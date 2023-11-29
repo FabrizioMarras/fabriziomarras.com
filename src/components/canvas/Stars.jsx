@@ -8,8 +8,8 @@ const Stars = (props) => {
   // IMPORTANT: the Float32Array value needs to be a number divisible by 3 to avoid an error in the console.
   const sphere = random.inSphere(new Float32Array(6000), { radius: 1.2})
   useFrame((state, delta) => {
-    ref.current.rotation.x -= delta / 10;
-    ref.current.rotation.y -= delta / 15;
+    ref.current.rotation.x -= delta / 30;
+    ref.current.rotation.y -= delta / 45;
   })
 
   return (
@@ -18,7 +18,7 @@ const Stars = (props) => {
         <PointMaterial
           transparent
           color="#f272c8"
-          size={0.002}
+          size={0.0015}
           sizeAttenuation={true}
           depthWrite={false}
         />
