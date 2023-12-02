@@ -15,7 +15,7 @@ const Navbar = () => {
       <div className="w-full flex justify-between items-center max-w-7xl mx-auto">
         <Link
           to="/"
-          className="flex items-center gap-2"
+          className="flex items-center gap-2 z-20"
           onClick={() => {
             setActive("");
             window.scrollTo(0, 0);
@@ -28,7 +28,7 @@ const Navbar = () => {
             <li
               className={`${active === link.title
                   ? 'text-primary'
-                  : 'text-tertiary'
+                  : 'text-white'
                 } hover:text-secondary text-[16px] font-light cursor-pointer`}
               key={link.id}
               onClick={() => setActive(link.title)}>
@@ -36,20 +36,21 @@ const Navbar = () => {
             </li>
           ))}
         </ul>
-        <div className="sm:hidden flex flex-1 justify-end items-center">
+        <div className="sm:hidden flex flex-1 justify-end items-center z-10">
           <img
             src={!toggle ? menu : close}
             alt="menu"
             className="w-[28px] h-[28px] object-contain cursor-pointer"
             onClick={() => setToggle(!toggle)} />
-          <div className={`${!toggle ? 'hidden' : 'flex'} p-6 black-gradient absolute top-20 right-0 mx-4 my-2 z-10 min-w-[140px] rounded-xl`}>
-            <ul className="list-none flex flex-col justify-end items-start gap-4">
+        </div>
+        <div className={`${!toggle ? 'hidden' : 'flex'} bg-black flex-col justify-between md:hidden p- pt-24 absolute top-0 right-0 z-8 w-full h-screen`}>
+            <ul className="list-none flex flex-col justify-end items-center mt-10 gap-8">
               {navLinks.map((link) => (
                 <li
                   className={`${active === link.title
-                      ? 'text-white'
-                      : 'text-secondary'
-                    } font-poppins text-[16px] font-medium cursor-pointer`}
+                      ? 'text-secondary'
+                      : 'text-white'
+                    } font-body text-[18px] cursor-pointer`}
                   key={link.id}
                   onClick={() => {
                     setToggle(!toggle);
@@ -60,7 +61,6 @@ const Navbar = () => {
               ))}
             </ul>
           </div>
-        </div>
       </div>
     </nav>
   )
