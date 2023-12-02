@@ -10,34 +10,38 @@ import { textVariant } from '../utils/motion';
 const ExperienceCard = ({ experience }) => (
   <VerticalTimelineElement
     contentStyle={{
-      background: '#1d1836',
-      color: '#fff'
+      background: '#1f2937',
+      color: '#fff',
+      boxShadow: '0px 2px 0px #2dc4b6'
     }}
     contentArrowStyle={{
-      borderRight: '7px solid #232631'
+      borderRight: '12px solid #1f2937'
     }}
     date={experience.date}
     iconStyle={{
-      background: experience.iconBg
+      background: experience.iconBg,
+      backgroundColor: 'rgba(31, 41, 55, .9)',
+      border: '3px solid rgba(250, 250, 250, .9)',
+      boxShadow: '0 5px 8px 1px rgba(31, 41, 55, .9)'
     }}
     icon={
       <div className='flex justify-center items-center w-full h-full'>
         <img 
           src={experience.icon}
           alt={experience.company_name}
-          className='w-[60%] h-[60%] object-contain'
+          className='w-[70%] h-[70%] object-contain'
         />
       </div>
     }
   >
     <div>
-      <h3 className='text-white text-[24px] font-bold'>{experience.title}</h3>
-      <p className='text-secondary text-[16px] font-semibold' style={{ margin: 0 }}>{experience.company_name}</p>
+      <h3 className='text-secondary text-[24px] font-light uppercase tracking-wider'>{experience.title}</h3>
+      <p className='text-tertiary font-title text-[20px] m-0' style={{ margin: 0, fontWeight: 200 }}>{experience.company_name}</p>
       <ul className='mt-5 list-disc ml-5 space-y-2'>
         {experience.points.map((point, index) => (
           <li 
             key={`experience-point-${index}`}
-            className='text-white-100 text-[14px] pl-1 tracking-wider'>
+            className={`${styles.pText} text-white-100 pl-1`}>
               {point}
           </li>
         ))}
@@ -54,7 +58,9 @@ const Experience = () => {
         <h2 className={styles.sectionHeadText}>Work Experience.</h2>
       </motion.div>
       <div className="mt-20 flkex flex-col">
-        <VerticalTimeline>
+        <VerticalTimeline
+          lineColor={'linear-gradient(180deg, #ec1d24 0%, #f6921f 40%, #2dc4b6 80%)'}
+        >
           {experiences.map((experience, index) => (
             <ExperienceCard key={index} experience={experience} />
           ))}
