@@ -4,11 +4,14 @@ module.exports = {
   mode: "jit",
   theme: {
     extend: {
+      fontFamily: {
+        'title': ['Montserrat', 'sans-serif'],
+        'body': ['"Open Sans"', 'sans-serif'] // Ensure fonts with spaces have " " surrounding it.
+      },
       colors: {
         primary: "#ec1d24", // Red
         secondary: "#f6921f", //Orange
         tertiary: "#2dc4b6", // water
-        text: "#dfd9ff",
       },
       boxShadow: {
         card: "0px 35px 120px -15px #211e35",

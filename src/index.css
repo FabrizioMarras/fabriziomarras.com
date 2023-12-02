@@ -1,4 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -8,7 +10,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
   scroll-behavior: smooth;
   color-scheme: dark;
 }
@@ -55,14 +56,14 @@
 
 .tertiary-primary-gradient {
   background: "#2dc4b6";
-  background: linear-gradient(90.13deg, #2dc4b6 1.9%, #ec1d24 97.5%);
-  background: -webkit-linear-gradient(-90.13deg, #2dc4b6 1.9%, #ec1d24 97.5%);
+  background: linear-gradient(90deg, #2dc4b6 2%, #ec1d24 98%);
+  background: -webkit-linear-gradient(-90deg, #2dc4b6 2%, #ec1d24 98%);
 }
 
 .primary-secondary-tertiary-gradient {
   background: "#ec1d24";
-  background: linear-gradient(90.13deg, #ec1d24 0%, #f6921f 40%, #2dc4b6 80%);
-  background: -webkit-linear-gradient(-90.13deg, #ec1d24 0%, #f6921f 40%, #2dc4b6 80%);
+  background: linear-gradient(90deg, #ec1d24 0%, #f6921f 40%, #2dc4b6 80%);
+  background: -webkit-linear-gradient(-90deg, #ec1d24 0%, #f6921f 40%, #2dc4b6 80%);
 }
 
 .orange-text-gradient {
