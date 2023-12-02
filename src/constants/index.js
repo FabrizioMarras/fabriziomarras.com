@@ -23,8 +23,16 @@ import {
     jobit,
     tripguide,
     threejs,
+    Hero,
+    Hero_hover
   } from "../assets";
   
+  const heroImg = {
+      name: "Fabrizio Marras",
+      image: Hero,
+      image_hover: Hero_hover
+    }
+
   export const navLinks = [
     {
       id: "about",
@@ -262,4 +270,4 @@ import {
     },
   ];
   
-  export { services, technologies, experiences, testimonials, projects };
+  export { services, technologies, experiences, testimonials, projects, heroImg };
