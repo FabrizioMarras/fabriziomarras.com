@@ -12,8 +12,8 @@ const Hero = () => {
           <div className="w-1 sm:h-screen h-40 primary-secondary-tertiary-gradient"/>
         </div>
         <div>
-          <h1 className={`${styles.heroHeadText} text-white`}><span className="text-primary">Fabrizio</span>&nbsp;<span className="text-secondary">Marras</span></h1>
-          <p className={`${styles.heroSubText} mt-2 text-white-100`}>Digital Strategy Leader <br /> Innovative Technologist <br /> Visionary Executive</p>
+          <h1 className={`${styles.heroHeadText} uppercase`}>Fabrizio&nbsp;<span className="text-secondary">Marras</span></h1>
+          <p className={`${styles.heroSubText} mt-2`}>Digital Strategy Leader <br /> Innovative Technologist <br /> Visionary Executive</p>
         </div>
       </div>
       <ComputersCanvas />
