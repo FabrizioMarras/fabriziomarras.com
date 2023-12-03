@@ -5,7 +5,7 @@ import 'react-vertical-timeline-component/style.min.css';
 import { styles } from '../styles';
 import { experiences } from '../constants';
 import { SectionWrapper } from '../hoc';
-import { textVariant } from '../utils/motion';
+import { textVariant, fadeIn } from '../utils/motion';
 
 const ExperienceCard = ({ experience }) => (
   <VerticalTimelineElement
@@ -58,15 +58,16 @@ const Experience = () => {
          <p className={styles.sectionSubText}>What I have done so far</p>
         <h2 className={styles.sectionHeadText}>Work Experience.</h2>
       </motion.div>
+      <motion.div variants={fadeIn("up", "spring", 0.5, 0.75)}>
       <div className="mt-20 flkex flex-col">
         <VerticalTimeline
-          lineColor={'linear-gradient(180deg, #ec1d24 0%, #f6921f 40%, #2dc4b6 80%)'}
-        >
+          lineColor={'linear-gradient(180deg, #ec1d24 0%, #f6921f 40%, #2dc4b6 80%)'}>
           {experiences.map((experience, index) => (
             <ExperienceCard key={index} experience={experience} />
           ))}
         </VerticalTimeline>
       </div>
+      </motion.div>
     </>
   )
 }
