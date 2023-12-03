@@ -16,7 +16,10 @@ const styles = {
       "font-title font-light sm:text-[18px] text-[14px] text-tertiary uppercase tracking-wider",
 
     pText: 
-    "font-body font-light sm:text-[16px] text-[13px] text-white tracking-wider"
+    "font-body font-light sm:text-[16px] text-[13px] text-white tracking-wider",
+
+    cardText: 
+    "font-body font-light sm:text-[14px] text-[10px] text-white leading-[26px] tracking-wider"
   };
   
   export { styles };
