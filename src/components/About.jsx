@@ -10,7 +10,7 @@ import { SectionWrapper } from '../hoc';
 const ServiceCard = ({ index, title, icon, points }) => {
   return (
     <Tilt
-      className="sm:w-[350px] w-full"
+      className="sm:max-w-[350px] w-full"
     >
       <motion.div
         variants={fadeIn("right", "spring", 0.5 * index, 0.75)}
@@ -56,7 +56,7 @@ const About = () => {
         className={` ${styles.pText} mt-4 max-w-3xl`}>
         I'm an experienced professional with a unique talent for steering projects from conception to successful realization, with a distinctive skill-set that combines technical and creative domains. With a track record of success highlights and ability to provide effective leadership in the ever-evolving strategic digital management. I'm a quick learner and collaborate closely with clients to create efficient, scalable, and user-friendly solutions that solve real-world problems. Let's work together to bring your ideas to life!
       </motion.p>
-      <div className="mt-20 flex flex-wrap gap-10">
+      <div className="mt-20 flex flex-wrap justify-center gap-10">
         {services.map((service, index) => (
           <ServiceCard key={service.title} index={index} {...service} />
         ))}

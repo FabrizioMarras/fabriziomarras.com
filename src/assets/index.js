@@ -1,19 +1,25 @@
 import logo from "./logo.svg";
-// import backend from "./backend.png";
-// import creator from "./creator.png";
-// import mobile from "./mobile.png";
-// import web from "./web.png";
+import menu from "./menu.svg";
+import close from "./close.svg";
+import Hero from "./Hero.png";
+import Hero_hover from "./Hero_hover.png";
+// About
 import leadership from "./leadership.svg";
 import creativity from "./creativity.svg";
 import communication from "./communication.svg";
 import agile from "./agile.svg";
 import ai from "./ai.svg";
 import development from "./development.svg";
+// Experience
+import assist from "./assist.jpeg";
+import floyd from "./floyd.jpeg";
+import fm from "./fm.jpeg";
+import hexion from "./hexion.jpeg";
+import pirates from "./pirates.jpeg";
+import speak from "./speak.png";
+import wfp from "./wfp.jpeg";
+//Tech
 import github from "./github.png";
-import menu from "./menu.svg";
-import close from "./close.svg";
-import Hero from "./Hero.png";
-import Hero_hover from "./Hero_hover.png";
 import css from "./tech/css.png";
 import docker from "./tech/docker.png";
 import figma from "./tech/figma.png";
@@ -27,28 +33,26 @@ import redux from "./tech/redux.png";
 import tailwind from "./tech/tailwind.png";
 import typescript from "./tech/typescript.png";
 import threejs from "./tech/threejs.svg";
-
-import meta from "./company/meta.png";
-import shopify from "./company/shopify.png";
-import starbucks from "./company/starbucks.png";
-import tesla from "./company/tesla.png";
-
+// Projects
 import carrent from "./carrent.png";
 import jobit from "./jobit.png";
 import tripguide from "./tripguide.png";
 
 export {
   logo,
-  // backend,
-  // creator,
-  // mobile,
-  // web,
   leadership,
   creativity,
   communication,
   agile,
   ai,
   development,
+  assist,
+  floyd,
+  fm,
+  hexion,
+  pirates,
+  speak,
+  wfp,
   github,
   menu,
   close,
@@ -65,10 +69,6 @@ export {
   tailwind,
   typescript,
   threejs,
-  meta,
-  shopify,
-  starbucks,
-  tesla,
   carrent,
   jobit,
   tripguide,

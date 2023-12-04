@@ -21,8 +21,8 @@ const ExperienceCard = ({ experience }) => (
     date={experience.date}
     iconStyle={{
       background: experience.iconBg,
-      backgroundColor: 'rgba(31, 41, 55, .9)',
-      border: '3px solid rgba(250, 250, 250, .9)',
+      backgroundColor: 'rgba(250, 250, 250, 1)',
+      border: '4px solid #2dc4b6',
       boxShadow: '0 5px 8px 1px rgba(31, 41, 55, .9)'
     }}
     icon={
@@ -30,7 +30,7 @@ const ExperienceCard = ({ experience }) => (
         <img 
           src={experience.icon}
           alt={experience.company_name}
-          className='w-[70%] h-[70%] object-contain'
+          className='w-[60%] h-[60%] object-contain'
         />
       </div>
     }
@@ -61,7 +61,7 @@ const Experience = () => {
       <motion.div variants={fadeIn("up", "spring", 0.5, 0.75)}>
       <div className="mt-20 flkex flex-col">
         <VerticalTimeline
-          lineColor={'linear-gradient(180deg, #ec1d24 0%, #f6921f 40%, #2dc4b6 80%)'}>
+          lineColor={'#2dc4b6'}>
           {experiences.map((experience, index) => (
             <ExperienceCard key={index} experience={experience} />
           ))}
