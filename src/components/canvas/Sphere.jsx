@@ -5,7 +5,7 @@ import * as THREE from 'three';
 
 import CanvasLoader from '../Loader';
 
-const Sphere = ({ position, size }) => {
+const Sphere = () => {
 //   const [lineWidth] =useState(10)
   const [ isHovered, setIsHovered ] = useState(false);
 
@@ -29,10 +29,11 @@ const Sphere = ({ position, size }) => {
         castShadow 
         receiveShadow 
         scale={2.5} 
-        rotation={[0, Math.PI / 2.5, 0]}
+        rotation={[0, 0, 0]}
+        position={[0, 0, 0]}
         onPointerEnter={(event) => (event.stopPropagation(), setIsHovered(true))}
         onPointerLeave={() => setIsHovered(false)}>
-        <sphereGeometry position={position} size={size} />
+        <sphereGeometry position={[0, 0, 0]}/>
         <meshStandardMaterial 
           color={isHovered ? "#ec1d24" : "#2dc4b6"}
           wireframe
@@ -59,7 +60,7 @@ const SphereCanvas = () => {
           maxPolarAngle={Math.PI / 2}
           minPolarAngle={Math.PI / 2}
         />
-        <Sphere position={[0, 1, 0]} size={1} />
+        <Sphere />
       </Suspense>
       <Preload all />
     </Canvas>

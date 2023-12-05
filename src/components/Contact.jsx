@@ -6,6 +6,10 @@ import { styles } from '../styles';
 // import { SectionWrapper } from '../hoc';
 import { slideIn } from '../utils/motion';
 
+// 6LdWwyYpAAAAAApvqW8VtuBSMgCWgv8Ifc03GbiV KEY ID
+
+
+
 const Contact = () => {
   const formRef = useRef();
   const [form, setForm] = useState({
@@ -58,7 +62,7 @@ const Contact = () => {
 };
 
 return (
-  <div id="contact" className="xl:mt-12 overflow-hidden w-[50%]">
+  <div id="contact" className="xl:mt-12 overflow-hidden w-full md:w-[50%]">
     <motion.div
       variants={slideIn("left", "tween", 0.2, 1)}
       className='p-8'>
@@ -67,11 +71,12 @@ return (
       <form
         ref={formRef}
         onSubmit={handleSubmit}
-        className='mt-12 p-10 border-2 border-tertiary rounded-xl flex flex-col gap-8 bg-black'
+        className='mt-12 p-10 border-2 border-tertiary rounded-xl flex flex-col gap-8'
       >
         <label htmlFor="name" className="flex flex-col">
           <span className='text-white font-medium mb-4'>Your Full Name</span>
           <input
+            required
             id="name"
             autoComplete="name"
             type="text"
@@ -84,6 +89,7 @@ return (
         <label htmlFor="email" className="flex flex-col">
           <span className='text-white font-medium mb-4'>Your Email Address</span>
           <input
+            required
             id="email"
             autoComplete="email"
             type="email"
@@ -91,11 +97,12 @@ return (
             value={form.email}
             onChange={handleChange}
             placeholder="What's your email?"
-            className="bg-gray-900 py-4 px-6 placeholder:text-secondary placeholder:font-thin placeholder:italic placeholder:text-[12px] text-white rounded-lg outline-none border-none font-medium" />
+            className="required:border-red-500 bg-gray-900 py-4 px-6 placeholder:text-secondary placeholder:font-thin placeholder:italic placeholder:text-[12px] text-white rounded-lg outline-none border-none font-medium" />
         </label>
         <label htmlFor="message" className="flex flex-col">
           <span className='text-white font-medium mb-4'>Your Message</span>
           <textarea
+            required
             id="message"
             rows={7}
             name="message"

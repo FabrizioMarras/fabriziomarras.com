@@ -27,12 +27,12 @@ const App = () => {
         <Tech />
         <Works />
         <Feedbacks />
-        <div className="relative z-0 pb-20">
-          <div className=" max-w-7xl mx-auto">
+        <div className="relative z-0 pb-20 overflow-hidden">
+          <div className=" max-w-7xl p-6 mx-auto">
             <Contact />
             <motion.div
               variants={slideIn("right", "tween", 0.2, 1)}
-              className="w-full h-full absolute left-[30%] bottom-[0px]">
+              className="hidden md:flex md:w-[75%] md:h-[75%] lg:w-full lg:h-full absolute sm:left-[40%] sm:bottom-[-10%] lg:left-[30%]">
               <SphereCanvas />
             </motion.div>
           </div>
