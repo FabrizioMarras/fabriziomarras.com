@@ -33,8 +33,9 @@ const Ball = (props) => {
   )
 }
 
-const BallCanvas = ({ icon }) => {
+const BallCanvas = ({ icon, name }) => {
   return (
+    <div className="flex flex-col ">
     <Canvas
       frameloop='demand'
       // shadows
@@ -51,6 +52,8 @@ const BallCanvas = ({ icon }) => {
       </Suspense>
       <Preload all />
     </Canvas>
+    <h3 className={`text-center text-tertiary uppercase font-light`}>{name}</h3>
+    </div>
   )
 }
 export default BallCanvas
