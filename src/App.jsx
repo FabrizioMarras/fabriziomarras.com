@@ -8,7 +8,8 @@ import {
   Works,
   Feedbacks,
   Contact,
-  StarsCanvas
+  StarsCanvas,
+  Footer
 } from './components';
 import { motion } from 'framer-motion';
 import { SphereCanvas } from './components/canvas';
@@ -36,8 +37,10 @@ const App = () => {
               <SphereCanvas />
             </motion.div>
           </div>
+          
           <StarsCanvas />
         </div>
+        <Footer />
       </div>
     </BrowserRouter>
   )

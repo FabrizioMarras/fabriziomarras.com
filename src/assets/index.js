@@ -42,6 +42,10 @@ import speak2lead from "./work/speak2lead.jpeg";
 import alessandro from './testimonials/alessandro.png';
 import vaggelis from './testimonials/vaggelis.jpeg';
 import massimo from './testimonials/massimo.jpeg';
+//Socials
+import gh from './socials/github-white.svg';
+import yt from './socials/youtube-white.svg';
+import li from './socials/linkedin-white.svg';
 
 export {
   logo,
@@ -82,5 +86,8 @@ export {
   Hero_hover,
   alessandro,
   vaggelis,
-  massimo
+  massimo,
+  gh,
+  yt,
+  li
 };

@@ -33,7 +33,9 @@ import {
     Hero_hover,
     alessandro,
     vaggelis,
-    massimo
+    massimo,
+    github,
+    gh,yt,li
   } from "../assets";
   
   const heroImg = {
@@ -54,6 +56,24 @@ import {
     {
       id: "contact",
       title: "Contact",
+    },
+  ];
+
+  export const socials = [
+    {
+      id: "linkedIn",
+      icon: li,
+      url: "#",
+    },
+    {
+      id: "github",
+      icon: gh,
+      title: "#",
+    },
+    {
+      id: "youtube",
+      icon: yt,
+      title: "#",
     },
   ];
   
