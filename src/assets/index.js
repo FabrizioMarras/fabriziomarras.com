@@ -39,7 +39,9 @@ import lovelace from "./work/lovelace.jpeg";
 import prasanna from "./work/prasanna.jpeg";
 import speak2lead from "./work/speak2lead.jpeg";
 // Testimonials
-import alessandro from './testimonials/alessandro.png'
+import alessandro from './testimonials/alessandro.png';
+import vaggelis from './testimonials/vaggelis.jpeg';
+import massimo from './testimonials/massimo.jpeg';
 
 export {
   logo,
@@ -78,5 +80,7 @@ export {
   speak2lead,
   Hero,
   Hero_hover,
-  alessandro
+  alessandro,
+  vaggelis,
+  massimo
 };

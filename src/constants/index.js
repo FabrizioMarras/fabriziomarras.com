@@ -31,7 +31,9 @@ import {
     threejs,
     Hero,
     Hero_hover,
-    alessandro
+    alessandro,
+    vaggelis,
+    massimo
   } from "../assets";
   
   const heroImg = {
@@ -277,19 +279,19 @@ import {
     },
     {
       testimonial:
-        "I've never met a web developer who truly cares about their clients' success like Rick does.",
-      name: "Chris Brown",
-      designation: "COO",
-      company: "DEF Corp",
-      image: "https://randomuser.me/api/portraits/men/5.jpg",
+        "We worked with Fabrizio on the website of our soon to be released game. He is very professional and fast, and a great communicator, making the creation of this website a breeze (I wish I could say the same for the development of our game!) I recommend him with all my heart to all indie game developers.",
+      name: "Evangelos Leivaditis",
+      designation: "UGC Design Lead",
+      company: "Seedify",
+      image: vaggelis,
     },
     {
       testimonial:
-        "After Rick optimized our website, our traffic increased by 50%. We can't thank them enough!",
-      name: "Lisa Wang",
-      designation: "CTO",
-      company: "456 Enterprises",
-      image: "https://randomuser.me/api/portraits/women/6.jpg",
+        "Fabrizio is an hard worker! He is oriented on problem solving and on development of new strategies. It was a plesaure to work together with him.",
+      name: "Massimo Casanova",
+      designation: "Global R&D Director",
+      company: "Cargill",
+      image: massimo,
     },
   ];
   
@@ -300,16 +302,16 @@ import {
         "Drop started out as a fundraiser combinining the love for music with the message of raising awareness against plastic by organising events in the heart of Amsterdam.",
       tags: [
         {
-          name: "2D/3D Logo Design",
-          color: "blue-text-gradient",
+          name: "3d-design",
+          color: "text-primary",
         },
         {
-          name: "3D Animation",
-          color: "green-text-gradient",
+          name: "3d-animation",
+          color: "text-secondary",
         },
         {
-          name: "Live Streaming",
-          color: "pink-text-gradient",
+          name: "live-streaming",
+          color: "text-tertiary",
         },
       ],
       image: drop,
@@ -321,16 +323,16 @@ import {
         "Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
       tags: [
         {
-          name: "react",
-          color: "blue-text-gradient",
+          name: "html",
+          color: "text-primary",
         },
         {
-          name: "restapi",
-          color: "green-text-gradient",
+          name: "css",
+          color: "text-secondary",
         },
         {
-          name: "scss",
-          color: "pink-text-gradient",
+          name: "js",
+          color: "text-tertiary",
         },
       ],
       image: speak2lead,
@@ -342,16 +344,16 @@ import {
         "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
       tags: [
         {
-          name: "nextjs",
-          color: "blue-text-gradient",
+          name: "adobe-cc",
+          color: "text-primary",
         },
         {
-          name: "supabase",
-          color: "green-text-gradient",
+          name: "2d-animation",
+          color: "text-secondary",
         },
         {
-          name: "css",
-          color: "pink-text-gradient",
+          name: "web-dev",
+          color: "text-tertiary",
         },
       ],
       image: lovelace,
@@ -363,16 +365,16 @@ import {
         "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
       tags: [
         {
-          name: "nextjs",
-          color: "blue-text-gradient",
-        },
-        {
-          name: "supabase",
-          color: "green-text-gradient",
+          name: "html",
+          color: "text-primary",
         },
         {
           name: "css",
-          color: "pink-text-gradient",
+          color: "text-secondary",
+        },
+        {
+          name: "js",
+          color: "text-tertiary",
         },
       ],
       image: boipeba,
@@ -384,16 +386,16 @@ import {
         "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
       tags: [
         {
-          name: "nextjs",
-          color: "blue-text-gradient",
-        },
-        {
-          name: "supabase",
-          color: "green-text-gradient",
+          name: "html",
+          color: "text-primary",
         },
         {
           name: "css",
-          color: "pink-text-gradient",
+          color: "text-secondary",
+        },
+        {
+          name: "js",
+          color: "text-tertiary",
         },
       ],
       image: prasanna,
@@ -405,16 +407,16 @@ import {
         "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
       tags: [
         {
-          name: "nextjs",
-          color: "blue-text-gradient",
-        },
-        {
-          name: "supabase",
-          color: "green-text-gradient",
+          name: "html",
+          color: "text-primary",
         },
         {
           name: "css",
-          color: "pink-text-gradient",
+          color: "text-secondary",
+        },
+        {
+          name: "js",
+          color: "text-tertiary",
         },
       ],
       image: avanvera,
