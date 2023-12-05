@@ -30,7 +30,8 @@ import {
     speak2lead,
     threejs,
     Hero,
-    Hero_hover
+    Hero_hover,
+    alessandro
   } from "../assets";
   
   const heroImg = {
@@ -268,11 +269,11 @@ import {
   const testimonials = [
     {
       testimonial:
-        "I thought it was impossible to make a website as beautiful as our product, but Rick proved me wrong.",
-      name: "Sara Lee",
-      designation: "CFO",
-      company: "Acme Co",
-      image: "https://randomuser.me/api/portraits/women/4.jpg",
+        "Fabrizio's creative, inventive and inquisitive mind help immensely to get the projects we shared at the University of Amsterdam through the hurdles that every chemist find on his/her way. He's an hard worker but he know how to keep a balance and when it's time to stop, step back, relax and start over from a fresh perspective. I miss working with him!",
+      name: "Alessandro Vozza",
+      designation: "Developer Relations",
+      company: "Solo.io",
+      image: alessandro,
     },
     {
       testimonial:

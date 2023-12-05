@@ -38,6 +38,8 @@ import drop from "./work/drop.jpeg";
 import lovelace from "./work/lovelace.jpeg";
 import prasanna from "./work/prasanna.jpeg";
 import speak2lead from "./work/speak2lead.jpeg";
+// Testimonials
+import alessandro from './testimonials/alessandro.png'
 
 export {
   logo,
@@ -75,5 +77,6 @@ export {
   prasanna,
   speak2lead,
   Hero,
-  Hero_hover
+  Hero_hover,
+  alessandro
 };
