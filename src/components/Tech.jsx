@@ -1,17 +1,17 @@
-import { BallCanvas } from "./canvas";
+import { CubeCanvas } from "./canvas";
 import { SectionWrapper } from "../hoc";
 import { technologies } from "../constants";
 
 
 const Tech = () => {
   return (
-    <div className="flex flex-row flex-wrap justify-center gap-10">
+    <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-5">
       {technologies.map((technology) => (
         <div className="w-28 h-28" key={technology.name}>
-          <BallCanvas icon={technology.icon} />
+          <CubeCanvas icon={technology.icon} />
         </div>
       ))}
-    </div>
+    </div> 
   )
 }
 
