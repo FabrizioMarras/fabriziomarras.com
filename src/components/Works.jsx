@@ -18,7 +18,7 @@ const ProjectCard = ({ index, name, description, tags, image, source_code_link }
           scale: 1,
           speed: 450,
         }}
-        className="bg-gray-800 p-5 border-2 border-tertiary rounded-2xl sm:w-[360px] w-full"
+        className="bg-gray-800 p-5 border-2 border-tertiary rounded-2xl w-full h-full"
       >
         <div className="relative w-full h-[230px]">
           <img
@@ -69,7 +69,7 @@ const Works = () => {
           Following projects showcase my skills and experience through real-world examples of my work. Each project is briefly described with links to code repositories and live demos in it. It reflects my ability to solve complex problem, work with different technologies, and manage project effectively.
         </motion.p>
       </div>
-      <div className="mt-20 flex flex-wrap gap-7">
+      <div className="mt-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
         {projects.map((project, index) => (
           <ProjectCard 
             key={`project-${index}`}
