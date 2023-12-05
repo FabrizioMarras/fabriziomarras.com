@@ -9,7 +9,7 @@ import {
 import { styles } from '../styles';
 import { slideIn } from '../utils/motion';
 
-const Contact = ({ googleReCaptchaProps }) => {
+const Contact = () => {
   const formRef = useRef();
   const [form, setForm] = useState({
     name: '',
