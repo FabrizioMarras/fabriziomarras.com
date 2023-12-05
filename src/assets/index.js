@@ -21,7 +21,6 @@ import wfp from "./wfp.jpeg";
 //Tech
 import github from "./github.png";
 import css from "./tech/css.png";
-import docker from "./tech/docker.png";
 import figma from "./tech/figma.png";
 import git from "./tech/git.png";
 import html from "./tech/html.png";
@@ -29,14 +28,16 @@ import javascript from "./tech/javascript.png";
 import mongodb from "./tech/mongodb.png";
 import nodejs from "./tech/nodejs.png";
 import reactjs from "./tech/reactjs.png";
-import redux from "./tech/redux.png";
 import tailwind from "./tech/tailwind.png";
-import typescript from "./tech/typescript.png";
-import threejs from "./tech/threejs.svg";
+import threejs from "./tech/threejs.png";
+import artificial from "./tech/ai.png";
 // Projects
-import carrent from "./carrent.png";
-import jobit from "./jobit.png";
-import tripguide from "./tripguide.png";
+import avanvera from "./work/avanvera.jpeg";
+import boipeba from "./work/boipeba.jpeg";
+import drop from "./work/drop.jpeg";
+import lovelace from "./work/lovelace.jpeg";
+import prasanna from "./work/prasanna.jpeg";
+import speak2lead from "./work/speak2lead.jpeg";
 
 export {
   logo,
@@ -53,11 +54,11 @@ export {
   pirates,
   speak,
   wfp,
+  artificial,
   github,
   menu,
   close,
   css,
-  docker,
   figma,
   git,
   html,
@@ -65,13 +66,14 @@ export {
   mongodb,
   nodejs,
   reactjs,
-  redux,
   tailwind,
-  typescript,
   threejs,
-  carrent,
-  jobit,
-  tripguide,
+  avanvera,
+  boipeba,
+  drop,
+  lovelace,
+  prasanna,
+  speak2lead,
   Hero,
   Hero_hover
 };

@@ -13,20 +13,21 @@ import {
     speak,
     wfp,
     javascript,
-    typescript,
+    artificial,
     html,
     css,
     reactjs,
-    redux,
     tailwind,
     nodejs,
     mongodb,
     git,
     figma,
-    docker,
-    carrent,
-    jobit,
-    tripguide,
+    avanvera,
+    boipeba,
+    drop,
+    lovelace,
+    prasanna,
+    speak2lead,
     threejs,
     Hero,
     Hero_hover
@@ -117,20 +118,8 @@ import {
   
   const technologies = [
     {
-      name: "Agile",
-      icon: html,
-    },
-    {
-      name: "Scrum",
-      icon: html,
-    },
-    {
-      name: "Product Management",
-      icon: html,
-    },
-    {
       name: "Artificial Intelligence",
-      icon: html,
+      icon: artificial,
     },
     {
       name: "HTML 5",
@@ -305,28 +294,28 @@ import {
   
   const projects = [
     {
-      name: "Car Rent",
+      name: "Drop Music Official",
       description:
-        "Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.",
+        "Drop started out as a fundraiser combinining the love for music with the message of raising awareness against plastic by organising events in the heart of Amsterdam.",
       tags: [
         {
-          name: "react",
+          name: "2D/3D Logo Design",
           color: "blue-text-gradient",
         },
         {
-          name: "mongodb",
+          name: "3D Animation",
           color: "green-text-gradient",
         },
         {
-          name: "tailwind",
+          name: "Live Streaming",
           color: "pink-text-gradient",
         },
       ],
-      image: carrent,
+      image: drop,
       source_code_link: "https://github.com/",
     },
     {
-      name: "Job IT",
+      name: "Speak 2 Lead",
       description:
         "Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
       tags: [
@@ -343,11 +332,11 @@ import {
           color: "pink-text-gradient",
         },
       ],
-      image: jobit,
+      image: speak2lead,
       source_code_link: "https://github.com/",
     },
     {
-      name: "Trip Guide",
+      name: "Lovelace",
       description:
         "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
       tags: [
@@ -364,9 +353,72 @@ import {
           color: "pink-text-gradient",
         },
       ],
-      image: tripguide,
+      image: lovelace,
       source_code_link: "https://github.com/",
     },
+    {
+      name: "Boipeba",
+      description:
+        "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
+      tags: [
+        {
+          name: "nextjs",
+          color: "blue-text-gradient",
+        },
+        {
+          name: "supabase",
+          color: "green-text-gradient",
+        },
+        {
+          name: "css",
+          color: "pink-text-gradient",
+        },
+      ],
+      image: boipeba,
+      source_code_link: "https://github.com/",
+    },
+    {
+      name: "Prasanna",
+      description:
+        "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
+      tags: [
+        {
+          name: "nextjs",
+          color: "blue-text-gradient",
+        },
+        {
+          name: "supabase",
+          color: "green-text-gradient",
+        },
+        {
+          name: "css",
+          color: "pink-text-gradient",
+        },
+      ],
+      image: prasanna,
+      source_code_link: "https://github.com/",
+    },
+    {
+      name: "Avanvera",
+      description:
+        "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
+      tags: [
+        {
+          name: "nextjs",
+          color: "blue-text-gradient",
+        },
+        {
+          name: "supabase",
+          color: "green-text-gradient",
+        },
+        {
+          name: "css",
+          color: "pink-text-gradient",
+        },
+      ],
+      image: avanvera,
+      source_code_link: "https://github.com/",
+    }
   ];
   
   export { services, technologies, experiences, testimonials, projects, heroImg };
