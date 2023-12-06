@@ -54,11 +54,11 @@ const ExperienceCard = ({ experience }) => (
 const Experience = () => {
   return (
     <>
-      <motion.div variants={textVariant()}>
+      <motion.div initial="hidden" animate="show" variants={textVariant(2.5)}>
          <p className={styles.sectionSubText}>What I have done so far</p>
         <h2 className={styles.sectionHeadText}>Work Experience.</h2>
       </motion.div>
-      <motion.div variants={fadeIn("up", "spring", 0.5, 0.75)}>
+      <motion.div initial="hidden" animate="show"variants={fadeIn("up", "spring", 0.5, 0.75)}>
       <div className="mt-20 flkex flex-col">
         <VerticalTimeline
           lineColor={'#2dc4b6'}>

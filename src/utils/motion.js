@@ -1,7 +1,7 @@
 export const textVariant = (delay) => {
     return {
       hidden: {
-        y: -50,
+        y: -30,
         opacity: 0,
       },
       show: {
@@ -13,6 +13,10 @@ export const textVariant = (delay) => {
           delay: delay,
         },
       },
+      exit: {
+        opacity: 0,
+        transition: { duration: 0.2 },
+      }
     };
   };
   
@@ -34,6 +38,10 @@ export const textVariant = (delay) => {
           ease: "easeOut",
         },
       },
+      exit: {
+      opacity: 0,
+      transition: { duration: 0.2 },
+    }
     };
   };
   
@@ -53,6 +61,10 @@ export const textVariant = (delay) => {
           ease: "easeOut",
         },
       },
+      exit: {
+        opacity: 0,
+        transition: { duration: 0.2 },
+      },      
     };
   };
   
@@ -72,6 +84,10 @@ export const textVariant = (delay) => {
           ease: "easeOut",
         },
       },
+      exit: {
+        opacity: 0,
+        transition: { duration: 0.2 },
+      },
     };
   };
   
@@ -83,6 +99,6 @@ export const textVariant = (delay) => {
           staggerChildren: staggerChildren,
           delayChildren: delayChildren || 0,
         },
-      },
+      }
     };
   };
