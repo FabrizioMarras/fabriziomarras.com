@@ -16,7 +16,7 @@ const Hero = () => {
         </div>
         <div className="mt-2 md:mt-5 lg:mt-10">
           <h1 className={`${styles.heroHeadText} uppercase`}>Fabrizio&nbsp;<span className="text-secondary">Marras</span></h1>
-          <p className={`${styles.heroSubText} mt-2`}>Digital Strategy Leader <br /> Innovative Technologist <br /> Visionary Executive</p>
+          <p className={`${styles.heroSubText} mt-2`}>Digital Strategy Leader <br /> Innovative Technologist</p>
         </div>
       </div>
         <ComputersCanvas />
