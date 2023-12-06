@@ -50,8 +50,12 @@ import {
       title: "About",
     },
     {
-      id: "work",
-      title: "Work",
+      id: "experience",
+      title: "Experience",
+    },
+    {
+      id: "projects",
+      title: "Projects",
     },
     {
       id: "contact",
@@ -317,6 +321,7 @@ import {
   
   const projects = [
     {
+      id: "01",
       name: "Drop Music Official",
       description:
         "Drop started out as a fundraiser combinining the love for music with the message of raising awareness against plastic by organising events in the heart of Amsterdam.",
@@ -338,6 +343,7 @@ import {
       source_code_link: "https://github.com/",
     },
     {
+      id: "02",
       name: "Speak 2 Lead",
       description:
         "Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
@@ -359,6 +365,7 @@ import {
       source_code_link: "https://github.com/",
     },
     {
+      id: "03",
       name: "Lovelace",
       description:
         "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
@@ -380,6 +387,7 @@ import {
       source_code_link: "https://github.com/",
     },
     {
+      id: "04",
       name: "Boipeba",
       description:
         "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
@@ -401,6 +409,7 @@ import {
       source_code_link: "https://github.com/",
     },
     {
+      id: "05",
       name: "Prasanna",
       description:
         "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
@@ -422,6 +431,7 @@ import {
       source_code_link: "https://github.com/",
     },
     {
+      id: "06",
       name: "Avanvera",
       description:
         "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",

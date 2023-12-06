@@ -1,13 +1,33 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 import { styles } from '../styles';
 import { navLinks } from '../constants';
 import { logo, menu, close } from '../assets';
 
-const Navbar = () => {
+const Navbar = ({ isHome }) => {
   const [active, setActive] = useState('');
   const [toggle, setToggle] = useState(false);
+  const navigate = useNavigate();
+
+  const handleNavClick = (sectionId) => {
+    const section = document.getElementById(sectionId);
+
+    if (isHome && section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      // Navigate to home page using React Router
+      navigate('/');
+      // Wait for navigation to complete, then scroll to the section
+      setTimeout(() => {
+        const homeSection = document.getElementById(sectionId);
+        if (homeSection) {
+          homeSection.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100); // Adjust the delay if needed
+    }
+  };
+
   return (
     <nav className={`
       ${styles.paddingX} w-full flex items-center py-5 fixed top-0 z-20
@@ -27,12 +47,15 @@ const Navbar = () => {
           {navLinks.map((link) => (
             <li
               className={`${active === link.title
-                  ? 'text-primary'
+                  ? 'text-secondary'
                   : 'text-white'
-                } hover:text-secondary text-[16px] font-light cursor-pointer`}
+                } hover:text-primary text-[16px] font-light cursor-pointer`}
               key={link.id}
-              onClick={() => setActive(link.title)}>
-              <a href={`#${link.id}`}>{link.title}</a>
+              onClick={() => {
+                setActive(link.title)
+                handleNavClick(link.id)}
+                }>
+              <Link to={isHome ? `#${link.id}` : `/#${link.id}`}>{link.title}</Link>
             </li>
           ))}
         </ul>
@@ -54,9 +77,10 @@ const Navbar = () => {
                   key={link.id}
                   onClick={() => {
                     setToggle(!toggle);
-                    setActive(link.title)
+                    setActive(link.title);
+                    handleNavClick(link.id)
                   }}>
-                  <a href={`#${link.id}`}>{link.title}</a>
+                  <Link to={isHome ? `#${link.id}` : `/${link.id}`}>{link.title}</Link>
                 </li>
               ))}
             </ul>
