@@ -8,7 +8,7 @@ import { testimonials } from "../constants";
 const FeedbackCard = ({ index, testimonial, name, designation, company, image }) => (
   <motion.div
     variants={fadeIn("", "spring", index * 0.5, 0.75)}
-    className="primary-secondary-tertiary-gradient p-[2px] rounded-3xl xs:w-[320px] w-full flex flex-col justify-between">
+    className="primary-secondary-tertiary-gradient p-[2px] rounded-3xl w-full flex flex-col justify-between">
     <div className="bg-gray-800 p-6 rounded-3xl w-full h-full flex flex-col justify-between">
       <div className="mt-4">
         <p className="text-tertiary font-black text-[82px] testimonials leading-[50px]">"</p>
@@ -40,7 +40,7 @@ const Feedbacks = () => {
           <h2 className={styles.sectionHeadText}>Testimonials.</h2>
         </motion.div>
       </div>
-      <div className={`-mt-20 pb-14 ${styles.paddingX} flex flex-wrap gap-7`}>
+      <div className={`-mt-20 pb-14 ${styles.paddingX} grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7`}>
         {testimonials.map((testimonial, index) => (
           <FeedbackCard
             key={testimonial.name}
