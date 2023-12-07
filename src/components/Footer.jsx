@@ -18,7 +18,7 @@ const Footer = () => {
               ))}
             </ul>
     </div>
-    <div className="text-white/40 font-thin text-[10px] py-6 tracking-wider flex justify-center"><span className="font-bold">© 2023 &nbsp; fabriziomarras.com &nbsp;</span> - All rights reserved</div>
+    <div className="text-white/40 font-thin text-[10px] py-6 tracking-wider flex justify-center"><span className="font-bold">&copy; 2023 &nbsp; fabriziomarras.com &nbsp;</span> - All rights reserved</div>
     </>
   )
 }

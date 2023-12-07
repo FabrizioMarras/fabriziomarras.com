@@ -20,23 +20,23 @@ const Hero = () => {
         </div>
       </div>
         <ComputersCanvas />
-      <div className="absolute bottom-10 w-full flex justify-center items-center">
-        <a href="#about">
-          <div className="w-[20px] h-[44px] rounded-3xl border-2 border-gray-200 flex justify-center items-start p-1">
-            <motion.div 
-              animate={{
-                y: [0, 24, 0]
-              }}
-              transition={{
-                duration: 1.5,
-                repeat: Infinity,
-                repeatType: 'loop',
-              }}
-              className="w-2 h-2 rounded-full bg-gray-100 mb-1"
-            />
-          </div>
-        </a>
-      </div>
+        <div className="absolute bottom-10 left-[50%] -translate-x-[50%] flex justify-center items-center opacity-40 hover:opacity-80">
+          <a href={`#about`}>
+            <div className="w-[20px] h-[44px] rounded-3xl border-2 border-gray-200 flex justify-center items-start p-1">
+              <motion.div
+                animate={{
+                  y: [0, 24, 0]
+                }}
+                transition={{
+                  duration: 2.5,
+                  repeat: Infinity,
+                  repeatType: 'loop',
+                }}
+                className="w-2 h-2 rounded-full bg-gray-100 mb-1"
+              />
+            </div>
+          </a>
+        </div>
     </section>
   )
 }

@@ -46,6 +46,10 @@ import massimo from './testimonials/massimo.jpeg';
 import gh from './socials/github-white.svg';
 import yt from './socials/youtube-white.svg';
 import li from './socials/linkedin-white.svg';
+// Pages - Projects
+import drop_01 from './work/drop_01.jpeg';
+import drop_02 from './work/drop_02.jpeg';
+import drop_03 from './work/drop_03.jpeg';
 
 export {
   logo,
@@ -89,5 +93,8 @@ export {
   massimo,
   gh,
   yt,
-  li
+  li,
+  drop_01,
+  drop_02,
+  drop_03
 };

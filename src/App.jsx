@@ -2,6 +2,7 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
+import { projects } from './constants';
 import {
   Hero,
   Navbar,
@@ -51,7 +52,7 @@ const App = () => {
       <div className="relative z-0 bg-black">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/project/:projectId" element={<ProjectPage />} />
+          <Route path={`/project/:projectName`} element={<ProjectPage />} />
         </Routes>
         <Footer />
       </div>
