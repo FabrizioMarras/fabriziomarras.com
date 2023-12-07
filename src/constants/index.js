@@ -67,17 +67,17 @@ import {
     {
       id: "linkedIn",
       icon: li,
-      url: "#",
+      url: "https://www.linkedin.com/in/fabriziomarras",
     },
     {
       id: "github",
       icon: gh,
-      title: "#",
+      url: "https://github.com/FabrizioMarras",
     },
     {
       id: "youtube",
       icon: yt,
-      title: "#",
+      url: "https://www.youtube.com/@fabriziomarras7644",
     },
   ];
   
