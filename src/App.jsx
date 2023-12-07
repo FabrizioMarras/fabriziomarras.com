@@ -2,7 +2,6 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
-import { projects } from './constants';
 import {
   Hero,
   Navbar,
