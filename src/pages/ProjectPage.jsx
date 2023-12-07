@@ -1,11 +1,13 @@
 // ProjectPage.jsx
 import { useState, useEffect } from 'react'
 import { useNavigate, Link, useParams } from 'react-router-dom';
-import { motion } from 'framer-motion'
+import { motion } from 'framer-motion';
+import { Tilt } from 'react-tilt';
 
 import Navbar from '../components/Navbar';
 import { projects } from '../constants';
 import { styles } from '../styles';
+import { staggerContainer, slideIn, fadeIn, textVariant } from '../utils/motion';
 
 const ProjectPage = () => {
   const { projectName } = useParams();
@@ -74,7 +76,7 @@ const ProjectPage = () => {
             className="w-[32px] h-[32px] md:w-[64px] md:h-[64px] text-white/40 hover:text-white" onClick={() => navigateToProject(prevProjectIndex)}>
             &larr;
           </button>
-          <button 
+          <button
             aria-label="Next Project"
             className="w-[32px] h-[32px] md:w-[64px] md:h-[64px] text-white/40 hover:text-white" onClick={() => navigateToProject(nextProjectIndex)}>
             &rarr;
@@ -84,16 +86,16 @@ const ProjectPage = () => {
         <div className="w-full flex flex-nowrap justify-center absolute top-20 gap-2">
           {projects.map((project, index) => (
             <Link
-            key={project.id}
-            to={`/project/${projects[index].name.replace(/[^\w-]+/g, '-')}`}
-            className="text-white text-opacity-60 hover:text-opacity-100 transition duration-300"
-          >
-            {index === currentProjectIndex ? (
-              <div className="w-[24px] h-[3px] bg-white rounded-full" />
-            ) : (
-              <div className="w-[24px] h-[3px] rounded-full bg-gray-100/40" />
-            )}
-          </Link>
+              key={project.id}
+              to={`/project/${projects[index].name.replace(/[^\w-]+/g, '-')}`}
+              className="text-white text-opacity-60 hover:text-opacity-100 transition duration-300"
+            >
+              {index === currentProjectIndex ? (
+                <div className="w-[24px] h-[3px] bg-white rounded-full" />
+              ) : (
+                <div className="w-[24px] h-[3px] rounded-full bg-gray-100/40" />
+              )}
+            </Link>
           ))}
         </div>
         <div className="absolute bottom-10 left-[50%] -translate-x-[50%] flex justify-center items-center opacity-40 hover:opacity-80">
@@ -115,26 +117,42 @@ const ProjectPage = () => {
         </div>
       </div>
       <div className={`${styles.padding} max-w-7xl mx-auto relative z-0`}>
-      <span className='hash-span' id={projectName}>
-                &nbsp;
-            </span>
+        <span className='hash-span' id={projectName}>&nbsp;</span>
         <h2 className={`${styles.sectionHeadText}`}>{project.name}</h2>
         {project.content.map((section, index) => (
-          <section key={`section-${index}`} className="py-6 ">
-            <div>
-              <h2 className={styles.pageHeadText}>{section.title}</h2>
-              <p>{section.description}</p>
-            </div>
-            {section.image ? <img src={section.image} alt={section.title} /> : null}
-            {section.video ? (
-              <iframe
-                src={`https://www.youtube.com/embed/${getYouTubeVideoId(section.video)}`}
-                allow="autoplay; encrypted-media"
-                allowFullScreen
-                title={section.title}
-              />
-            ) : null}
-          </section>
+          <motion.section
+            variants={staggerContainer()}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.25}}
+            key={`section-${index}`}
+            className={`py-8 flex ${index % 2 === 0 ? 'flex-col md:flex-row' : 'flex-col md:flex-row-reverse'}`}>
+            <motion.div
+              variants={textVariant(0.3 * index)}
+              className={`${index === 0 ? "w-full max-w-3xl" : "w-full md:w-1/2 pb-8 md:p-12"}`}>
+              <motion.h2 variants={slideIn("", "", index, 1)} className={styles.pageHeadText}>{section.title}</motion.h2>
+              <motion.p variants={fadeIn("", "", 0.3 * index, 0.8)}>{section.description}</motion.p>
+            </motion.div>
+            <Tilt className="w-full">
+              {(section.image || section.video)
+                && (
+                  <motion.div 
+                  variants={fadeIn("", "", 0.3 * index, 0.8)}
+                    className={`${index !== 0 && "border-2 border-tertiary rounded-xl overflow-hidden w-full h-full min-h-[250px]"}`}>
+                    {section.image && <img className="w-full h-full min-h-[250px] object-cover" src={section.image} alt={section.title} />}
+                    {section.video && (
+                      <iframe
+                        className="w-full h-full md:w-50% min-h-[250px]"
+                        src={`https://www.youtube.com/embed/${getYouTubeVideoId(section.video)}`}
+                        allow="autoplay; encrypted-media"
+                        allowFullScreen
+                        title={section.title}
+                      />
+                    )}
+                  </motion.div>
+                )}
+            </Tilt>
+          </motion.section>
         ))}
       </div>
 
