@@ -24,7 +24,7 @@ const Navbar = ({ isHome }) => {
         if (homeSection) {
           homeSection.scrollIntoView({ behavior: 'smooth' });
         }
-      }, 100); // Adjust the delay if needed
+      }, 80); // Adjust the delay if needed
     }
   };
 
