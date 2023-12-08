@@ -18,6 +18,8 @@ import { SphereCanvas } from './components/canvas';
 import { slideIn } from './utils/motion';
 import ProjectPage from './pages/ProjectPage';
 
+import FmLogo from './components/canvas/FmLogo';
+
 const Home = () => {
   return (
     <>
@@ -52,6 +54,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path={`/project/:projectName`} element={<ProjectPage />} />
+          <Route path="/test" element={<FmLogo />} />
         </Routes>
         <Footer />
       </div>
