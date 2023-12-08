@@ -37,10 +37,6 @@ const Sphere = () => {
         <meshStandardMaterial 
           color={isHovered ? "#ec1d24" : "#2dc4b6"}
           wireframe
-        //   attach="material"
-        //   uniforms={{ lineWidth: { value: lineWidth } }}
-        //   side={THREE.DoubleSide}
-        //   extensions={{ derivatives: true }}
         />
       </mesh>
     </Float>
