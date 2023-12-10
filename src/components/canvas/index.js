@@ -4,5 +4,6 @@ import CubeCanvas from "./Cube";
 import BallCanvas from "./Ball";
 import ComputersCanvas from "./Computers";
 import StarsCanvas from "./Stars";
+import FmLogoCanvas from "./FmLogo";
 
-export { EarthCanvas, BallCanvas, CubeCanvas, ComputersCanvas, StarsCanvas, SphereCanvas };
+export { EarthCanvas, BallCanvas, CubeCanvas, ComputersCanvas, StarsCanvas, SphereCanvas, FmLogoCanvas };
