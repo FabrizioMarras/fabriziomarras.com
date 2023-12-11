@@ -122,7 +122,6 @@ const FmLogoCanvas = () => {
   const spotLightRef = useRef();
   // useHelper(spotLightRef, spotLightHelper, 1, "red");
   return (
-    <div className="w-full h-screen absolute bottom-[-25%] right-[-25%]">
       <Canvas
         camera={{ position: [0, 0, 50], fov: 25 }}
         frameloop='demand'
@@ -145,7 +144,6 @@ const FmLogoCanvas = () => {
           <FmLogo position={[-1.5, 0, -2]} rotation={[0, (-Math.PI/4), 0]}/>
         </Suspense>
       </Canvas>
-    </div>
   );
 };
 

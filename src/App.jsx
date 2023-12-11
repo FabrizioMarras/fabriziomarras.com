@@ -36,8 +36,14 @@ const Home = () => {
           <Contact />
           <motion.div
             variants={slideIn("right", "tween", 0.2, 1)}
-            className="hidden md:flex md:w-[75%] md:h-[75%] lg:w-full lg:h-full absolute sm:left-[40%] sm:bottom-[-10%] lg:left-[30%]">
-            <SphereCanvas />
+            className="hidden z-1 md:flex md:w-[75%] md:h-[75%] lg:w-full lg:h-full absolute sm:left-[40%] sm:bottom-[-10%] lg:left-[30%]">
+            <div className="w-full h-screen absolute top-0 left-[-50%] scale-125">
+              <FmLogo />
+            </div>
+            <div className='w-[50%] h-[50%] z-[-1]'>
+              <SphereCanvas />
+            </div>
+            
           </motion.div>
         </div>
         <StarsCanvas />

@@ -6,7 +6,7 @@ import * as THREE from 'three';
 import CanvasLoader from '../Loader';
 
 const Sphere = () => {
-//   const [lineWidth] =useState(10)
+
   const [ isHovered, setIsHovered ] = useState(false);
 
   const ref = useRef();
