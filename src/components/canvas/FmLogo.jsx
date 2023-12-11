@@ -21,11 +21,11 @@ const FmLogo = ({ position, rotation }) => {
 
   const parallelepipedsData = [
     { position: [-1, -15, 0], dimensions: [1, 3, 1], rotation: [0, 0, 0], material: { color: '#ec1d24' }, radius: 0.1, smoothness: 2 },
-    { position: [-17, 3, 0], dimensions: [1, 3, 1], rotation: [0, 0, Math.PI / 2], material: { color: '#ec1d24' }, radius: 0.1, smoothness: 2 },
-    { position: [-18, 5, 0], dimensions: [1, 5, 1], rotation: [0, 0, Math.PI / 2], material: { color: '#ec1d24' }, radius: 0.1, smoothness: 2 },
+    { position: [+17, 3, 0], dimensions: [1, 3, 1], rotation: [0, 0, Math.PI / 2], material: { color: '#ec1d24' }, radius: 0.1, smoothness: 2 },
+    { position: [+38, 5, 0], dimensions: [1, 5, 1], rotation: [0, 0, Math.PI / 2], material: { color: '#ec1d24' }, radius: 0.1, smoothness: 2 },
     { position: [1, 15, 0], dimensions: [1, 3, 1], rotation: [0, 0, 0], material: { color: '#f6921f' }, radius: 0.1, smoothness: 2 },
-    { position: [3, 18, 0], dimensions: [1, 5, 1], rotation: [0, 0, 0], material: { color: '#f6921f' }, radius: 0.1, smoothness: 2 },
-    { position: [5, 20, 0], dimensions: [1, 7, 1], rotation: [0, 0, 0], material: { color: '#f6921f' }, radius: 0.1, smoothness: 2 },
+    { position: [3, 34, 0], dimensions: [1, 5, 1], rotation: [0, 0, 0], material: { color: '#f6921f' }, radius: 0.1, smoothness: 2 },
+    { position: [5, 46, 0], dimensions: [1, 7, 1], rotation: [0, 0, 0], material: { color: '#f6921f' }, radius: 0.1, smoothness: 2 },
   ];
   // stop position is an array of only the positions which are changing with respect to the beginning positions from the parallelepipedsData
   // so the 0 item of the array is the position Y of the parallelepiped 0, the position 1 of the array will be the X position of the parallelepiped 1, and so on.
@@ -58,9 +58,9 @@ const FmLogo = ({ position, rotation }) => {
 
         // Animation of the two horizontal red parallelepipeds
         if (index === 1 || index === 2) {
-          if (parallelepiped.position[0] < stop) {
+          if (parallelepiped.position[0] > stop) {
             rotation = [parallelepiped.rotation[0] + (rotationSpeed), parallelepiped.rotation[1], parallelepiped.rotation[2]];
-            finalPosition = [parallelepiped.position[0] + 0.3, parallelepiped.position[1], parallelepiped.position[2]];
+            finalPosition = [parallelepiped.position[0] - 0.3, parallelepiped.position[1], parallelepiped.position[2]];
           } else {
             rotation = [0, 0, Math.PI / 2];
             finalPosition = [stop, parallelepiped.position[1], parallelepiped.position[2]];
@@ -122,8 +122,7 @@ const FmLogoCanvas = () => {
   const spotLightRef = useRef();
   // useHelper(spotLightRef, spotLightHelper, 1, "red");
   return (
-    <div className="w-full h-screen">
-      FmLogo
+    <div className="w-full h-screen absolute bottom-[-25%] right-[-25%]">
       <Canvas
         camera={{ position: [0, 0, 50], fov: 25 }}
         frameloop='demand'
