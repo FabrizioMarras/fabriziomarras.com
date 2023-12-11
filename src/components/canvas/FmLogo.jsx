@@ -16,7 +16,6 @@ const Parallelepiped = ({ position, dimensions, rotation, material, radius, smoo
   );
 };
 
-
 const FmLogo = () => {
   const group = useRef();
 
@@ -28,9 +27,10 @@ const FmLogo = () => {
     { position: [3, 18, 0], dimensions: [1, 5, 1], rotation: [0, 0, 0], material: { color: '#f6921f' }, radius: 0.1, smoothness: 2 },
     { position: [5, 20, 0], dimensions: [1, 7, 1], rotation: [0, 0, 0], material: { color: '#f6921f' }, radius: 0.1, smoothness: 2 },
   ];
-
+  // stop position is an array of only the positions which are changing with respect to the beginning positions from the parallelepipedsData
+  // so the 0 item of the array is the position Y of the parallelepiped 0, the position 1 of the array will be the X position of the parallelepiped 1, and so on.
   const stopPositions = [0, 0, 1, 0, 1, 2];
-
+ // using memo to memorize the initial position in order to be able to calcul;ate the distance to use to fix the rotation in function of the distance..
   const initialDistances = useMemo(() => {
     return parallelepipedsData.map((parallelepiped, index) => {
       const stop = stopPositions[index];
@@ -45,6 +45,7 @@ const FmLogo = () => {
   const [parallelepipeds, setParallelepipeds] = useState(parallelepipedsData);
   const [isAnimationPaused, setIsAnimationPaused] = useState(false);
 
+  // ANIMATION :
   useFrame(() => {
     setParallelepipeds((prevParallelepipeds) =>
       prevParallelepipeds.map((parallelepiped, index) => {
@@ -55,6 +56,7 @@ const FmLogo = () => {
         const distance = initialDistances[index];
         const rotationSpeed = ((Math.PI * 1.5) / distance) * 0.1;
 
+        // Animation of the two horizontal red parallelepipeds
         if (index === 1 || index === 2) {
           if (parallelepiped.position[0] < stop) {
             rotation = [parallelepiped.rotation[0] + (rotationSpeed), parallelepiped.rotation[1], parallelepiped.rotation[2]];
@@ -63,6 +65,7 @@ const FmLogo = () => {
             rotation = [0, 0, Math.PI / 2];
             finalPosition = [stop, parallelepiped.position[1], parallelepiped.position[2]];
           }
+           // Animation of the vertical red parallelepiped
         } else if (index === 0) {
           if (parallelepiped.position[1] < stop) {
             rotation = [parallelepiped.rotation[0], parallelepiped.rotation[1] + (rotationSpeed), parallelepiped.rotation[2]];
@@ -71,6 +74,7 @@ const FmLogo = () => {
             rotation = [0, 0, 0];
             finalPosition = [parallelepiped.position[0], stop, parallelepiped.position[2]];
           }
+          // Animation of the vertical orange parallelepipeds
         } else {
           if (parallelepiped.position[1] > stop) {
             rotation = [parallelepiped.rotation[0], parallelepiped.rotation[1] + (rotationSpeed), parallelepiped.rotation[2]];
@@ -98,6 +102,7 @@ const FmLogo = () => {
     );
   });
 
+  // When clicking the animation starts over
   const handleResetAnimation = () => {
     setIsAnimationPaused(false);
     setParallelepipeds(parallelepipedsData);
