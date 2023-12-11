@@ -12,6 +12,7 @@ import {
   Feedbacks,
   Contact,
   StarsCanvas,
+  FmLogo,
   Footer
 } from './components';
 import { SphereCanvas } from './components/canvas';
@@ -51,6 +52,7 @@ const App = () => {
       <div className="relative z-0 bg-black">
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/logo" element={<FmLogo />} />
           <Route path={`/project/:projectName`} element={<ProjectPage />} />
         </Routes>
         <Footer />
