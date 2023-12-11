@@ -1,7 +1,7 @@
 import React, { Suspense, useRef, useState, useMemo } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import CanvasLoader from '../Loader';
-import { RoundedBox, OrbitControls } from '@react-three/drei';
+import { RoundedBox, OrbitControls, useHelper } from '@react-three/drei';
 
 const Parallelepiped = ({ position, dimensions, rotation, material, radius, smoothness }) => {
   return (
@@ -16,7 +16,7 @@ const Parallelepiped = ({ position, dimensions, rotation, material, radius, smoo
   );
 };
 
-const FmLogo = () => {
+const FmLogo = ({ position, rotation }) => {
   const group = useRef();
 
   const parallelepipedsData = [
@@ -30,7 +30,7 @@ const FmLogo = () => {
   // stop position is an array of only the positions which are changing with respect to the beginning positions from the parallelepipedsData
   // so the 0 item of the array is the position Y of the parallelepiped 0, the position 1 of the array will be the X position of the parallelepiped 1, and so on.
   const stopPositions = [0, 0, 1, 0, 1, 2];
- // using memo to memorize the initial position in order to be able to calcul;ate the distance to use to fix the rotation in function of the distance..
+  // using memo to memorize the initial position in order to be able to calcul;ate the distance to use to fix the rotation in function of the distance..
   const initialDistances = useMemo(() => {
     return parallelepipedsData.map((parallelepiped, index) => {
       const stop = stopPositions[index];
@@ -65,7 +65,7 @@ const FmLogo = () => {
             rotation = [0, 0, Math.PI / 2];
             finalPosition = [stop, parallelepiped.position[1], parallelepiped.position[2]];
           }
-           // Animation of the vertical red parallelepiped
+          // Animation of the vertical red parallelepiped
         } else if (index === 0) {
           if (parallelepiped.position[1] < stop) {
             rotation = [parallelepiped.rotation[0], parallelepiped.rotation[1] + (rotationSpeed), parallelepiped.rotation[2]];
@@ -87,7 +87,7 @@ const FmLogo = () => {
 
         // Check if the last parallelepiped has reached the stop position
         const indexOfLastParallelepiped = initialDistances.indexOf(Math.max(...initialDistances));
-        console.log(initialDistances,indexOfLastParallelepiped)
+        console.log(initialDistances, indexOfLastParallelepiped)
         const isLastParallelepiped = parallelepipeds[indexOfLastParallelepiped].position[1] === stopPositions[indexOfLastParallelepiped];
         if (isLastParallelepiped) {
           setIsAnimationPaused(true);
@@ -107,9 +107,9 @@ const FmLogo = () => {
     setIsAnimationPaused(false);
     setParallelepipeds(parallelepipedsData);
   };
-  
+
   return (
-    <group ref={group} onClick={handleResetAnimation}>
+    <group ref={group} position={position} rotation={rotation} onClick={handleResetAnimation}>
       {parallelepipeds.map((parallelepiped, index) => (
         <Parallelepiped key={index} {...parallelepiped} />
       ))}
@@ -118,26 +118,32 @@ const FmLogo = () => {
 };
 
 const FmLogoCanvas = () => {
+
+  const spotLightRef = useRef();
+  // useHelper(spotLightRef, spotLightHelper, 1, "red");
   return (
     <div className="w-full h-screen">
       FmLogo
       <Canvas
         camera={{ position: [0, 0, 50], fov: 25 }}
+        frameloop='demand'
       >
         <Suspense fallback={<CanvasLoader />}>
           {/* Ambient light */}
-          <ambientLight intensity={0.2} />
+          <ambientLight intensity={0.25} />
           {/* Directional light */}
-          <directionalLight position={[5, 5, 5]} intensity={0.8} />
+          <directionalLight position={[-1, 0, -10]} intensity={0.5} />
           {/* Spot light */}
-          <spotLight position={[0, 10, 10]} angle={0.5} penumbra={0.2} intensity={0.8} />
+          <spotLight ref={spotLightRef} position={[5, 5, 7]} angle={Math.PI / 4} penumbra={0.6} intensity={80} />
+          <spotLight ref={spotLightRef} position={[-2, 5, -7]} angle={Math.PI / 1} penumbra={0.6} intensity={60} />
+          <spotLight ref={spotLightRef} position={[-8, 5, 3]} angle={Math.PI / 1} penumbra={0.6} intensity={150} />
           <OrbitControls
             autoRotate={false}
             enableZoom={false}
             maxPolarAngle={Math.PI / 2}
             minPolarAngle={Math.PI / 2}
           />
-          <FmLogo />
+          <FmLogo position={[-1.5, 0, -2]} rotation={[0, (-Math.PI/4), 0]}/>
         </Suspense>
       </Canvas>
     </div>
