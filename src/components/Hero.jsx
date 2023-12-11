@@ -2,7 +2,8 @@ import { motion } from 'framer-motion'
 
 import { styles } from '../styles';
 import { heroImg } from '../constants';
-import { ComputersCanvas } from './canvas';
+// import { ComputersCanvas } from './canvas';
+import { FmLogo } from '../components';
 
 const Hero = () => {
   return (
@@ -19,7 +20,7 @@ const Hero = () => {
           <p className={`${styles.heroSubText} mt-2`}>Digital Strategy Leader <br /> Innovative Technologist</p>
         </div>
       </div>
-        <ComputersCanvas />
+        <FmLogo />
         <div className="absolute bottom-10 left-[50%] -translate-x-[50%] flex justify-center items-center opacity-40 hover:opacity-80">
           <a href={`#about`}>
             <div className="w-[20px] h-[44px] rounded-3xl border-2 border-gray-200 flex justify-center items-start p-1">
