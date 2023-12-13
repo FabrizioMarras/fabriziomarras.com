@@ -216,7 +216,7 @@ import {
       iconBg: "#fff",
       date: "Jan 2015 - Present",
       points: [
-        "Extensive experience in motion graphics and animation using Adobe Creative Cloud tools and #D softwares such as Maya, Cinema4D and Blender.",
+        "Extensive experience in motion graphics and animation using Adobe Creative Cloud tools and 3D softwares such as Maya, Cinema4D and Blender.",
         "Proficient in full-stack development with in-depth knowledge of technologies such as ReactJS, ThreeJS, Cloud, Nginx, NodeJS, Express, and more.",
         "Skilled in API development, AI API integrations, and AI prompt engineering, enhancing project capabilities and functionality.",
       ],
@@ -228,7 +228,7 @@ import {
       iconBg: "#000",
       date: "Feb 2022 - Oct 2023",
       points: [
-        "Leading international teams of engineers and developers across Europe to ensure the successful delivery of high-quality products.",
+        "Leading international teams of engineers and developers across Europe to ensure the successful delivery of high-quality Softwares and applications for the Salesforce and Marketing Cloud Platform.",
         "Translated customer needs into user stories, maintaining adherence to Agile and Scrum methodologies.",
         "Leading product strategy, defining and prioritizing tasks for optimal outcomes.",
         "Designing a Service Management System for integrated Customers Service."
