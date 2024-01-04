@@ -17,10 +17,10 @@ const Hero = () => {
         </div>
         <div className="mt-2 md:mt-5 lg:mt-10">
           <h1 className={`${styles.heroHeadText} uppercase`}>Fabrizio&nbsp;<span className="text-secondary">Marras</span></h1>
-          <p className={`${styles.heroSubText} mt-2`}>Digital Strategy Leader <br /> Innovative Technologist</p>
+          <p className={`${styles.heroSubText} mt-2`}>Digital Strategy & Innovation Leader</p>
         </div>
       </div>
-      <div className="w-full h-screen absolute scale-75 md:scale-100 bottom-[-35%] md:bottom-[-25%] right-[-10%] md:right-[-25%]">
+      <div className="w-full h-screen absolute scale-75 md:scale-100 bottom-[-45%] md:bottom-[-35%] right-[-10%] sm:right-[-30%]">
         <FmLogo />
       </div>
       <div className="absolute bottom-10 left-[50%] -translate-x-[50%] flex justify-center items-center opacity-40 hover:opacity-80">
