@@ -210,7 +210,7 @@ import {
       ],
     },
     {
-      title: "Owner | Freelancer",
+      title: "Consultant",
       company_name: "Fabrizio Marras",
       icon: fm,
       iconBg: "#fff",
