@@ -61,7 +61,7 @@ const About = () => {
           <ServiceCard key={service.title} index={index} {...service} />
         ))}
       </div>
-      <motion.div
+      {/* <motion.div
         variants={textVariant(2)}
         className="mt-20 max-w-3xl">
        <motion.p 
@@ -69,7 +69,7 @@ const About = () => {
         className={`${styles.sectionSubText} mb-8`}>More about myself</motion.p>
       <motion.p 
         variants={fadeIn("", "", 2.5, 1)}>With a Chemistry degree from Italy, I pursued a Ph.D. in Amsterdam, later contributing six years to impactful research in the chemical industry. Driven by a desire for new challenges, I explored photography and graphic design before transitioning into IT and web development, discovering a profound passion for programming. As a frontend developer, I identified the need for improved organizational efficiency, leading me to step into the role of a project manager. Subsequently, I embraced the position of a product owner in a Marketing Automation company, expanding my skills into marketing. Currently, I'm engaged in AI-driven projects, reflecting my commitment to adaptability and continuous learning at the forefront of technological trends. My journey highlights a diverse skill set and a passion for driving innovative solutions.</motion.p>
-      </motion.div>
+      </motion.div> */}
     </>
   )
 }
