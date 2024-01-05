@@ -128,13 +128,13 @@ const FmLogoCanvas = ({autoRotation, logoRotation = 0, scale}) => {
       >
         <Suspense fallback={<CanvasLoader />}>
           {/* Ambient light */}
-          <ambientLight intensity={0.25} />
+          <ambientLight intensity={0.35} />
           {/* Directional light */}
-          <directionalLight position={[-1, 0, -10]} intensity={0.5} />
+          <directionalLight position={[-1, 0, -10]} intensity={0.6} />
           {/* Spot light */}
-          <spotLight ref={spotLightRef} position={[5, 5, 7]} angle={Math.PI / 4} penumbra={0.6} intensity={80} />
-          <spotLight ref={spotLightRef} position={[-2, 5, -7]} angle={Math.PI / 1} penumbra={0.6} intensity={60} />
-          <spotLight ref={spotLightRef} position={[-8, 5, 3]} angle={Math.PI / 1} penumbra={0.6} intensity={150} />
+          <spotLight ref={spotLightRef} position={[5, 5, 7]} angle={Math.PI / 4} penumbra={0.6} intensity={90} />
+          <spotLight ref={spotLightRef} position={[-2, 5, -7]} angle={Math.PI / 1} penumbra={0.6} intensity={75} />
+          <spotLight ref={spotLightRef} position={[-8, 5, 3]} angle={Math.PI / 1} penumbra={0.6} intensity={170} />
           <OrbitControls
             autoRotate={autoRotation}
             enableZoom={false}

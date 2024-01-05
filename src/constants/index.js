@@ -66,6 +66,23 @@ import {
     },
   ];
 
+  export const footerNavs = [
+    {
+      id: "about",
+      title: "About",
+      url: "/#about"
+    },
+    {
+      id: "terms",
+      title: "Terms & Conditions",
+      url: "/terms"
+    },{
+      id: "contact",
+      title: "Contact",
+      url: "/#contact"
+    },
+  ]
+
   export const socials = [
     {
       id: "linkedIn",
