@@ -38,7 +38,7 @@ const Contact = () => {
 
     const foolingBotsValue = e.target.elements.foolingBots.value;
 
-  // Check if the honeypot field is empty (indicating likely human interaction)
+    // Check if the honeypot field is empty (indicating likely human interaction)
     if (foolingBotsValue) {
       console.log('Bot detected. Ignoring submission.');
       return;
@@ -77,7 +77,7 @@ const Contact = () => {
 
   return (
     <GoogleReCaptchaProvider reCaptchaKey="6LdWwyYpAAAAAApvqW8VtuBSMgCWgv8Ifc03GbiV">
-      <div id="contact" className="xl:mt-12 overflow-hidden w-full md:w-[50%]">
+      <div id="contact" className="xl:mt-12 overflow-hidden w-full">
         <motion.div
           variants={slideIn("left", "tween", 0.2, 1)}
           className='p-8'>
@@ -86,56 +86,62 @@ const Contact = () => {
           <form
             ref={formRef}
             onSubmit={handleSubmit}
-            className='mt-12 p-10 border-2 border-tertiary rounded-xl flex flex-col gap-8'
+            className='mt-12 p-10 border-2 border-tertiary bg-black/70 rounded-xl flex flex-col gap-8'
           >
-            <label htmlFor="name" className="flex flex-col">
-              <span className='text-white font-medium mb-4'>Your Full Name</span>
-              <input
-                required
-                id="name"
-                autoComplete="name"
-                type="text"
-                name="name"
-                value={form.name}
-                onChange={handleChange}
-                placeholder="What's your name?"
-                className="bg-gray-900 py-4 px-6 placeholder:text-secondary placeholder:font-thin placeholder:text-[12px] placeholder:italic text-white rounded-lg outline-none border-none font-medium" />
-            </label>
-            <label htmlFor="email" className="flex flex-col">
-              <span className='text-white font-medium mb-4'>Your Email Address</span>
-              <input
-                required
-                id="email"
-                autoComplete="email"
-                type="email"
-                name="email"
-                value={form.email}
-                onChange={handleChange}
-                placeholder="What's your email?"
-                className="required:border-red-500 bg-gray-900 py-4 px-6 placeholder:text-secondary placeholder:font-thin placeholder:italic placeholder:text-[12px] text-white rounded-lg outline-none border-none font-medium" />
-            </label>
-            {/* Empty input to hopefully fool some bots */}
-            <input type="text" name="foolingBots" style={{ display: 'none' }} />
-            {/* End Empty input */}
-            <label htmlFor="message" className="flex flex-col">
-              <span className='text-white font-medium mb-4'>Your Message</span>
-              <textarea
-                required
-                id="message"
-                rows={7}
-                name="message"
-                value={form.message}
-                onChange={handleChange}
-                placeholder="What do you want to say?"
-                className="bg-gray-900 py-4 px-6 placeholder:text-secondary placeholder:font-thin placeholder:italic placeholder:text-[12px] text-white rounded-lg outline-none border-none font-medium" />
-            </label>
+            <div className="flex md:flex-row flex-col gap-8">
+              <div className='flex flex-col justify-between gap-8 w-full'>
+                <label htmlFor="name" className="flex flex-col">
+                  <span className='text-white font-medium mb-4'>Your Full Name</span>
+                  <input
+                    required
+                    id="name"
+                    autoComplete="name"
+                    type="text"
+                    name="name"
+                    value={form.name}
+                    onChange={handleChange}
+                    placeholder="What's your name?"
+                    className="bg-gray-900 py-4 px-6 placeholder:text-tertiary placeholder:font-thin placeholder:text-[12px] placeholder:italic text-white rounded-lg outline-none border-none font-medium" />
+                </label>
+                <label htmlFor="email" className="flex flex-col">
+                  <span className='text-white font-medium mb-4'>Your Email Address</span>
+                  <input
+                    required
+                    id="email"
+                    autoComplete="email"
+                    type="email"
+                    name="email"
+                    value={form.email}
+                    onChange={handleChange}
+                    placeholder="What's your email?"
+                    className="required:border-red-500 bg-gray-900 py-4 px-6 placeholder:text-tertiary placeholder:font-thin placeholder:italic placeholder:text-[12px] text-white rounded-lg outline-none border-none font-medium" />
+                </label>
+              </div>
+
+              {/* Empty input to hopefully fool some bots */}
+              <input type="text" name="foolingBots" style={{ display: 'none' }} />
+              {/* End Empty input */}
+              <label htmlFor="message" className="flex flex-col w-full">
+                <span className='text-white font-medium mb-4'>Your Message</span>
+                <textarea
+                  required
+                  id="message"
+                  rows={7}
+                  name="message"
+                  value={form.message}
+                  onChange={handleChange}
+                  placeholder="What do you want to say?"
+                  className="bg-gray-900 py-4 px-6 placeholder:text-tertiary placeholder:font-thin placeholder:italic placeholder:text-[12px] text-white rounded-lg outline-none border-none font-medium" />
+              </label>
+              
+            </div>
             <WithGoogleRecaptchaExample
-              handleRecaptchaChange={handleRecaptchaChange}
-            />
+                handleRecaptchaChange={handleRecaptchaChange}
+              />
             <button
               type="submit"
               disabled={!isRecaptchaVerified}
-              className={`${!isRecaptchaVerified ? "opacity-50" : "opacity-100" } bg-gray-700 py-3 px-8 outline-none w-fit text-white font-bold shadow-sm shadow-tertiary rounded-xl`}
+              className={`${!isRecaptchaVerified ? "opacity-50" : "opacity-100"} bg-gray-700 py-3 px-8 outline-none w-fit text-white font-bold shadow-sm shadow-tertiary rounded-xl`}
             >
               {loading ? "Sending..." : "Send"}
             </button>
@@ -164,9 +170,9 @@ class ReCaptchaComponent extends React.Component {
 
   render() {
     return (
-      <div className="m-2 flex gap-2">
-          <input id="captcha" className="appearance-none w-4 h-4 border-2 border-gray-300 rounded-sm bg-gray-700 mt-1 shrink-0 checked:bg-tertiary checked:border-2 checked:border-gray-300" type="checkbox" onChange={this.handleVerifyRecaptcha} />
-          <label htmlFor="captcha"className="ml-2 text-[14px]"> I have read and agree to the <a href="/terms" className='underline'>Terms and Conditions</a>.</label>
+      <div className="m-2 mt-6 flex gap-2">
+        <input id="captcha" className="appearance-none w-4 h-4 border-2 border-gray-300 rounded-sm bg-gray-700 mt-1 shrink-0 checked:bg-tertiary checked:border-2 checked:border-gray-300" type="checkbox" onChange={this.handleVerifyRecaptcha} />
+        <label htmlFor="captcha" className="opacity-70 hover:opacity-100 ml-2 text-[14px]"> I have read and agree to the <a href="/terms" className='underline'>Terms and Conditions</a>.</label>
       </div>
     );
   }
