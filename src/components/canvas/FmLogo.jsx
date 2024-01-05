@@ -16,7 +16,7 @@ const Parallelepiped = ({ position, dimensions, rotation, material, radius, smoo
   );
 };
 
-const FmLogo = ({ position, rotation }) => {
+const FmLogo = ({ position, rotation, scale }) => {
   const group = useRef();
 
   const parallelepipedsData = [
@@ -109,7 +109,7 @@ const FmLogo = ({ position, rotation }) => {
   };
 
   return (
-    <group ref={group} position={position} rotation={rotation} onClick={handleResetAnimation}>
+    <group ref={group} scale={scale} position={position} rotation={rotation} onClick={handleResetAnimation}>
       {parallelepipeds.map((parallelepiped, index) => (
         <Parallelepiped key={index} {...parallelepiped} />
       ))}
@@ -117,7 +117,7 @@ const FmLogo = ({ position, rotation }) => {
   );
 };
 
-const FmLogoCanvas = ({autoRotation, logoRotation = 0}) => {
+const FmLogoCanvas = ({autoRotation, logoRotation = 0, scale}) => {
 
   const spotLightRef = useRef();
   // useHelper(spotLightRef, spotLightHelper, 1, "red");
@@ -141,7 +141,7 @@ const FmLogoCanvas = ({autoRotation, logoRotation = 0}) => {
             maxPolarAngle={Math.PI / 2}
             minPolarAngle={Math.PI / 2}
           />
-          <FmLogo position={[-1.5, 0, -2]} rotation={[0, logoRotation, 0]}/>
+          <FmLogo scale={scale} position={[-1.5, 0, -2]} rotation={[0, logoRotation, 0]}/>
         </Suspense>
       </Canvas>
   );

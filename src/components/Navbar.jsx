@@ -36,18 +36,19 @@ const Navbar = ({ isHome }) => {
       <div className="w-full flex justify-between items-center max-w-7xl mx-auto">
         <Link
           to="/"
-          className="flex items-center gap-4 z-20"
+          // className="flex items-center gap-4 z-20"
+          className="flex items-center justify-center w-[100px] h-[100px] z-20"
           onClick={() => {
             setActive("");
             window.scrollTo(0, 0);
           }}>
           {/* <img src={logo} alt="logo" className="w-7 h-7 object-contain" /> */}
-          <div className="w-7 h-7">
+          {/* <div className="absolute top-[-50%] left-[-50%]"> */}
             <FmLogo />
-          </div>
-          <p className="text-white text-[22px] font-light uppercase cursor-pointer sm:block hidden tracking-wider">Fabrizio Marras</p>
+          {/* </div> */}
+          {/* <p className="text-white text-[22px] font-light uppercase cursor-pointer sm:block hidden tracking-wider">Fabrizio Marras</p> */}
         </Link>
-        <ul className="list-none hidden sm:flex flex-row gap-4">
+        <ul className="list-none hidden mb-4 sm:flex flex-row gap-4">
           {navLinks.map((link) => (
             <li
               className={`${active === link.title
@@ -63,7 +64,7 @@ const Navbar = ({ isHome }) => {
             </li>
           ))}
         </ul>
-        <div className="sm:hidden flex flex-1 justify-end items-center z-10">
+        <div className="sm:hidden flex flex-1 justify-end items-center mb-4 z-10">
           <img
             src={!toggle ? menu : close}
             alt="menu"
