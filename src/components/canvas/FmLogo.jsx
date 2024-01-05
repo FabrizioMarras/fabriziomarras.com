@@ -87,7 +87,7 @@ const FmLogo = ({ position, rotation }) => {
 
         // Check if the last parallelepiped has reached the stop position
         const indexOfLastParallelepiped = initialDistances.indexOf(Math.max(...initialDistances));
-        console.log(initialDistances, indexOfLastParallelepiped)
+        // console.log(initialDistances, indexOfLastParallelepiped)
         const isLastParallelepiped = parallelepipeds[indexOfLastParallelepiped].position[1] === stopPositions[indexOfLastParallelepiped];
         if (isLastParallelepiped) {
           setIsAnimationPaused(true);
@@ -117,7 +117,7 @@ const FmLogo = ({ position, rotation }) => {
   );
 };
 
-const FmLogoCanvas = () => {
+const FmLogoCanvas = ({autoRotation, logoRotation = 0}) => {
 
   const spotLightRef = useRef();
   // useHelper(spotLightRef, spotLightHelper, 1, "red");
@@ -136,12 +136,12 @@ const FmLogoCanvas = () => {
           <spotLight ref={spotLightRef} position={[-2, 5, -7]} angle={Math.PI / 1} penumbra={0.6} intensity={60} />
           <spotLight ref={spotLightRef} position={[-8, 5, 3]} angle={Math.PI / 1} penumbra={0.6} intensity={150} />
           <OrbitControls
-            autoRotate={true}
+            autoRotate={autoRotation}
             enableZoom={false}
             maxPolarAngle={Math.PI / 2}
             minPolarAngle={Math.PI / 2}
           />
-          <FmLogo position={[-1.5, 0, -2]} rotation={[0, (-Math.PI/4), 0]}/>
+          <FmLogo position={[-1.5, 0, -2]} rotation={[0, logoRotation, 0]}/>
         </Suspense>
       </Canvas>
   );

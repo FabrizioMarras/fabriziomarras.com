@@ -21,7 +21,7 @@ const Hero = () => {
         </div>
       </div>
       <div className="w-full h-screen absolute scale-75 md:scale-100 bottom-[-45%] md:bottom-[-35%] right-[-10%] sm:right-[-30%]">
-        <FmLogo />
+        <FmLogo autoRotation={true} logoRotation={-Math.PI/4} />
       </div>
       <div className="absolute bottom-10 left-[50%] -translate-x-[50%] flex justify-center items-center opacity-40 hover:opacity-80">
         <a href={`#about`}>
