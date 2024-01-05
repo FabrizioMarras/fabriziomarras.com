@@ -20,12 +20,12 @@ const FmLogo = ({ position, rotation }) => {
   const group = useRef();
 
   const parallelepipedsData = [
-    { position: [-1, -15, 0], dimensions: [1, 3, 1], rotation: [0, 0, 0], material: { color: '#ec1d24' }, radius: 0.1, smoothness: 2 },
-    { position: [+17, 3, 0], dimensions: [1, 3, 1], rotation: [0, 0, Math.PI / 2], material: { color: '#ec1d24' }, radius: 0.1, smoothness: 2 },
-    { position: [+38, 5, 0], dimensions: [1, 5, 1], rotation: [0, 0, Math.PI / 2], material: { color: '#ec1d24' }, radius: 0.1, smoothness: 2 },
-    { position: [1, 15, 0], dimensions: [1, 3, 1], rotation: [0, 0, 0], material: { color: '#f6921f' }, radius: 0.1, smoothness: 2 },
-    { position: [3, 34, 0], dimensions: [1, 5, 1], rotation: [0, 0, 0], material: { color: '#f6921f' }, radius: 0.1, smoothness: 2 },
-    { position: [5, 46, 0], dimensions: [1, 7, 1], rotation: [0, 0, 0], material: { color: '#f6921f' }, radius: 0.1, smoothness: 2 },
+    { position: [-1, -20, 0], dimensions: [1, 3, 1], rotation: [0, 0, 0], material: { color: '#ec1d24' }, radius: 0.1, smoothness: 2 },
+    { position: [+30, 3, 0], dimensions: [1, 3, 1], rotation: [0, 0, Math.PI / 2], material: { color: '#ec1d24' }, radius: 0.1, smoothness: 2 },
+    { position: [+50, 5, 0], dimensions: [1, 5, 1], rotation: [0, 0, Math.PI / 2], material: { color: '#ec1d24' }, radius: 0.1, smoothness: 2 },
+    { position: [1, 26, 0], dimensions: [1, 3, 1], rotation: [0, 0, 0], material: { color: '#f6921f' }, radius: 0.1, smoothness: 2 },
+    { position: [3, 44, 0], dimensions: [1, 5, 1], rotation: [0, 0, 0], material: { color: '#f6921f' }, radius: 0.1, smoothness: 2 },
+    { position: [5, 66, 0], dimensions: [1, 7, 1], rotation: [0, 0, 0], material: { color: '#f6921f' }, radius: 0.1, smoothness: 2 },
   ];
   // stop position is an array of only the positions which are changing with respect to the beginning positions from the parallelepipedsData
   // so the 0 item of the array is the position Y of the parallelepiped 0, the position 1 of the array will be the X position of the parallelepiped 1, and so on.
@@ -54,7 +54,7 @@ const FmLogo = ({ position, rotation }) => {
         let rotation, finalPosition;
         const stop = stopPositions[index];
         const distance = initialDistances[index];
-        const rotationSpeed = ((Math.PI * 1.5) / distance) * 0.1;
+        const rotationSpeed = ((Math.PI * 3.5) / distance) * 0.3;
 
         // Animation of the two horizontal red parallelepipeds
         if (index === 1 || index === 2) {
