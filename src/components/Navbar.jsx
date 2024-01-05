@@ -4,6 +4,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { styles } from '../styles';
 import { navLinks } from '../constants';
 import { logo, menu, close } from '../assets';
+import { FmLogo } from '../components';
 
 const Navbar = ({ isHome }) => {
   const [active, setActive] = useState('');
@@ -40,7 +41,10 @@ const Navbar = ({ isHome }) => {
             setActive("");
             window.scrollTo(0, 0);
           }}>
-          <img src={logo} alt="logo" className="w-7 h-7 object-contain" />
+          {/* <img src={logo} alt="logo" className="w-7 h-7 object-contain" /> */}
+          <div className="w-7 h-7">
+            <FmLogo />
+          </div>
           <p className="text-white text-[22px] font-light uppercase cursor-pointer sm:block hidden tracking-wider">Fabrizio Marras</p>
         </Link>
         <ul className="list-none hidden sm:flex flex-row gap-4">
