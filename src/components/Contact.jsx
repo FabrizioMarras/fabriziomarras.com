@@ -166,7 +166,7 @@ class ReCaptchaComponent extends React.Component {
     return (
       <div className="m-2 flex gap-2">
           <input id="captcha" className="appearance-none w-4 h-4 border-2 border-gray-300 rounded-sm bg-gray-700 mt-1 shrink-0 checked:bg-tertiary checked:border-2 checked:border-gray-300" type="checkbox" onChange={this.handleVerifyRecaptcha} />
-          <label htmlFor="captcha"className="ml-2 text-[14px]"> Please verify you are a human.</label>
+          <label htmlFor="captcha"className="ml-2 text-[14px]"> I have read and agree to the <a href="/terms" className='underline'>Terms and Conditions</a>.</label>
       </div>
     );
   }

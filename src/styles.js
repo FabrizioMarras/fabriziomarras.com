@@ -3,7 +3,7 @@ const styles = {
     paddingY: "sm:py-16 py-6",
     padding: "sm:px-16 px-6 sm:py-16 py-10",
   
-    heroImage: "w-[150px] h-[150px] md:w-[200px] md:h-[200px] lg:w-[250px] lg:h-[250px] border-4 border-primary rounded-2xl overflow-hidden",
+    heroImage: "w-[150px] h-[150px] md:w-[180px] md:h-[180px] border-4 border-primary rounded-full overflow-hidden",
 
     heroHeadText:
       "font-title font-medium text-primary lg:text-[56px] sm:text-[38px] text-[30px] lg:leading-[64px] mt-2 tracking-wider",
