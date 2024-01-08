@@ -3,6 +3,7 @@ import menu from "./menu.svg";
 import close from "./close.svg";
 import Hero from "./Hero.png";
 import Hero_hover from "./Hero_hover.png";
+import success from "./success.png";
 // About
 import leadership from "./leadership.svg";
 import creativity from "./creativity.svg";
@@ -96,5 +97,6 @@ export {
   li,
   drop_01,
   drop_02,
-  drop_03
+  drop_03,
+  success
 };
