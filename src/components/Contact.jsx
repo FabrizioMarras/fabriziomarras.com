@@ -86,7 +86,7 @@ const Contact = () => {
           <p className={styles.sectionSubText}>Get in touch</p>
           <h3 className={styles.sectionHeadText}>Contact.</h3>
           {showSuccessMessage ? (
-              <div className="mt-12 p-10 border-2 border-tertiar rounded-xl flex flex-col gap-8">
+              <div className="mt-12 p-10 border-2 border-tertiary rounded-xl flex flex-col gap-8">
                 <img className="w-[150px]" src={success} alt="Success" />
                 <h3 className={`${styles.cardHeadText}`}>Thank you for your message!</h3>
                 <p className={`${styles.cardSubText}`}>We will get back to you as soon as possible.</p>
