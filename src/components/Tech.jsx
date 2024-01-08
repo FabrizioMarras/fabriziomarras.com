@@ -2,12 +2,20 @@ import { CubeCanvas } from "./canvas";
 import { SectionWrapper } from "../hoc";
 import { technologies } from "../constants";
 import { motion } from 'framer-motion';
-import { fadeIn } from '../utils/motion';
+import { fadeIn, textVariant } from '../utils/motion';
+import { styles } from '../styles';
 
 
 const Tech = () => {
   return (
-    <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-5">
+    <>
+      <motion.div 
+        variants={textVariant()}
+      >
+        <p className={styles.sectionSubText}>Technical Skills</p>
+        <h2 className={styles.sectionHeadText}>Stack</h2>
+      </motion.div>
+      <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-5">
       {technologies.map((technology, index) => (
         <motion.div 
           variants={fadeIn("right", "spring", 0.2 * index, 0.25)}
@@ -16,6 +24,7 @@ const Tech = () => {
         </motion.div>
       ))}
     </div> 
+    </>
   )
 }
 

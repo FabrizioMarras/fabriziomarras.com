@@ -84,7 +84,7 @@ const Contact = () => {
           variants={slideIn("left", "tween", 0.2, 1)}
           className='p-8'>
           <p className={styles.sectionSubText}>Get in touch</p>
-          <h3 className={styles.sectionHeadText}>Contact.</h3>
+          <h3 className={styles.sectionHeadText}>Contact</h3>
           {showSuccessMessage ? (
               <div className="mt-12 p-10 border-2 border-tertiary bg-gray-600/50 rounded-xl flex flex-col gap-8">
                 <img className="w-[150px]" src={success} alt="Success" />
