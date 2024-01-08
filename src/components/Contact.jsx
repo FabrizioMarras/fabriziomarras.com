@@ -52,7 +52,7 @@ const Contact = () => {
         from_name: form.name,
         to_name: "Fabrizio Marras",
         from_email: form.email,
-        to_email: "fmarras79@gmail.com",
+        to_email: "info@fabriziomarras.com",
         message: form.message,
       },
       '_ZYbRTFhQiKQlmC8Z'
