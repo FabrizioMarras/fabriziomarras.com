@@ -8,6 +8,7 @@ import {
 
 import { styles } from '../styles';
 import { slideIn } from '../utils/motion';
+import { success } from '../assets'
 
 const Contact = () => {
   const formRef = useRef();
@@ -19,6 +20,7 @@ const Contact = () => {
   const [loading, setLoading] = useState(false);
   const [recaptchaValue, setRecaptchaValue] = useState(null);
   const [isRecaptchaVerified, setIsRecaptchaVerified] = useState(false);
+  const [showSuccessMessage, setShowSuccessMessage] = useState(true);
 
   const handleRecaptchaChange = (value) => {
     setRecaptchaValue(value);
@@ -59,7 +61,7 @@ const Contact = () => {
     )
       .then(() => {
         setLoading(false);
-        alert('Thank you. I will get back to you as soon as possible');
+        setShowSuccessMessage(true);
 
         // logic to reset the form to initial state
         setForm({
@@ -83,6 +85,13 @@ const Contact = () => {
           className='p-8'>
           <p className={styles.sectionSubText}>Get in touch</p>
           <h3 className={styles.sectionHeadText}>Contact.</h3>
+          {showSuccessMessage ? (
+              <div className="mt-12 p-10 border-2 border-tertiary bg-white rounded-xl flex flex-col gap-8">
+                <img className="w-[150px]" src={success} alt="Success" />
+                <h3 className={`${styles.cardHeadText}`}>Thank you for your message!</h3>
+                <p className={`${styles.cardSubText}`}>We will get back to you as soon as possible.</p>
+              </div>
+            ) : (
           <form
             ref={formRef}
             onSubmit={handleSubmit}
@@ -146,6 +155,7 @@ const Contact = () => {
               {loading ? "Sending..." : "Send"}
             </button>
           </form>
+            )}
         </motion.div>
       </div>
     </GoogleReCaptchaProvider>
