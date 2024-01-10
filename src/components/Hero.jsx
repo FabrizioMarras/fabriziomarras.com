@@ -16,7 +16,7 @@ const Hero = () => {
           <div className="hidden md:flex w-1 h-screen primary-secondary-tertiary-gradient" />
         </div>
         <div className="mt-2 md:mt-5 lg:mt-10">
-          <h1 className={`${styles.heroHeadText} uppercase`}>Fabrizio&nbsp;<span className="text-secondary">Marras</span></h1>
+          <h1 className={`${styles.heroHeadText} uppercase`}>Fabrizio&nbsp;<span className="text-tertiary">Marras</span></h1>
           <p className={`${styles.heroSubText} mt-2`}>Digital Strategy & Innovation Leader</p>
         </div>
       </div>
