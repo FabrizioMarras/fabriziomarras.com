@@ -47,8 +47,10 @@ const App = () => {
           <Route path="/terms" element={<Terms />} />
           <Route path={`/project/:projectName`} element={<ProjectPage />} />
         </Routes>
-        <FmLogo />
-        <Footer />
+        <footer>
+          <FmLogo />
+          <Footer />
+        </footer>
       </div>
     </Router>
   )
