@@ -18,9 +18,16 @@ const ProjectPage = () => {
   useEffect(() => {
     // Scroll to the top of the page when the component mounts
     window.scrollTo(0, 0);
-    // Update current project index when projectId changes
-    const newIndex = projects.findIndex((p) => p.name === projectName);
-    setCurrentProjectIndex(newIndex >= 0 ? newIndex : 0);
+    // Convert projectName in URL to match the format in the projects array
+  const formattedProjectName = projectName.replace(/-/g, ' ').trim().toLowerCase();
+
+  // Update current project index when projectId changes
+  const newIndex = projects.findIndex((p) => {
+    const projectNameLowercase = p.name.trim().toLowerCase();
+    return formattedProjectName === projectNameLowercase;
+  });
+    console.log("INDEX: ", newIndex,"PROJECT: ", projectName )
+    setCurrentProjectIndex(newIndex > 0 ? newIndex : 0);
   }, [projectName, setCurrentProjectIndex]);
 
 
@@ -45,6 +52,7 @@ const ProjectPage = () => {
 
   const navigateToProject = (index) => {
     setCurrentProjectIndex(index);
+    console.log("Navigate", index,projectName )
     // Update the URL
     navigate(`/project/${projects[index].name.replace(/[^\w-]+/g, '-')}`);
   };
