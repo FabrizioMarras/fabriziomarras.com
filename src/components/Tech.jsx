@@ -8,7 +8,7 @@ import { styles } from '../styles';
 
 const Tech = () => {
   return (
-    <>
+    <div className="hidden md:block">
       <motion.div 
         variants={textVariant()}
       >
@@ -24,7 +24,7 @@ const Tech = () => {
         </motion.div>
       ))}
     </div> 
-    </>
+    </div>
   )
 }
 

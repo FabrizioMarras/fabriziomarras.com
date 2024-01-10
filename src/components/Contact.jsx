@@ -8,7 +8,8 @@ import {
 
 import { styles } from '../styles';
 import { slideIn } from '../utils/motion';
-import { success } from '../assets'
+import { success } from '../assets';
+import { SectionWrapper } from '../hoc';
 
 const Contact = () => {
   const formRef = useRef();
@@ -79,10 +80,9 @@ const Contact = () => {
 
   return (
     <GoogleReCaptchaProvider reCaptchaKey="6LdWwyYpAAAAAApvqW8VtuBSMgCWgv8Ifc03GbiV">
-      <div id="contact" className="xl:mt-12 overflow-hidden w-full">
+      {/* <div id="contact" className="xl:mt-12 overflow-hidden w-full"> */}
         <motion.div
-          variants={slideIn("left", "tween", 0.2, 1)}
-          className='p-8'>
+          variants={slideIn("left", "tween", 0.2, 1)}>
           <p className={styles.sectionSubText}>Get in touch</p>
           <h3 className={styles.sectionHeadText}>Contact</h3>
           {showSuccessMessage ? (
@@ -95,7 +95,7 @@ const Contact = () => {
           <form
             ref={formRef}
             onSubmit={handleSubmit}
-            className='mt-12 p-10 border-2 border-tertiary bg-black/70 rounded-xl flex flex-col gap-8'
+            className='mt-12 p-10 px-6 md:px-10 border-2 border-tertiary bg-black/70 rounded-xl flex flex-col gap-8'
           >
             <div className="flex md:flex-row flex-col gap-8">
               <div className='flex flex-col justify-between gap-8 w-full'>
@@ -157,12 +157,12 @@ const Contact = () => {
           </form>
             )}
         </motion.div>
-      </div>
+      {/* </div> */}
     </GoogleReCaptchaProvider>
   )
 }
 
-export default Contact
+export default SectionWrapper(Contact, "contact")
 
 // Define WithGoogleRecaptchaExample component
 class ReCaptchaComponent extends React.Component {

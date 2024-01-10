@@ -23,8 +23,7 @@ import Terms from './pages/Terms';
 const Home = () => {
   return (
     <>
-      {/* <div className="bg-hero-pattern bg-cover bg-no-repeat bg-center"> */}
-        <div>
+      <div>
         <Navbar isHome={true} />
         <Hero />
       </div>
@@ -33,22 +32,7 @@ const Home = () => {
       <Tech />
       <Works />
       <Feedbacks />
-      <div className="relative z-0 pb-20 overflow-hidden">
-        <div className=" max-w-7xl p-6 mx-auto">
-          <Contact />
-          {/* <motion.div
-            variants={slideIn("right", "tween", 0.2, 1)}
-            className="hidden z-1 md:flex md:w-[75%] md:h-[75%] lg:w-full lg:h-full absolute sm:left-[40%] sm:bottom-[-10%] lg:left-[30%]">
-            <div className="w-full h-screen absolute top-0 left-[-50%] scale-125"> */}
-              
-            {/* </div> */}
-            {/* <div className='w-[50%] h-[50%] z-[-1]'>
-              <SphereCanvas />
-            </div> */}
-            
-          {/* </motion.div> */}
-        </div>
-      </div>
+      <Contact />
       <div className="fixed top-[0px] left-[0px] w-full h-screen z-[-1]">
         <StarsCanvas />
       </div>
