@@ -80,7 +80,6 @@ const Contact = () => {
 
   return (
     <GoogleReCaptchaProvider reCaptchaKey="6LdWwyYpAAAAAApvqW8VtuBSMgCWgv8Ifc03GbiV">
-      {/* <div id="contact" className="xl:mt-12 overflow-hidden w-full"> */}
         <motion.div
           variants={fadeIn("", "", 0.1, 1)}>
           <p className={styles.sectionSubText}>Get in touch</p>
@@ -157,7 +156,6 @@ const Contact = () => {
           </form>
             )}
         </motion.div>
-      {/* </div> */}
     </GoogleReCaptchaProvider>
   )
 }
