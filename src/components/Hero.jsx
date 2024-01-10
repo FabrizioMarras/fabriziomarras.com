@@ -20,7 +20,7 @@ const Hero = () => {
           <p className={`${styles.heroSubText} mt-2`}>Digital Strategy & Innovation Leader</p>
         </div>
       </div>
-      <div className="w-full h-screen absolute scale-75 md:scale-100 bottom-[-30%] md:bottom-[-35%] right-[-10%] sm:right-[-30%]">
+      <div className="w-full h-screen absolute scale-75 md:scale-100 bottom-[-32%] md:bottom-[-35%] right-[-10%] sm:right-[-30%]">
         <FmLogo autoRotation={true} logoRotation={-Math.PI/4} />
       </div>
       <div className="absolute bottom-10 left-[50%] -translate-x-[50%] flex justify-center items-center opacity-40 hover:opacity-80">
