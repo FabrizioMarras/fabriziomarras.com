@@ -7,7 +7,7 @@ import {
 } from 'react-google-recaptcha-v3';
 
 import { styles } from '../styles';
-import { slideIn } from '../utils/motion';
+import { fadeIn, slideIn } from '../utils/motion';
 import { success } from '../assets';
 import { SectionWrapper } from '../hoc';
 
@@ -82,7 +82,7 @@ const Contact = () => {
     <GoogleReCaptchaProvider reCaptchaKey="6LdWwyYpAAAAAApvqW8VtuBSMgCWgv8Ifc03GbiV">
       {/* <div id="contact" className="xl:mt-12 overflow-hidden w-full"> */}
         <motion.div
-          variants={slideIn("left", "tween", 0.2, 1)}>
+          variants={fadeIn("", "", 0.1, 1)}>
           <p className={styles.sectionSubText}>Get in touch</p>
           <h3 className={styles.sectionHeadText}>Contact</h3>
           {showSuccessMessage ? (
