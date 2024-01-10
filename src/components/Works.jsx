@@ -47,7 +47,7 @@ const Works = () => {
   return (
     <>
       <div className="w-full flex flex-col">
-      <motion.div variants={textVariant()}>
+      {/* <motion.div variants={textVariant()}> */}
           <p className={styles.sectionSubText}>My Work</p>
           <h2 className={styles.sectionHeadText}>Projects</h2>
           {/* <motion.p variants={fadeIn("", "", 0.1, 1)} */}
@@ -55,7 +55,7 @@ const Works = () => {
             Following projects showcase my skills and experience through real-world examples of my work. Each project is briefly described with links to code repositories and live demos in it. It reflects my ability to solve complex problem, work with different technologies, and manage project effectively.
           {/* </motion.p> */}
           </p>
-        </motion.div>
+        {/* </motion.div> */}
         </div>
       <div className="mt-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
         {projects.map((project, index) => (
