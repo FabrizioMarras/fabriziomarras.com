@@ -11,7 +11,7 @@ import { fadeIn, textVariant } from "../utils/motion";
 const ProjectCard = ({ index, name, description, tags, image, source_code_link }) => {
   return (
     <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
-      <Link to={`/project/${projects[index].name.replace(/\s+/g, '-')}`}>
+      {/* <Link to={`/project/${projects[index].name.replace(/\s+/g, '-')}`}> */}
         <Tilt
           options={{
             max: 45,
@@ -38,7 +38,7 @@ const ProjectCard = ({ index, name, description, tags, image, source_code_link }
             </div>
           </div>
         </Tilt>
-      </Link>
+      {/* </Link> */}
     </motion.div>
   )
 }
