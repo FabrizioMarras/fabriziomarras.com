@@ -95,7 +95,6 @@ const Works = () => {
     };
   }, []);
 
-  console.log("isMobile", isMobile)
   return (
     <>
       <div className="w-full flex flex-col">
