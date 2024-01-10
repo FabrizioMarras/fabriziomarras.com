@@ -26,7 +26,6 @@ const ProjectPage = () => {
     const projectNameLowercase = p.name.trim().toLowerCase();
     return formattedProjectName === projectNameLowercase;
   });
-    console.log("INDEX: ", newIndex,"PROJECT: ", projectName )
     setCurrentProjectIndex(newIndex > 0 ? newIndex : 0);
   }, [projectName, setCurrentProjectIndex]);
 
