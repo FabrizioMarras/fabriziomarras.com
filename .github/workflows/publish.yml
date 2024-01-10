@@ -16,27 +16,15 @@ jobs:
       - name: Install Dependencies
         run: npm install
 
-      - name: Build
+      - name: Build on main branch
         run: npm run build
 
-      - name: Push contents of dist folder to build branch
+      - name: Copy dist contents to build branch
         run: |
-          # Fetch the latest changes from the build branch
-          git fetch origin build
-          
-          # Switch to the build branch
           git checkout build
-
-          # Remove all existing files in the build branch
           git rm -r .
-
-          # Copy contents of dist folder from main branch to the root of build branch
           git checkout main -- dist/
           mv dist/* .
-
-          # Stage and commit changes
           git add .
           git commit -m "Update build branch with dist contents from main branch"
-
-          # Push changes to build branch
           git push origin build
