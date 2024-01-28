@@ -136,12 +136,14 @@ const FmLogoCanvas = ({autoRotation, logoRotation = 0, scale}) => {
           <spotLight ref={spotLightRef} position={[-2, 5, -7]} angle={Math.PI / 1} penumbra={0.6} intensity={75} />
           <spotLight ref={spotLightRef} position={[-8, 5, 3]} angle={Math.PI / 1} penumbra={0.6} intensity={170} />
           <OrbitControls
+            target={[-0.5,0,1.5]}
             autoRotate={autoRotation}
             enableZoom={false}
             maxPolarAngle={Math.PI / 2}
             minPolarAngle={Math.PI / 2}
           />
-          <FmLogo scale={scale} position={[-1.5, 0, -2]} rotation={[0, logoRotation, 0]}/>
+          {/* <FmLogo scale={scale} position={[-1.5, 0, -2]} rotation={[0, logoRotation, 0]}/> */}
+          <FmLogo scale={scale} position={[-2, 0, 0]} rotation={[0, logoRotation, 0]}/>
         </Suspense>
       </Canvas>
   );

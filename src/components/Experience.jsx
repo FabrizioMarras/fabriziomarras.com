@@ -42,7 +42,7 @@ const ExperienceCard = ({ experience }) => (
         {experience.points.map((point, index) => (
           <li 
             key={`experience-point-${index}`}
-            className={`${styles.pText} text-white-100 pl-1`}>
+            className={`${styles.cardText} text-white-100 pl-1`}>
               {point}
           </li>
         ))}
@@ -59,7 +59,7 @@ const Experience = () => {
         <h2 className={styles.sectionHeadText}>Work Experience</h2>
         <motion.p 
           variants={fadeIn("", "", 0.1, 1)}
-          className={` ${styles.pText} mt-4 max-w-3xl`}>With a Chemistry degree from Italy, I pursued a Ph.D. in Amsterdam, later contributing six years to impactful research in the chemical industry. Driven by a desire for new challenges, I explored photography and graphic design before transitioning into IT and web development, discovering a profound passion for programming. As a frontend developer, I identified the need for improved organizational efficiency, leading me to step into the role of a project manager. Subsequently, I embraced the position of a product owner in a Marketing Automation company, expanding my skills into marketing. Currently, I'm engaged in AI-driven projects, reflecting my commitment to adaptability and continuous learning at the forefront of technological trends. My journey highlights a diverse skill set and a passion for driving innovative solutions.
+          className={` ${styles.pText} mt-4`}>With a Chemistry degree from Italy, I pursued a Ph.D. in Amsterdam, later contributing six years to impactful research in the chemical industry. Driven by a desire for new challenges, I explored photography and graphic design before transitioning into IT and web development, discovering a profound passion for programming. As a frontend developer, I identified the need for improved organizational efficiency, leading me to step into the role of a project manager. Subsequently, I embraced the position of a product owner in a Marketing Automation company, expanding my skills into marketing. Currently, I'm engaged in AI-driven projects, reflecting my commitment to adaptability and continuous learning at the forefront of technological trends. My journey highlights a diverse skill set and a passion for driving innovative solutions.
         </motion.p>
       </motion.div>
       <motion.div initial="hidden" animate="show"variants={fadeIn("up", "spring", 0.5, 0.75)}>

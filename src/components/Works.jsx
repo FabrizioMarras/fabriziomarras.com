@@ -103,14 +103,14 @@ const Works = () => {
           <p className={styles.sectionSubText}>My Work</p>
           <h2 className={styles.sectionHeadText}>Projects</h2>
           <motion.p variants={fadeIn("", "", 0.1, 1)}
-            className={`${styles.pText} mt-3 max-w-3xl`}>
+            className={`${styles.pText} mt-3`}>
             Following projects showcase my skills and experience through real-world examples of my work. Each project is briefly described with links to code repositories and live demos in it. It reflects my ability to solve complex problem, work with different technologies, and manage project effectively.
           </motion.p>
         </motion.div>) : (
           <div>
           <p className={styles.sectionSubText}>My Work</p>
           <h2 className={styles.sectionHeadText}>Projects</h2>
-          <p className={`${styles.pText} mt-3 max-w-3xl`}>
+          <p className={`${styles.pText} mt-3`}>
             Following projects showcase my skills and experience through real-world examples of my work. Each project is briefly described with links to code repositories and live demos in it. It reflects my ability to solve complex problem, work with different technologies, and manage project effectively.
           </p>
         </div>

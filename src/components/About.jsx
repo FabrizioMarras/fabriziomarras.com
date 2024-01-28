@@ -53,7 +53,7 @@ const About = () => {
       </motion.div>
       <motion.p 
         variants={fadeIn("", "", 0.1, 1)}
-        className={` ${styles.pText} mt-4 max-w-3xl`}>
+        className={` ${styles.pText} mt-4`}>
         I'm an experienced professional with a unique talent for steering projects from conception to successful realization, with a distinctive skill-set that combines technical and creative domains. With a track record of success highlights and ability to provide effective leadership in the ever-evolving strategic digital management. I'm a quick learner and collaborate closely with clients to create efficient, scalable, and user-friendly solutions that solve real-world problems. Let's work together to bring your ideas to life!
       </motion.p>
       <div className="mt-20 flex flex-wrap justify-center gap-10">
