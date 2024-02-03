@@ -347,7 +347,7 @@ import {
       id: "01",
       name: "Drop Music Official",
       description:
-        "Drop started out as a fundraiser combinining the love for music with the message of raising awareness against plastic by organising events in the heart of Amsterdam.",
+        "Designed a geometrically refined 2D water drop logo for Drop Music using Adobe Illustrator. Transitioned to advanced 3D design in Maxon Cinema 4D, incorporating a dynamic ripple effect and reflections. The seamless integration of Adobe Suite and 3D graphic software produced a visually striking logo and an animated intro for livestream events.",
       tags: [
         {
           name: "3d-design",
@@ -390,7 +390,7 @@ import {
       id: "02",
       name: "Speak 2 Lead",
       description:
-        "Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
+        "Designed Speak 2 Lead's brand with a futuristic visual identity, creating symbolic 3D icons in Adobe Illustrator and animating them in Maxon Cinema 4D. Developed a gamified questionnaire using Adobe Illustrator, Adobe Edge Animate, and Javascript, enhancing the website and promotional materials with high-quality animated assets.",
       tags: [
         {
           name: "html",
@@ -437,7 +437,7 @@ import {
       id: "03",
       name: "Lovelace",
       description:
-        "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
+        "Crafted Lovelace Engineering's brand identity from scratch, designing a modern logo symbolizing passion, engineering and DevOp cloud expertise. Developed a vibrant red heart-shaped cloud with moving engineering gears and a simulated blood circulation system in a 2D logo animation using Adobe Illustrator and Animate CC.",
       tags: [
         {
           name: "adobe-cc",
@@ -476,7 +476,7 @@ import {
       id: "04",
       name: "Boipeba",
       description:
-        "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
+        "Designed a vibrant, user-friendly website for Boipeba Bed and Breakfast in Alghero, Sardinia, using Adobe Muse. The summer-themed design features a dual-language interface (English and Italian) and adheres to the client's color palette. The fully responsive site includes business details, accommodations, location, and host information.",
       tags: [
         {
           name: "html",
@@ -507,7 +507,7 @@ import {
       id: "05",
       name: "Prasanna",
       description:
-        "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
+        "Developed a clean and user-friendly website for Prasanna Yoga in Rotterdam, adhering to the client's specific guidelines, including a provided logo, color palette, and content. Utilized Adobe Muse for the project, ensuring a responsive layout with a fully translated Dutch version and embedded Google Maps.",
       tags: [
         {
           name: "html",
@@ -538,7 +538,7 @@ import {
       id: "06",
       name: "Avanvera",
       description:
-        "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
+        "Created a modern website for Avanvera Tour, a social association of tour operators, utilizing Wordpress for its blog functionality. The project, initiated by the owner of Boipeba Bed and Breakfast, involved customizing a standard template with HTML, CSS, Javascript, and PHP to achieve the desired look and functionality for sharing unique travel experiences through personalized blog posts.",
       tags: [
         {
           name: "html",
