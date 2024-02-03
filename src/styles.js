@@ -19,7 +19,7 @@ const styles = {
       "font-title text-secondary font-medium md:text-[40px] sm:text-[28px] xs:text-[24px] text-[18px]",
 
     pText: 
-    "font-body font-light sm:text-[16px] text-[13px] text-white tracking-wider text-center m-auto max-w-5xl",
+    "font-body font-light sm:text-[16px] text-[13px] text-white tracking-wider text-center m-auto",
 
     cardText: 
     "font-body font-light sm:text-[14px] text-[10px] text-white leading-[26px] tracking-wider"

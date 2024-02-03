@@ -216,7 +216,18 @@ import {
   
   const experiences = [
     {
-      title: "IT Consultant",
+      title: "Co-Founder",
+      company_name: "Cloud Pirates",
+      icon: pirates,
+      iconBg: "#fff",
+      date: "May 2021 - Present",
+      points: [
+        "Pioneered a collaborative initiative reshaping the landscape for cloud-native technologists and communities.",
+        "Launched a new collaborative space in Amsterdam in September 2021.",
+      ],
+    },
+    {
+      title: "Consultant",
       company_name: "Fabrizio Marras",
       icon: fm,
       iconBg: "#fff",
@@ -225,16 +236,6 @@ import {
         "Extensive experience in motion graphics and animation using Adobe Creative Cloud tools and 3D softwares such as Maya, Cinema4D and Blender.",
         "Proficient in full-stack development with in-depth knowledge of technologies such as ReactJS, ThreeJS, Cloud, Nginx, NodeJS, Express, and more.",
         "Skilled in API development, AI API integrations, and AI prompt engineering, enhancing project capabilities and functionality.",
-      ],
-    },{
-      title: "Co-Founder",
-      company_name: "Cloud Pirates",
-      icon: pirates,
-      iconBg: "#fff",
-      date: "May 2021 - Jan 2024",
-      points: [
-        "Pioneered a collaborative initiative reshaping the landscape for cloud-native technologists and communities.",
-        "Launched a new collaborative space in Amsterdam in September 2021.",
       ],
     },
     {
@@ -286,20 +287,20 @@ import {
         "Implementing document standardization for a cohesive brand image.",
       ],
     },
-    // {
-    //   title: "Director",
-    //   company_name: "World Film Presentation",
-    //   icon: wfp,
-    //   iconBg: "#fff",
-    //   date: "Oct 2016 - Dec 2018",
-    //   points: [
-    //     "Overseeing international film festivals across the globe.",
-    //     "Managing technology development, marketing, and event coordination.",
-    //     "Designing festival-specific websites and creating promotional materials to curating engaging social media content.",
-    //     "Communicating with venues, filmmakers, and attendees, ensuring smooth logistics for catering, awards, scheduling, and travel.",
-    //     "Producing event trailers and documenting festivals as a photographer, creating memorable experiences for film enthusiasts and industry professionals."
-    //   ],
-    // },
+    {
+      title: "Director",
+      company_name: "World Film Presentation",
+      icon: wfp,
+      iconBg: "#fff",
+      date: "Oct 2016 - Dec 2018",
+      points: [
+        "Overseeing international film festivals across the globe.",
+        "Managing technology development, marketing, and event coordination.",
+        "Designing festival-specific websites and creating promotional materials to curating engaging social media content.",
+        "Communicating with venues, filmmakers, and attendees, ensuring smooth logistics for catering, awards, scheduling, and travel.",
+        "Producing event trailers and documenting festivals as a photographer, creating memorable experiences for film enthusiasts and industry professionals."
+      ],
+    },
     {
       title: "Process Researcher",
       company_name: "Hexion",
