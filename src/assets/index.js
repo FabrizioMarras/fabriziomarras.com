@@ -5,22 +5,22 @@ import Hero from "./Hero.png";
 import Hero_hover from "./Hero_hover.png";
 import success from "./success.png";
 // About
-import leadership from "./leadership.svg";
-import creativity from "./creativity.svg";
-import communication from "./communication.svg";
-import agile from "./agile.svg";
-import ai from "./ai.svg";
-import development from "./development.svg";
+import leadership from "./about/leadership.svg";
+import creativity from "./about/creativity.svg";
+import communication from "./about/communication.svg";
+import agile from "./about/agile.svg";
+import ai from "./about/ai.svg";
+import development from "./about/development.svg";
 // Experience
-import assist from "./assist.jpeg";
-import floyd from "./floyd.jpeg";
-import fm from "./fm.jpeg";
-import hexion from "./hexion.jpeg";
-import pirates from "./pirates.jpeg";
-import speak from "./speak.png";
-import wfp from "./wfp.jpeg";
+import assist from "./experience/assist.jpeg";
+import floyd from "./experience/floyd.jpeg";
+import fm from "./experience/fm.jpeg";
+import hexion from "./experience/hexion.jpeg";
+import pirates from "./experience/pirates.jpeg";
+import speak from "./experience/speak.png";
+import wfp from "./experience/wfp.jpeg";
 //Tech
-import github from "./github.png";
+import github from "./work/github.png";
 import css from "./tech/css.png";
 import figma from "./tech/figma.png";
 import git from "./tech/git.png";
