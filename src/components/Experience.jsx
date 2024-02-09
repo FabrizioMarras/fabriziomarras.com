@@ -10,7 +10,7 @@ import { textVariant, fadeIn } from '../utils/motion';
 const ExperienceCard = ({ experience }) => (
   <VerticalTimelineElement
     contentStyle={{
-      background: '#111827',
+      background: '#00000050',
       borderRadius: '20px',
       color: '#fff',
       boxShadow: '0px 2px 0px #2dc4b6'
@@ -53,7 +53,8 @@ const ExperienceCard = ({ experience }) => (
 
 const Experience = () => {
   return (
-    <>
+    <div className="mt-12 bg-gray-600/50 rounded-[20px]">
+    <div className={`bg-black/50 rounded-t-2xl ${styles.padding} min-h-[300px]`} >
       <motion.div initial="hidden" animate="show" variants={textVariant(2.5)}>
          <p className={styles.sectionSubText}>What I have done so far</p>
         <h2 className={styles.sectionHeadText}>Work Experience</h2>
@@ -62,8 +63,10 @@ const Experience = () => {
           className={` ${styles.pText} mt-4`}>With a Chemistry degree from Italy, I pursued a Ph.D. in Amsterdam, later contributing six years to impactful research in the chemical industry. Driven by a desire for new challenges, I explored photography and graphic design before transitioning into IT and web development, discovering a profound passion for programming. As a frontend developer, I identified the need for improved organizational efficiency, leading me to step into the role of a project manager. Subsequently, I embraced the position of a product owner in a Marketing Automation company, expanding my skills into marketing. Currently, I'm engaged in AI-driven projects, reflecting my commitment to adaptability and continuous learning at the forefront of technological trends. My journey highlights a diverse skill set and a passion for driving innovative solutions.
         </motion.p>
       </motion.div>
+      </div>
+      {/* <div className={`-mt-20 pb-14 ${styles.paddingX}`}> */}
       <motion.div initial="hidden" animate="show"variants={fadeIn("up", "spring", 0.5, 0.75)}>
-      <div className="mt-20 flkex flex-col">
+      <div className="flkex flex-col">
         <VerticalTimeline
           lineColor={'#2dc4b6'}>
           {experiences.map((experience, index) => (
@@ -72,7 +75,8 @@ const Experience = () => {
         </VerticalTimeline>
       </div>
       </motion.div>
-    </>
+    {/* </div> */}
+    </div>
   )
 }
 

@@ -6,11 +6,11 @@ import { Link } from 'react-router-dom';
 import { styles } from "../styles";
 import { github } from "../assets";
 import { SectionWrapper } from "../hoc";
-import { projects } from "../constants";
+import { projects } from "../constants/projects";
 import { fadeIn, textVariant } from "../utils/motion";
 
-const ProjectCard = ({ index, name, description, tech, tags, image, source_code_link, isMobile }) => {
-  
+const ProjectCard = ({ index, name, description, techs, tags, image, source_code_link, isMobile }) => {
+  console.log(techs);
   return (
     !isMobile ? (
     <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
@@ -21,7 +21,8 @@ const ProjectCard = ({ index, name, description, tech, tags, image, source_code_
             scale: 1,
             speed: 450,
           }}
-          className="bg-gray-800 p-5 border-2 border-tertiary rounded-2xl w-full h-full">
+          className="bg-gray-800 p-5 border-2 border-tertiary rounded-2xl w-full h-full flex flex-col justify-between">
+          <div>
           <div className="relative w-full h-[230px]">
             <img
               src={image}
@@ -32,11 +33,19 @@ const ProjectCard = ({ index, name, description, tech, tags, image, source_code_
           <div className="mt-5">
             <h3 className="text-tertiary font-bold text-[24px]">{name}</h3>
             <p className="mt-2 text-white text-[14px]">{description}</p>
-            <div className="mt-4 flex flex-wrap gap-2">
+          </div>
+          </div>
+          <div>
+          {/* <div className="mt-4 flex flex-wrap gap-2">
               {tags.map((tag) => (
                 <p key={tag.name} className={`text-[14px] ${tag.color}`}>
                   #{tag.name}
                 </p>
+              ))}
+            </div> */}
+             <div className="mt-4 flex flex-row justify-end flex-wrap gap-2">
+              {techs.map((tech) => (
+                <img key={tech.name} className={`w-[24px] h-[24px]`} src={tech.img} alt={tech.name} />
               ))}
             </div>
           </div>
@@ -51,6 +60,7 @@ const ProjectCard = ({ index, name, description, tech, tags, image, source_code_
         speed: 450,
       }}
       className="bg-gray-800 p-5 border-2 border-tertiary rounded-2xl w-full h-full flex flex-col">
+      <div>
       <div className="relative w-full h-[230px]">
         <img
           src={image}
@@ -61,14 +71,20 @@ const ProjectCard = ({ index, name, description, tech, tags, image, source_code_
       <div className="mt-5 h-full flex flex-col flex-1">
         <h3 className="text-tertiary font-bold text-[24px]">{name}</h3>
         <p className="mt-2 text-white text-[14px] flex-1">{description}</p>
-        <div className="mt-4 flex flex-wrap gap-2">
+      </div>
+      </div>
+      {/* <div className="mt-4 flex flex-wrap gap-2">
           {tags.map((tag) => (
             <p key={tag.name} className={`text-[14px] ${tag.color}`}>
               #{tag.name}
             </p>
           ))}
-        </div>
-      </div>
+        </div> */}
+        <div className="mt-4 flex flex-row justify-end flex-wrap gap-2">
+              {techs.map((tech) => (
+                <img key={tech.name} className={`w-[24px] h-[24px]`} src={tech.img} alt={tech.name} />
+              ))}
+            </div>
     </Tilt>
       </div>
     )

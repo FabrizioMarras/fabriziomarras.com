@@ -33,12 +33,16 @@ import tailwind from "./tech/tailwind.png";
 import threejs from "./tech/threejs.png";
 import artificial from "./tech/ai.png";
 // Projects
-import avanvera from "./work/avanvera.jpeg";
-import boipeba from "./work/boipeba.jpeg";
+import ainsyte from "./work/ainsyte.jpg";
 import drop from "./work/drop.jpeg";
-import lovelace from "./work/lovelace.jpeg";
-import prasanna from "./work/prasanna.jpeg";
-import speak2lead from "./work/speak2lead.jpeg";
+import mnml from "./work/mnml.jpg";
+import lovelace from "./work/lovelace.jpg";
+import prasanna from "./work/prasanna.jpg";
+import speak2lead from "./work/s2l.jpg";
+// Pages - Projects
+import drop_01 from './work/drop_01.jpeg';
+import drop_02 from './work/drop_02.jpeg';
+import drop_03 from './work/drop_03.jpeg';
 // Testimonials
 import alessandro from './testimonials/alessandro.png';
 import vaggelis from './testimonials/vaggelis.jpeg';
@@ -47,10 +51,6 @@ import massimo from './testimonials/massimo.jpeg';
 import gh from './socials/github-white.svg';
 import yt from './socials/youtube-white.svg';
 import li from './socials/linkedin-white.svg';
-// Pages - Projects
-import drop_01 from './work/drop_01.jpeg';
-import drop_02 from './work/drop_02.jpeg';
-import drop_03 from './work/drop_03.jpeg';
 // Adobe Images
 import adobe_ae from './adobe/after-effects.svg';
 import adobe_xp from './adobe/cc-express.svg';
@@ -60,9 +60,12 @@ import adobe_lr from './adobe/lightroom.svg';
 import adobe_ps from './adobe/photoshop.svg';
 import adobe_pr from './adobe/premiere.svg';
 import blender from './adobe/blender.svg';
+import cinema4d from './adobe/cinema4d.svg';
 
 export {
+  ainsyte,
   blender,
+  cinema4d,
   adobe_ae,
   adobe_xp,
   adobe_cc,
@@ -98,8 +101,7 @@ export {
   reactjs,
   tailwind,
   threejs,
-  avanvera,
-  boipeba,
+  mnml,
   drop,
   lovelace,
   prasanna,
