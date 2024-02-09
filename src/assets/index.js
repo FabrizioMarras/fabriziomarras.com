@@ -1,8 +1,8 @@
 import logo from "./logo.svg";
 import menu from "./menu.svg";
 import close from "./close.svg";
-import Hero from "./Hero.png";
-import Hero_hover from "./Hero_hover.png";
+import hero from "./Hero.png";
+import hero_hover from "./Hero_hover.png";
 import success from "./success.png";
 // About
 import leadership from "./about/leadership.svg";
@@ -51,8 +51,25 @@ import li from './socials/linkedin-white.svg';
 import drop_01 from './work/drop_01.jpeg';
 import drop_02 from './work/drop_02.jpeg';
 import drop_03 from './work/drop_03.jpeg';
+// Adobe Images
+import adobe_ae from './adobe/after-effects.svg';
+import adobe_xp from './adobe/cc-express.svg';
+import adobe_cc from './adobe/creative-cloud.svg';
+import adobe_il from './adobe/illustrator.svg';
+import adobe_lr from './adobe/lightroom.svg';
+import adobe_ps from './adobe/photoshop.svg';
+import adobe_pr from './adobe/premiere.svg';
+import blender from './adobe/blender.svg';
 
 export {
+  blender,
+  adobe_ae,
+  adobe_xp,
+  adobe_cc,
+  adobe_il,
+  adobe_lr,
+  adobe_ps,
+  adobe_pr,
   logo,
   leadership,
   creativity,
@@ -87,8 +104,8 @@ export {
   lovelace,
   prasanna,
   speak2lead,
-  Hero,
-  Hero_hover,
+  hero,
+  hero_hover,
   alessandro,
   vaggelis,
   massimo,

@@ -1,51 +1,23 @@
 import {
-    leadership,
-    creativity,
-    communication,
-    agile,
-    ai,
-    development,
-    assist,
-    floyd,
-    fm,
-    hexion,
-    pirates,
-    speak,
-    wfp,
-    javascript,
-    artificial,
-    html,
-    css,
-    reactjs,
-    tailwind,
-    nodejs,
-    mongodb,
-    git,
-    figma,
     avanvera,
     boipeba,
     drop,
     lovelace,
     prasanna,
     speak2lead,
-    threejs,
-    Hero,
-    Hero_hover,
-    alessandro,
-    vaggelis,
-    massimo,
-    github,
     gh,yt,li,
     drop_01,
     drop_02,
-    drop_03
+    drop_03,
+    adobe_ae,
+    adobe_xp,
+    adobe_cc,
+    adobe_il,
+    adobe_lr,
+    adobe_ps,
+    adobe_pr,
+    blender,
   } from "../assets";
-  
-  const heroImg = {
-      name: "Fabrizio Marras",
-      image: Hero,
-      image_hover: Hero_hover
-    }
 
   export const navLinks = [
     {
@@ -101,248 +73,6 @@ import {
     },
   ];
   
-  const services = [
-    {
-      title: "Leadership",
-      icon: leadership,
-      points: [
-        "Project and Product Management",
-        "Multicultural Teams",
-        "Decision-making",
-        "Project Oversight"
-      ]
-    },
-    {
-      title: "Creativity",
-      icon: creativity,
-      points: [
-        "Design Proficiency",
-        "2D and 3D animation",
-        "Motion Graphics"
-      ]
-    },
-    {
-      title: "Communication",
-      icon: communication,
-      points: [
-        "Interpersonal Skills",
-        "Cross-cultural Proficiency",
-        "Presentations Expertise"
-      ]
-    },
-    {
-      title: "Agile",
-      icon: agile,
-      points: [
-        "Scrum Methodology",
-        "Sprint Planning",
-        "Adaptability",
-        "Collaborative Development"
-      ]
-    },
-    ,
-    {
-      title: "AI",
-      icon: ai,
-      points: [
-        "Machine Learning",
-        "API integrations",
-        "Prompt Engineering",
-        "Data Science and Analysis"
-      ]
-    },
-    {
-      title: "Development",
-      icon: development, 
-      points: [
-        "Full-stack Development",
-        "API Design and Integration",
-        "Version Control (Git)",
-        "Collaborative Coding"
-      ]
-    }
-  ];
-  
-  const technologies = [
-    {
-      name: "Artificial Intelligence",
-      icon: artificial,
-    },
-    {
-      name: "HTML 5",
-      icon: html,
-    },
-    {
-      name: "CSS 3",
-      icon: css,
-    },
-    {
-      name: "JavaScript",
-      icon: javascript,
-    },
-    {
-      name: "React JS",
-      icon: reactjs,
-    },
-    {
-      name: "Tailwind CSS",
-      icon: tailwind,
-    },
-    {
-      name: "Node JS",
-      icon: nodejs,
-    },
-    {
-      name: "MongoDB",
-      icon: mongodb,
-    },
-    {
-      name: "Three JS",
-      icon: threejs,
-    },
-    {
-      name: "git",
-      icon: git,
-    },
-    {
-      name: "github",
-      icon: github
-    },
-    {
-      name: "figma",
-      icon: figma,
-    }
-  ];
-  
-  const experiences = [
-    {
-      title: "Co-Founder",
-      company_name: "Cloud Pirates",
-      icon: pirates,
-      iconBg: "#fff",
-      date: "May 2021 - Present",
-      points: [
-        "Pioneered a collaborative initiative reshaping the landscape for cloud-native technologists and communities.",
-        "Launched a new collaborative space in Amsterdam in September 2021.",
-      ],
-    },
-    {
-      title: "Consultant",
-      company_name: "Fabrizio Marras",
-      icon: fm,
-      iconBg: "#fff",
-      date: "Jan 2015 - Present",
-      points: [
-        "Extensive experience in motion graphics and animation using Adobe Creative Cloud tools and 3D softwares such as Maya, Cinema4D and Blender.",
-        "Proficient in full-stack development with in-depth knowledge of technologies such as ReactJS, ThreeJS, Cloud, Nginx, NodeJS, Express, and more.",
-        "Skilled in API development, AI API integrations, and AI prompt engineering, enhancing project capabilities and functionality.",
-      ],
-    },
-    {
-      title: "Product Owner",
-      company_name: "Assist Penfield Digital",
-      icon: assist,
-      iconBg: "#000",
-      date: "Feb 2022 - Oct 2023",
-      points: [
-        "Leading international teams of engineers and developers across Europe to ensure the successful delivery of high-quality Softwares and applications for the Salesforce and Marketing Cloud Platform.",
-        "Translated customer needs into user stories, maintaining adherence to Agile and Scrum methodologies.",
-        "Leading product strategy, defining and prioritizing tasks for optimal outcomes.",
-        "Designing a Service Management System for integrated Customers Service."
-      ],
-    },
-    {
-      title: "Digital Project Manager",
-      company_name: "Floyd & Hamilton",
-      icon: floyd,
-      iconBg: "#fff",
-      date: "Mar 2020 - May 2021",
-      points: [
-        "Orchestrating the setup of cutting-edge recruitment platforms.",
-        "Optimizing the candidate journey and achieving measurable results.",
-        "Managing multidisciplinary teams to deliver efficient digital solutions for renowned brands.",
-        "Applying Agile methodologies to deliver Projects from ideation to production."
-      ],
-    },
-    {
-      title: "FrontEnd Developer",
-      company_name: "Floyd & Hamilton",
-      icon: floyd,
-      iconBg: "#fff",
-      date: "Oct 2018 - Mar 2020",
-      points: [
-        "Crafting visually striking, multilingual recruitment websites for top Dutch and international brands.",
-        "Customers include brands like De Bijenkorf, Hunkemoller, DHL, Axians, Praxis, CBR, GrandVision, Hema, Eneco, and more."
-      ],
-    },
-    {
-      title: "Head of Product Design",
-      company_name: "Speak 2 Lead",
-      icon: speak,
-      iconBg: "#fff",
-      date: "Jan 2017 - May 2021",
-      points: [
-        "Leading a transformative project to revamp the organization's online presence.",
-        "Created a responsive mobile-friendly website, redesigned the logo in 2D and 3D, produced promotional videos, and developed e-learning modules",
-        "Implementing document standardization for a cohesive brand image.",
-      ],
-    },
-    {
-      title: "Director",
-      company_name: "World Film Presentation",
-      icon: wfp,
-      iconBg: "#fff",
-      date: "Oct 2016 - Dec 2018",
-      points: [
-        "Overseeing international film festivals across the globe.",
-        "Managing technology development, marketing, and event coordination.",
-        "Designing festival-specific websites and creating promotional materials to curating engaging social media content.",
-        "Communicating with venues, filmmakers, and attendees, ensuring smooth logistics for catering, awards, scheduling, and travel.",
-        "Producing event trailers and documenting festivals as a photographer, creating memorable experiences for film enthusiasts and industry professionals."
-      ],
-    },
-    {
-      title: "Process Researcher",
-      company_name: "Hexion",
-      icon: hexion,
-      iconBg: "#fff",
-      date: "Apr 2010 - Feb 2016",
-      points: [
-        "Expert in Vinylation and Catalysis.",
-        "Leadership and project management for New Process Developments.",
-        "Ensuring alignment with organizational goals, efficient timelines, and transparent communication with stakeholders.",
-        "Certified Six Sigma Professional, employing data-driven methodologies to enhance process efficiency, reducing defects, and driving operational excellence.",
-      ],
-    }
-  ];
-  
-  const testimonials = [
-    {
-      testimonial:
-        "Fabrizio's creative, inventive and inquisitive mind help immensely to get the projects we shared at the University of Amsterdam through the hurdles that every chemist find on his/her way. He's an hard worker but he know how to keep a balance and when it's time to stop, step back, relax and start over from a fresh perspective. I miss working with him!",
-      name: "Alessandro Vozza",
-      designation: "Developer Relations",
-      company: "Solo.io",
-      image: alessandro,
-    },
-    {
-      testimonial:
-        "We worked with Fabrizio on the website of our soon to be released game. He is very professional and fast, and a great communicator, making the creation of this website a breeze (I wish I could say the same for the development of our game!) I recommend him with all my heart to all indie game developers.",
-      name: "Evangelos Leivaditis",
-      designation: "UGC Design Lead",
-      company: "Seedify",
-      image: vaggelis,
-    },
-    {
-      testimonial:
-        "Fabrizio is an hard worker! He is oriented on problem solving and on development of new strategies. It was a plesaure to work together with him.",
-      name: "Massimo Casanova",
-      designation: "Global R&D Director",
-      company: "Cargill",
-      image: massimo,
-    },
-  ];
-  
   const projects = [
     {
       id: "01",
@@ -362,6 +92,21 @@ import {
           name: "live-streaming",
           color: "text-tertiary",
         },
+      ],
+      tech: [
+        {
+          name: "Blender",
+          img: "",
+        },{
+          name: "Adobe Illustrator",
+          img: adobe_il,
+        },{
+          name: "Adobe AfterEffects",
+          img: adobe_ae,
+        },{
+          name: "Adobe Premiere",
+          img: adobe_pr,
+        }
       ],
       image: drop_01,
       link: "https://github.com/",
@@ -567,39 +312,6 @@ import {
       ]
     }
   ];
-
-  const terms = [
-    { title: "Human Agreement",
-      description: "By using our website, you confirm that you are a human. Automated bots, scripts, or any non-human activity is strictly prohibited."
-    },
-    { title: "Age Requirement",
-      description: 'You must be at least 18 years old to use our services. By accessing our website, you affirm that you meet this age requirement.',
-    },
-    { title: "Personal Information",
-      description: 'In the course of using our services, you may be required to provide personal information such as your email address and full name. You agree to provide accurate and current information. We are committed to safeguarding your privacy, and our Privacy Policy outlines how we collect, use, and protect your personal information.',
-    },
-    { title: "Data Retention",
-      description: "By using our services, you consent to the collection and retention of your personal information. We may retain this information for an indefinite period, unless otherwise explicitly requested by you via email. You have the right to request the deletion of your personal information by contacting us through the provided communication channels.",
-    },
-    { title: "Acceptance of Changes",
-      description: "We reserve the right to update or modify these terms and conditions at any time without prior notice. It is your responsibility to review this page periodically for changes. Continued use of our services after any modifications indicate your acceptance of the updated terms.",
-    },
-    { title: "Prohibited Activities",
-      description: "You agree not to engage in any activities that violate our terms, applicable laws, or the rights of others. Prohibited activities include but are not limited to unauthorized access, distribution of malicious software, and any form of harassment.",
-    },
-    { title: "Intellectual Property",
-      description: "All content and materials on this website, including but not limited to text, graphics, logos, and images, are the intellectual property of Fabrizio Marras. You may not use, reproduce, or distribute any content without our express written permission.",
-    },
-    { title: "Disclaimer of Warranties",
-      description: `Our services are provided on an "as is" and "as available" basis. We do not warrant that our services will meet your specific requirements, be uninterrupted, secure, or error-free.`,
-    },
-    { title: "Limitation of Liability",
-      description: `In no event shall Fabrizio Marras be liable for any direct, indirect, incidental, special, or consequential damages arising out of or in any way connected with the use of our services`,
-    },
-    { title: "Contact Information",
-      description: `For any questions or concerns regarding these terms and conditions, please contact us.`,
-    }
-  ]
   
   const topics = [
     {
@@ -647,4 +359,4 @@ import {
     }
   ]
 
-  export { services, technologies, experiences, testimonials, projects, heroImg, terms, topics };
+  export { projects, topics };

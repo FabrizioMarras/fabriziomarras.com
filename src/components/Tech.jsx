@@ -1,6 +1,6 @@
 import { CubeCanvas } from "./canvas";
 import { SectionWrapper } from "../hoc";
-import { technologies } from "../constants";
+import { technologies } from "../constants/stack";
 import { motion } from 'framer-motion';
 import { fadeIn, textVariant } from '../utils/motion';
 import { styles } from '../styles';
