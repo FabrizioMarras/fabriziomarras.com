@@ -43,7 +43,7 @@ const ProjectCard = ({ index, name, description, techs, tags, image, source_code
                 </p>
               ))}
             </div> */}
-             <div className="mt-4 flex flex-row justify-end flex-wrap gap-2">
+             <div className="mt-8 flex flex-row justify-end flex-wrap gap-2">
               {techs.map((tech) => (
                 <img key={tech.name} className={`w-[24px] h-[24px]`} src={tech.img} alt={tech.name} />
               ))}
@@ -80,7 +80,7 @@ const ProjectCard = ({ index, name, description, techs, tags, image, source_code
             </p>
           ))}
         </div> */}
-        <div className="mt-4 flex flex-row justify-end flex-wrap gap-2">
+        <div className="mt-8 flex flex-row justify-end flex-wrap gap-2">
               {techs.map((tech) => (
                 <img key={tech.name} className={`w-[24px] h-[24px]`} src={tech.img} alt={tech.name} />
               ))}
