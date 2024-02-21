@@ -46,17 +46,19 @@ const Filter = ({ handleFilterChange, filters }) => {
           <circle cx={isOpen ? "6" : "18"} cy="18" r="2" fill={isOpen ? "currentColor" : "black"} stroke="currentColor" strokeWidth="1" />
         </svg>
       </div>
-      <div className='filters-options absolute top-[40px] right-0 bg-[#000000] border-2 border-white p-4 rounded-xl'>
+      <div className='filters-options absolute top-[40px] right-0 bg-[#000000] border-2 border-tertiary p-4 rounded-xl min-w-[192px]'>
         {filters.map(filter => (
           <div key={filter.name} className="flex items-center">
-            <input
-              type="checkbox"
-              id={filter.name}
-              value={filter.name}
-              onChange={handleFilterChange}
-            />
-            <label htmlFor={filter.name} className="ml-2">{filter.name}</label>
-          </div>
+          <input
+            type="checkbox"
+            id={filter.name}
+            value={filter.name}
+            onChange={handleFilterChange}
+            className="hidden"
+          />
+          <label htmlFor={filter.name} className="ml-2 text-white font-thin">{filter.name}</label>
+        </div>
+        
         ))}
       </div>
     </div>

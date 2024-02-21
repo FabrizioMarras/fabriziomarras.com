@@ -112,6 +112,12 @@ section {
   display: none;
 }
 
+/* label color on check */
+[type="checkbox"]:checked + label {
+  color: #f6921f; 
+  font-weight: 400;
+}
+
 @keyframes mulShdSpin {
   0%,
   100% {
