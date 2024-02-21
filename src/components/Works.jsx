@@ -31,7 +31,7 @@ const Filter = ({ handleFilterChange, filters }) => {
           <circle cx={isOpen ? "6" : "18"} cy="18" r="2" fill={isOpen ? "currentColor" : "black"} stroke="currentColor" stroke-width="1" />
         </svg>
       </div>
-      <div className='filters-options absolute top-[40px] right-0 bg-[#00000099] border-2 border-white p-4 rounded'>
+      <div className='filters-options absolute top-[40px] right-0 bg-[#000000] border-2 border-white p-4 rounded'>
         {filters.map(filter => (
           <div key={filter.name} className="flex items-center">
             <input
