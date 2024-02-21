@@ -41,8 +41,8 @@ const Cube = (props) => {
         receiveShadow 
         scale={4} 
         rotation={[0, Math.PI / 2.5, 0]}
-        onPointerEnter={(event) => (event.stopPropagation(), setIsHovered(true))}
-        onPointerLeave={() => setIsHovered(false)}>
+        onPointerEnter={(event) => (event.stopPropagation(), setIsHovered(true), props.autoRotate(true))}
+        onPointerLeave={() => (setIsHovered(false), props.autoRotate(false))}>
         {/* <boxGeometry args={[1, 1, 1]} /> */}
         <icosahedronGeometry args={[1, 1]} />
         <meshStandardMaterial 
@@ -64,21 +64,27 @@ const Cube = (props) => {
 }
 
 const CubeCanvas = ({ icon }) => {
+  const [shouldAutoRotate, setShouldAutoRotate] = useState(false);
+
+  const handleAutoRotate = (value) => {
+    setShouldAutoRotate(value);
+  };
   return (
     <Canvas
       frameloop='demand'
       // shadows
-      camera={{ position: [25, 0, 5], fov: 25 }}
+      camera={{ position: [25, 0, 0], fov: 25 }}
       gl={{ preserveDrawingBuffer: true }}
     >
       <Suspense fallback={<CanvasLoader />}>
         <OrbitControls
           enableZoom={false}
-          autoRotate = {false}
+          autoRotate={shouldAutoRotate}
+          autoRotateSpeed={50}
           // maxPolarAngle={Math.PI / 2}
           // minPolarAngle={Math.PI / 2}
         />
-        <Cube imgUrl={icon} />
+        <Cube imgUrl={icon} autoRotate={handleAutoRotate} />
       </Suspense>
       <Preload all />
     </Canvas>
