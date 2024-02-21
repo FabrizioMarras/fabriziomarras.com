@@ -10,9 +10,11 @@ import { projects } from "../constants/projects";
 import { filters } from "../constants/filters";
 import { fadeIn, textVariant } from "../utils/motion";
 
-const Filter = ({ handleFilterChange, filters }) => {
+const Filter = ({ handleFilterChange, filters, selectedFilters }) => {
   const [isOpen, setIsOpen] = useState(false);
   const filterOptionsRef = useRef(null);
+
+  console.log("selectedFilters:", selectedFilters);
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -33,17 +35,19 @@ const Filter = ({ handleFilterChange, filters }) => {
     setIsOpen(!isOpen); // Toggle the state to revert the position of spheres
 
   };
+  // Determine the color of the icon based on whether there are selected filters
+  const iconColor = selectedFilters.length === 0 ? "currentColor" : "#f6921f";
 
   return (
     <div className={`${isOpen ? 'open' : 'close'} filters `} ref={filterOptionsRef}>
       <div className='filter-icon scale-150 cursor-pointer' onClick={handleIconClick}>
         <svg className="h-6 w-6 inline-block" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <line x1={isOpen ? "4" : "18"} y1="6" x2={isOpen ? "20" : "4"} y2="6" stroke="currentColor" strokeWidth="1" />
-          <circle cx={isOpen ? "6" : "18"} cy="6" r="2" fill={isOpen ? "currentColor" : "black"} stroke="currentColor" strokeWidth="1"  />
-          <line x1={isOpen ? "4" : "6"} y1="12" x2='20' y2="12" stroke="currentColor" strokeWidth="1" />
-          <circle cx={isOpen ? "18" : "6"} cy="12" r="2" fill={isOpen ? "currentColor" : "black"} stroke="currentColor" strokeWidth="1" />
-          <line x1={isOpen ? "4" : "20"} y1="18" x2={isOpen ? "20" : "4"} y2="18" stroke="currentColor" strokeWidth="1" />
-          <circle cx={isOpen ? "6" : "18"} cy="18" r="2" fill={isOpen ? "currentColor" : "black"} stroke="currentColor" strokeWidth="1" />
+          <line x1={isOpen ? "4" : "18"} y1="6" x2={isOpen ? "20" : "4"} y2="6" stroke={iconColor} strokeWidth="1" />
+          <circle cx={isOpen ? "6" : "18"} cy="6" r="2" fill={isOpen ? iconColor : "black"} stroke={iconColor} strokeWidth="1"  />
+          <line x1={isOpen ? "4" : "6"} y1="12" x2='20' y2="12" stroke={iconColor} strokeWidth="1" />
+          <circle cx={isOpen ? "18" : "6"} cy="12" r="2" fill={isOpen ? iconColor : "black"} stroke={iconColor} strokeWidth="1" />
+          <line x1={isOpen ? "4" : "20"} y1="18" x2={isOpen ? "20" : "4"} y2="18" stroke={iconColor} strokeWidth="1" />
+          <circle cx={isOpen ? "6" : "18"} cy="18" r="2" fill={isOpen ? iconColor : "black"} stroke={iconColor} strokeWidth="1" />
         </svg>
       </div>
       <div className='filters-options absolute top-[40px] right-0 bg-[#000000] border-2 border-tertiary p-4 rounded-xl min-w-[192px]'>
@@ -174,6 +178,7 @@ const Works = () => {
   }
   }, [selectedFilters]);
 
+  console.log("selectedFilters WORK:", selectedFilters);
   return (
     <>
       <div className="w-full flex flex-col">
@@ -187,7 +192,7 @@ const Works = () => {
           </motion.p>
           <div variants={textVariant()}
             className="mt-10 px-1 relative z-10 flex justify-end">
-                <Filter handleFilterChange={handleFilterChange} filters={filters} />
+                <Filter handleFilterChange={handleFilterChange} filters={filters} selectedFilters={selectedFilters} />
             </div>
         </motion.div>
         ) : (
@@ -198,7 +203,7 @@ const Works = () => {
               Following projects showcase my skills and experience through real-world examples of my work. Each project is briefly described with links to code repositories and live demos in it. It reflects my ability to solve complex problem, work with different technologies, and manage project effectively.
             </p>
           <div className="mt-10 px-1 relative z-10 flex justify-end">
-            <Filter handleFilterChange={handleFilterChange} filters={filters} />
+            <Filter handleFilterChange={handleFilterChange} filters={filters} selectedFilters={selectedFilters}  />
           </div>
         </div>
         )}
