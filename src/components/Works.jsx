@@ -63,13 +63,12 @@ const Filter = ({ handleFilterChange, filters }) => {
   )
 }
 
-const ProjectCard = ({ index, name, description, techs, tags, image, source_code_link, isMobile }) => {
+const ProjectCard = ({ index, name, description, techs, image }) => {
   return (
     <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)}
     initial="hidden"
   animate="show"
   exit="exit">
-      {/* <Link to={`/project/${projects[index].name.replace(/\s+/g, '-')}`}> */}
         <Tilt
           options={{
             max: 45,
@@ -98,7 +97,6 @@ const ProjectCard = ({ index, name, description, techs, tags, image, source_code
             </div>
           </div>
         </Tilt>
-      {/* </Link> */}
     </motion.div>
 )}
 
@@ -162,20 +160,24 @@ const Works = () => {
             className={`${styles.pText} mt-3`}>
             Following projects showcase my skills and experience through real-world examples of my work. Each project is briefly described with links to code repositories and live demos in it. It reflects my ability to solve complex problem, work with different technologies, and manage project effectively.
           </motion.p>
-        </motion.div>) : (
+          <motion.div variants={textVariant()}
+            className="mt-10 px-1 relative z-10 flex justify-end">
+                <Filter handleFilterChange={handleFilterChange} filters={filters} />
+            </motion.div>
+        </motion.div>
+        ) : (
           <div>
-          <p className={styles.sectionSubText}>My Work</p>
-          <h2 className={styles.sectionHeadText}>Projects</h2>
-          <p className={`${styles.pText} mt-3`}>
-            Following projects showcase my skills and experience through real-world examples of my work. Each project is briefly described with links to code repositories and live demos in it. It reflects my ability to solve complex problem, work with different technologies, and manage project effectively.
-          </p>
+            <p className={styles.sectionSubText}>My Work</p>
+            <h2 className={styles.sectionHeadText}>Projects</h2>
+            <p className={`${styles.pText} mt-3`}>
+              Following projects showcase my skills and experience through real-world examples of my work. Each project is briefly described with links to code repositories and live demos in it. It reflects my ability to solve complex problem, work with different technologies, and manage project effectively.
+            </p>
+          <div className="mt-10 px-1 relative z-10 flex justify-end">
+            <Filter handleFilterChange={handleFilterChange} filters={filters} />
+          </div>
         </div>
         )}
       </div>
-      <motion.div variants={textVariant()}
-      className="mt-10 px-1 relative z-10 flex justify-end">
-          <Filter handleFilterChange={handleFilterChange} filters={filters} />
-      </motion.div>
       <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">   
       {displayedProjects.map((project, index) => (
         <ProjectCard key={`project-${index}`} isMobile={isMobile} index={index} {...project} />
