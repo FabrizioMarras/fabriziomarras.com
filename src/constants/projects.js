@@ -57,7 +57,7 @@ export const projects = [
             name: "NodeJS",
             img: nodejs,
           },{
-            name: "Openai",
+            name: "AI",
             img: artificial,
           }
         ],

@@ -106,6 +106,12 @@ section {
   transform: translateZ(0);
 }
 
+/* Filters Options */
+
+.close .filters-options {
+  display: none;
+}
+
 @keyframes mulShdSpin {
   0%,
   100% {

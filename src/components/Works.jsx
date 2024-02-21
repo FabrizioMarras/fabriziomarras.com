@@ -1,18 +1,60 @@
 import { useState, useEffect } from 'react';
 import { Tilt } from "react-tilt";
 import { motion } from "framer-motion";
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
 import { styles } from "../styles";
-import { github } from "../assets";
+// import { github } from "../assets";
 import { SectionWrapper } from "../hoc";
 import { projects } from "../constants/projects";
+import { filters } from "../constants/filters";
 import { fadeIn, textVariant } from "../utils/motion";
+
+const Filter = ({ handleFilterChange, filters }) => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  // Function to handle click on the filter icon
+  const handleIconClick = () => {
+    setIsOpen(!isOpen); // Toggle the state to revert the position of spheres
+
+  };
+
+  return (
+    <div className={`${isOpen ? 'open' : 'close'} filters relative z-10 flex justify-end`}>
+      <div className='filter-icon scale-150 cursor-pointer' onClick={handleIconClick}>
+        <svg className="h-6 w-6 inline-block" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <line x1={isOpen ? "4" : "18"} y1="6" x2={isOpen ? "20" : "4"} y2="6" stroke="currentColor" stroke-width="1" />
+          <circle cx={isOpen ? "6" : "18"} cy="6" r="2" fill={isOpen ? "currentColor" : "black"} stroke="currentColor" stroke-width="1"  />
+          <line x1={isOpen ? "4" : "6"} y1="12" x2='20' y2="12" stroke="currentColor" stroke-width="1" />
+          <circle cx={isOpen ? "18" : "6"} cy="12" r="2" fill={isOpen ? "currentColor" : "black"} stroke="currentColor" stroke-width="1" />
+          <line x1={isOpen ? "4" : "20"} y1="18" x2={isOpen ? "20" : "4"} y2="18" stroke="currentColor" stroke-width="1" />
+          <circle cx={isOpen ? "6" : "18"} cy="18" r="2" fill={isOpen ? "currentColor" : "black"} stroke="currentColor" stroke-width="1" />
+        </svg>
+      </div>
+      <div className='filters-options absolute top-[40px] right-0 bg-[#00000099] border-2 border-white p-4 rounded'>
+        {filters.map(filter => (
+          <div key={filter.name} className="flex items-center">
+            <input
+              type="checkbox"
+              id={filter.name}
+              value={filter.name}
+              onChange={handleFilterChange}
+            />
+            <label htmlFor={filter.name} className="ml-2">{filter.name}</label>
+          </div>
+        ))}
+      </div>
+    </div>
+  )
+}
 
 const ProjectCard = ({ index, name, description, techs, tags, image, source_code_link, isMobile }) => {
   return (
-    !isMobile ? (
-    <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
+    // !isMobile ? (
+    <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)}
+    initial="hidden"
+  animate="show"
+  exit="exit">
       {/* <Link to={`/project/${projects[index].name.replace(/\s+/g, '-')}`}> */}
         <Tilt
           options={{
@@ -35,13 +77,6 @@ const ProjectCard = ({ index, name, description, techs, tags, image, source_code
           </div>
           </div>
           <div>
-          {/* <div className="mt-4 flex flex-wrap gap-2">
-              {tags.map((tag) => (
-                <p key={tag.name} className={`text-[14px] ${tag.color}`}>
-                  #{tag.name}
-                </p>
-              ))}
-            </div> */}
              <div className="mt-8 flex flex-row justify-end flex-wrap gap-2">
               {techs.map((tech) => (
                 <img key={tech.name} className={`w-[24px] h-[24px]`} src={tech.img} alt={tech.name} />
@@ -50,48 +85,13 @@ const ProjectCard = ({ index, name, description, techs, tags, image, source_code
           </div>
         </Tilt>
       {/* </Link> */}
-    </motion.div>) : (
-      <div>
-      <Tilt
-      options={{
-        max: 45,
-        scale: 1,
-        speed: 450,
-      }}
-      className="bg-gray-800 p-5 border-2 border-tertiary rounded-2xl w-full h-full flex flex-col">
-      <div>
-      <div className="relative w-full h-[230px]">
-        <img
-          src={image}
-          alt={`project-${name}`}
-          className="w-full h-full object-cover rounded-2xl"
-        />
-      </div>
-      <div className="mt-5 h-full flex flex-col flex-1">
-        <h3 className="text-tertiary font-bold text-[24px]">{name}</h3>
-        <p className="mt-2 text-white text-[14px] flex-1">{description}</p>
-      </div>
-      </div>
-      {/* <div className="mt-4 flex flex-wrap gap-2">
-          {tags.map((tag) => (
-            <p key={tag.name} className={`text-[14px] ${tag.color}`}>
-              #{tag.name}
-            </p>
-          ))}
-        </div> */}
-        <div className="mt-8 flex flex-row justify-end flex-wrap gap-2">
-              {techs.map((tech) => (
-                <img key={tech.name} className={`w-[24px] h-[24px]`} src={tech.img} alt={tech.name} />
-              ))}
-            </div>
-    </Tilt>
-      </div>
-    )
-  )
-}
+    </motion.div>
+)}
 
 const Works = () => {
   const [isMobile, setIsMobile] = useState(false);
+  const [selectedFilters, setSelectedFilters] = useState([]);
+  const [displayedProjects, setDisplayedProjects] = useState(projects);
 
   useEffect(() => {
     const handleResize = () => {
@@ -100,15 +100,46 @@ const Works = () => {
     };
     // Initial check on component mount
     handleResize();
-
     // Add event listener for window resize
     window.addEventListener('resize', handleResize);
-
     // Cleanup event listener on component unmount
     return () => {
       window.removeEventListener('resize', handleResize);
     };
   }, []);
+  
+  const handleFilterChange = (event) => {
+    const { value, checked } = event.target;
+    let updatedFilters;
+    if (checked) {
+        updatedFilters = [...selectedFilters, value]; // Add the checked value to updatedFilters
+    } else {
+        updatedFilters = selectedFilters.filter((filter) => filter !== value); // Remove the unchecked value from updatedFilters
+    }
+
+    setSelectedFilters(updatedFilters)
+  };
+
+  useEffect(() => {
+    console.log("selectedFilters: ", selectedFilters);
+    // Set displayed projects to all projects when no filters are selected
+    if (selectedFilters.length === 0) {
+      console.log("selectedFilters is empty")
+      setDisplayedProjects(projects);
+    } else {
+    console.log("useEffect 01 - displayedProjects", displayedProjects)
+    // Filter projects based on selected filters
+    const filteredProjects = projects.filter((project) => {
+      // Check if at least one selected filter is included in the project's techs
+      return selectedFilters.some((filter) =>
+        project.techs.map((tech) => tech.name).includes(filter)
+      );
+    });
+    // Update the displayed projects
+    setDisplayedProjects(filteredProjects);
+    console.log("selectedFilters: ", selectedFilters);
+  }
+  }, [selectedFilters]);
 
   return (
     <>
@@ -131,10 +162,14 @@ const Works = () => {
         </div>
         )}
       </div>
-      <div className="mt-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
-        {projects.map((project, index) => (
-          <ProjectCard key={`project-${index}`} isMobile={isMobile} index={index} {...project} />
-        ))}
+      <motion.div variants={textVariant()}
+      className="mt-10 px-1">
+          <Filter handleFilterChange={handleFilterChange} filters={filters} />
+      </motion.div>
+      <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">   
+      {displayedProjects.map((project, index) => (
+        <ProjectCard key={`project-${index}`} isMobile={isMobile} index={index} {...project} />
+      ))}
       </div>
     </>
   )
