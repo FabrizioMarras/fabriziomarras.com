@@ -23,15 +23,15 @@ const Filter = ({ handleFilterChange, filters }) => {
     <div className={`${isOpen ? 'open' : 'close'} filters relative z-10 flex justify-end`}>
       <div className='filter-icon scale-150 cursor-pointer' onClick={handleIconClick}>
         <svg className="h-6 w-6 inline-block" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <line x1={isOpen ? "4" : "18"} y1="6" x2={isOpen ? "20" : "4"} y2="6" stroke="currentColor" stroke-width="1" />
-          <circle cx={isOpen ? "6" : "18"} cy="6" r="2" fill={isOpen ? "currentColor" : "black"} stroke="currentColor" stroke-width="1"  />
-          <line x1={isOpen ? "4" : "6"} y1="12" x2='20' y2="12" stroke="currentColor" stroke-width="1" />
-          <circle cx={isOpen ? "18" : "6"} cy="12" r="2" fill={isOpen ? "currentColor" : "black"} stroke="currentColor" stroke-width="1" />
-          <line x1={isOpen ? "4" : "20"} y1="18" x2={isOpen ? "20" : "4"} y2="18" stroke="currentColor" stroke-width="1" />
-          <circle cx={isOpen ? "6" : "18"} cy="18" r="2" fill={isOpen ? "currentColor" : "black"} stroke="currentColor" stroke-width="1" />
+          <line x1={isOpen ? "4" : "18"} y1="6" x2={isOpen ? "20" : "4"} y2="6" stroke="currentColor" strokeWidth="1" />
+          <circle cx={isOpen ? "6" : "18"} cy="6" r="2" fill={isOpen ? "currentColor" : "black"} stroke="currentColor" strokeWidth="1"  />
+          <line x1={isOpen ? "4" : "6"} y1="12" x2='20' y2="12" stroke="currentColor" strokeWidth="1" />
+          <circle cx={isOpen ? "18" : "6"} cy="12" r="2" fill={isOpen ? "currentColor" : "black"} stroke="currentColor" strokeWidth="1" />
+          <line x1={isOpen ? "4" : "20"} y1="18" x2={isOpen ? "20" : "4"} y2="18" stroke="currentColor" strokeWidth="1" />
+          <circle cx={isOpen ? "6" : "18"} cy="18" r="2" fill={isOpen ? "currentColor" : "black"} stroke="currentColor" strokeWidth="1" />
         </svg>
       </div>
-      <div className='filters-options absolute top-[40px] right-0 bg-[#000000] border-2 border-white p-4 rounded'>
+      <div className='filters-options absolute top-[40px] right-0 bg-[#000000] border-2 border-white p-4 rounded-xl'>
         {filters.map(filter => (
           <div key={filter.name} className="flex items-center">
             <input
@@ -50,7 +50,6 @@ const Filter = ({ handleFilterChange, filters }) => {
 
 const ProjectCard = ({ index, name, description, techs, tags, image, source_code_link, isMobile }) => {
   return (
-    // !isMobile ? (
     <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)}
     initial="hidden"
   animate="show"

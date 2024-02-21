@@ -60,7 +60,7 @@ const technologies = [
       icon: threejs,
     },
     {
-      name: "GPT",
+      name: "AI",
       icon: artificial,
     },
   ];
