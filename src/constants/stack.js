@@ -11,12 +11,21 @@ import {
     figma,
     threejs,
     github,
+    adobe_ae, adobe_xp, adobe_cc, adobe_il, adobe_lr, adobe_ps, adobe_pr, blender, cinema4d,
 } from "../assets";
 
 const technologies = [
     {
-      name: "Artificial Intelligence",
-      icon: artificial,
+      name: "Adobe Creative Cloud",
+      icon: adobe_cc,
+    },
+    {
+      name: "Cinema 4D",
+      icon: cinema4d,
+    },
+    {
+      name: "Blender",
+      icon: blender
     },
     {
       name: "HTML 5",
@@ -35,7 +44,7 @@ const technologies = [
       icon: reactjs,
     },
     {
-      name: "Tailwind CSS",
+      name: "Tailwind",
       icon: tailwind,
     },
     {
@@ -43,7 +52,7 @@ const technologies = [
       icon: nodejs,
     },
     {
-      name: "MongoDB",
+      name: "Mongo DB",
       icon: mongodb,
     },
     {
@@ -51,17 +60,9 @@ const technologies = [
       icon: threejs,
     },
     {
-      name: "git",
-      icon: git,
+      name: "GPT",
+      icon: artificial,
     },
-    {
-      name: "github",
-      icon: github
-    },
-    {
-      name: "figma",
-      icon: figma,
-    }
   ];
 
   export { technologies };

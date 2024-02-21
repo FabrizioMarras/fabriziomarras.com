@@ -30,8 +30,8 @@ const Cube = (props) => {
 
   return (
     <Float
-      speed={1.75}
-      rotationIntensity={-3.5}
+      speed={1.5}
+      rotationIntensity={-2.5}
       floatIntensity={2}
     >
       <ambientLight intensity={0.25} />
@@ -43,7 +43,8 @@ const Cube = (props) => {
         rotation={[0, Math.PI / 2.5, 0]}
         onPointerEnter={(event) => (event.stopPropagation(), setIsHovered(true))}
         onPointerLeave={() => setIsHovered(false)}>
-        <boxGeometry args={[1, 1, 1]} />
+        {/* <boxGeometry args={[1, 1, 1]} /> */}
+        <icosahedronGeometry args={[1, 1]} />
         <meshStandardMaterial 
           color={isHovered ? "#ec1d24" : "#2dc4b6"}
           polygonOffset
@@ -52,8 +53,8 @@ const Cube = (props) => {
           wireframe={isMobile ? false : true}
         />
         <Decal 
-          position={[0, 0, 0]}
-          rotation={[ 0, 0, 0 ]}
+          position={[0, 0, 1]}
+          rotation={[ 2 * Math.PI, 0, 6.25 ]}
           flatShading
           map={decal}
         />
@@ -67,12 +68,13 @@ const CubeCanvas = ({ icon }) => {
     <Canvas
       frameloop='demand'
       // shadows
-      camera={{ position: [15, 0, 5], fov: 25 }}
+      camera={{ position: [25, 0, 5], fov: 25 }}
       gl={{ preserveDrawingBuffer: true }}
     >
       <Suspense fallback={<CanvasLoader />}>
         <OrbitControls
           enableZoom={false}
+          autoRotate = {false}
           // maxPolarAngle={Math.PI / 2}
           // minPolarAngle={Math.PI / 2}
         />

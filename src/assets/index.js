@@ -54,7 +54,7 @@ import li from './socials/linkedin-white.svg';
 // Adobe Images
 import adobe_ae from './adobe/after-effects.svg';
 import adobe_xp from './adobe/cc-express.svg';
-import adobe_cc from './adobe/creative-cloud.svg';
+import adobe_cc from './adobe/creative-cloud.png';
 import adobe_il from './adobe/illustrator.svg';
 import adobe_lr from './adobe/lightroom.svg';
 import adobe_ps from './adobe/photoshop.svg';
