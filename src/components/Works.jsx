@@ -10,7 +10,6 @@ import { projects } from "../constants/projects";
 import { fadeIn, textVariant } from "../utils/motion";
 
 const ProjectCard = ({ index, name, description, techs, tags, image, source_code_link, isMobile }) => {
-  console.log(techs);
   return (
     !isMobile ? (
     <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
