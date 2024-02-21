@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Tilt } from "react-tilt";
 import { motion } from "framer-motion";
 // import { Link } from 'react-router-dom';
@@ -12,6 +12,21 @@ import { fadeIn, textVariant } from "../utils/motion";
 
 const Filter = ({ handleFilterChange, filters }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const filterOptionsRef = useRef(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (filterOptionsRef.current && !filterOptionsRef.current.contains(event.target)) {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
 
   // Function to handle click on the filter icon
   const handleIconClick = () => {
@@ -20,7 +35,7 @@ const Filter = ({ handleFilterChange, filters }) => {
   };
 
   return (
-    <div className={`${isOpen ? 'open' : 'close'} filters relative z-10 flex justify-end`}>
+    <div className={`${isOpen ? 'open' : 'close'} filters `} ref={filterOptionsRef}>
       <div className='filter-icon scale-150 cursor-pointer' onClick={handleIconClick}>
         <svg className="h-6 w-6 inline-block" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <line x1={isOpen ? "4" : "18"} y1="6" x2={isOpen ? "20" : "4"} y2="6" stroke="currentColor" strokeWidth="1" />
@@ -162,7 +177,7 @@ const Works = () => {
         )}
       </div>
       <motion.div variants={textVariant()}
-      className="mt-10 px-1">
+      className="mt-10 px-1 relative z-10 flex justify-end">
           <Filter handleFilterChange={handleFilterChange} filters={filters} />
       </motion.div>
       <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">   
