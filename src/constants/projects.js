@@ -18,18 +18,13 @@ export const projects = [
         description:
           "Brand identity design for AInsyte, with a 3D logo and animations. Rendered more than 300 templates, videos and animations for social media content. Design a modern-looking website, and develop a user-friendly frontend interface. Built a robust server infrastructure with an efficient API routing and backend operations, integrating GPT-4 functionality via Openai API, to complete and automate the overall functionality of the website.",
         tags: [
-          {
-            name: "3d-design",
-            color: "text-primary",
-          },
-          {
-            name: "3d-animation",
-            color: "text-secondary",
-          },
-          {
-            name: "live-streaming",
-            color: "text-tertiary",
-          },
+          { name: "Graphic Design"},
+          { name: "Web Design"},
+          { name: "Web Development"},
+          { name: "Motion Graphics"},
+          { name: "Content Creation"},
+          { name: "Videos"},
+          { name: "AI"},
         ],
         techs: [
           {
@@ -91,18 +86,12 @@ export const projects = [
       description:
         "Designed a geometrically refined 2D water drop logo for Drop Music using Adobe Illustrator. Transitioned to advanced 3D design in Maxon Cinema 4D, incorporating a dynamic ripple effect and reflections. The seamless integration of Adobe Suite and 3D graphic software produced a visually striking logo and an animated intro for livestream events.",
       tags: [
-        {
-          name: "3d-design",
-          color: "text-primary",
-        },
-        {
-          name: "3d-animation",
-          color: "text-secondary",
-        },
-        {
-          name: "live-streaming",
-          color: "text-tertiary",
-        },
+        { name: "Graphic Design"},
+        { name: "Motion Graphics"},
+        { name: "Content Creation"},
+        { name: "Live Streaming"},
+        { name: "Videos"},
+        { name: "Event Management"},
       ],
       techs: [
         {
@@ -152,18 +141,13 @@ export const projects = [
       description:
         "Designed Speak 2 Lead's brand with a futuristic visual identity, creating symbolic 3D icons in Adobe Illustrator and animating them in Maxon Cinema 4D. Developed a gamified questionnaire using Adobe Illustrator, Adobe Edge Animate, and Javascript, enhancing the website and promotional materials with high-quality animated assets.",
       tags: [
-        {
-          name: "html",
-          color: "text-primary",
-        },
-        {
-          name: "css",
-          color: "text-secondary",
-        },
-        {
-          name: "js",
-          color: "text-tertiary",
-        },
+        { name: "Graphic Design"},
+        { name: "Web Design"},
+        { name: "Web Development"},
+        { name: "Motion Graphics"},
+        { name: "E-Learning"},
+        { name: "Content Creation"},
+        { name: "Videos"},
       ],
       techs: [
         {
@@ -223,18 +207,9 @@ export const projects = [
       description:
         "Crafted Lovelace Engineering's brand identity from scratch, designing a modern logo symbolizing passion, engineering and DevOp cloud expertise. Developed a vibrant red heart-shaped cloud with moving engineering gears and a simulated blood circulation system in a 2D logo animation using Adobe Creative Cloud.",
       tags: [
-        {
-          name: "adobe-cc",
-          color: "text-primary",
-        },
-        {
-          name: "2d-animation",
-          color: "text-secondary",
-        },
-        {
-          name: "web-dev",
-          color: "text-tertiary",
-        },
+        { name: "Graphic Design"},
+        { name: "Motion Graphics"},
+        { name: "Content Creation"},
       ],
       techs: [
         {
@@ -274,18 +249,11 @@ export const projects = [
       description:
         "Developed Techno Kube brand identity for mnml.amsterdam, an Amsterdam's techno event. I designed all branding material such as Logo, flyers, and promotional content for audiences engagemernt across all social media. I designed and developed a user-friendly frontend web interface with event information and ticket sales. I served as stage manager, ensuring smooth operations and coordination between performers, crew, and attendees.",
       tags: [
-        {
-          name: "html",
-          color: "text-primary",
-        },
-        {
-          name: "css",
-          color: "text-secondary",
-        },
-        {
-          name: "js",
-          color: "text-tertiary",
-        },
+        { name: "Graphic Design"},
+        { name: "Web Design"},
+        { name: "Web Development"},
+        { name: "Content Creation"},
+        { name: "Event Management"},
       ],
       techs: [
         {
@@ -332,18 +300,9 @@ export const projects = [
       description:
         "Developed a clean and user-friendly website for Prasanna Yoga in Rotterdam, adhering to the client's specific guidelines, including a provided logo, color palette, and content. Utilized Adobe Muse for the project, ensuring a responsive layout with a fully translated Dutch version and embedded Google Maps.",
       tags: [
-        {
-          name: "html",
-          color: "text-primary",
-        },
-        {
-          name: "css",
-          color: "text-secondary",
-        },
-        {
-          name: "js",
-          color: "text-tertiary",
-        },
+        { name: "Graphic Design"},
+        { name: "Web Design"},
+        { name: "Web Development"},
       ],
       techs: [
         {

@@ -135,23 +135,19 @@ const Works = () => {
   };
 
   useEffect(() => {
-    console.log("selectedFilters: ", selectedFilters);
     // Set displayed projects to all projects when no filters are selected
     if (selectedFilters.length === 0) {
-      console.log("selectedFilters is empty")
       setDisplayedProjects(projects);
     } else {
-    console.log("useEffect 01 - displayedProjects", displayedProjects)
     // Filter projects based on selected filters
     const filteredProjects = projects.filter((project) => {
       // Check if at least one selected filter is included in the project's techs
       return selectedFilters.some((filter) =>
-        project.techs.map((tech) => tech.name).includes(filter)
+        project.tags.map((tag) => tag.name).includes(filter)
       );
     });
     // Update the displayed projects
     setDisplayedProjects(filteredProjects);
-    console.log("selectedFilters: ", selectedFilters);
   }
   }, [selectedFilters]);
 
