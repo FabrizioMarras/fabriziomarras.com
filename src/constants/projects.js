@@ -24,7 +24,7 @@ export const projects = [
           { name: "Motion Graphics"},
           { name: "Content Creation"},
           { name: "Videos"},
-          { name: "AI"},
+          { name: "Artificial Intelligence"},
         ],
         techs: [
           {
