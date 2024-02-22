@@ -44,9 +44,8 @@ import speak2lead from "./work/s2l.jpg";
 // Pages - Projects
 // Ainsyte
 // Drop
-import drop_01 from './work/drop/drop_01.jpeg';
-import drop_02 from './work/drop/drop_02.jpeg';
-import drop_03 from './work/drop/drop_03.jpeg';
+import drop_01 from './work/drop/1_drop.jpg';
+import drop_02 from './work/drop/2_drop.jpg';
 // Speak2lead
 // Lovelace
 import love_01 from './work/lovelace/lovelace.jpeg';
@@ -127,7 +126,6 @@ export {
   li,
   drop_01,
   drop_02,
-  drop_03,
   success,
   link_external,
   link_internal
