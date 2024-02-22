@@ -16,7 +16,7 @@ const styles = {
       "font-title font-light sm:text-[18px] text-[14px] text-tertiary uppercase tracking-wider text-center",
 
     pageHeadText:
-      "font-title text-secondary font-medium md:text-[40px] sm:text-[28px] xs:text-[24px] text-[18px]",
+      "font-title text-secondary font-medium md:text-[32px] sm:text-[24px] text-[18px]",
 
     pText: 
     "font-body font-light sm:text-[16px] text-[14px] text-white tracking-wider text-center m-auto",

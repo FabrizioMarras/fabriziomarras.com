@@ -20,7 +20,7 @@ import Terms from './pages/Terms';
 const Home = () => {
   
   return (
-    <div className="relative z-0 bg-black">
+    <div className="relative z-0">
       <div>
         <Navbar isHome={true} />
         <Hero />
@@ -31,9 +31,9 @@ const Home = () => {
       <Works />
       <Feedbacks />
       <Contact />
-      <div className="fixed top-[0px] left-[0px] w-full h-screen z-[-1]">
+      {/* <div className="fixed top-[0px] left-[0px] w-full h-screen z-[-1]">
         <StarsCanvas />
-      </div>
+      </div> */}
     </div>
   )
 }
@@ -51,6 +51,10 @@ const App = () => {
           <FmLogo />
           <Footer />
         </footer>
+      
+      <div className="fixed top-[0px] left-[0px] w-full h-screen z-[-1]">
+        <StarsCanvas />
+      </div>
       {/* </div> */}
     </Router>
   )

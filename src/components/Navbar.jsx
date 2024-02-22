@@ -46,7 +46,7 @@ const Navbar = ({ isHome }) => {
           {/* <div className="absolute top-[-50%] left-[-50%]"> */}
             <FmLogo />
           {/* </div> */}
-          <p className="absolute left-20 mb-4 text-white text-[20px] md:text-[22px] font-light uppercase cursor-pointer w-auto whitespace-nowrap tracking-wider">Fabrizio Marras</p>
+          <p className={`absolute left-20 mb-4 text-[20px] md:text-[22px] font-normal uppercase cursor-pointer w-auto whitespace-nowrap tracking-widest text-white`}>Fabrizio Marras</p>
         </Link>
         <ul className="list-none hidden mb-4 sm:flex flex-row gap-4">
           {navLinks.map((link) => (

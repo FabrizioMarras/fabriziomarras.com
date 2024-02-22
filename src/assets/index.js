@@ -36,7 +36,7 @@ import threejs from "./tech/threejs.png";
 import artificial from "./tech/ai.png";
 // Projects
 import ainsyte from "./work/ainsyte.jpg";
-import drop from "./work/drop.jpeg";
+import drop from "./work/drop.jpg";
 import mnml from "./work/mnml.jpg";
 import lovelace from "./work/lovelace.jpg";
 import prasanna from "./work/prasanna.jpg";

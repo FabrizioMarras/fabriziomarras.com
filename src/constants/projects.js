@@ -4,6 +4,7 @@ import {
     lovelace,
     prasanna,
     speak2lead,
+    drop,
     drop_01,
     drop_02,
     drop_03,
@@ -112,7 +113,7 @@ export const projects = [
           img: adobe_pr,
         }
       ],
-      image: drop_01,
+      image: drop,
       link: "",
       link_fm: "/project/Drop-Music-Official",
       content: [
