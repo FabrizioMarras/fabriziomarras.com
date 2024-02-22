@@ -53,7 +53,7 @@ const ExperienceCard = ({ experience }) => (
 
 const Experience = () => {
   return (
-    <div className="mt-12 bg-gray-600/50 rounded-[20px]">
+    <div className="mt-12 bg-zinc-800/50 rounded-[20px]">
     <div className={`bg-black/50 rounded-t-2xl ${styles.padding} min-h-[300px]`} >
       <motion.div initial="hidden" animate="show" variants={textVariant(2.5)}>
          <p className={styles.sectionSubText}>What I have done so far</p>

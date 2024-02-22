@@ -74,12 +74,12 @@ const ProjectCard = ({ index, link, link_fm, name, description, techs, image, is
   animate="show"
   exit="exit">
     {isMobile ? (
-      <div className="bg-gray-800 relative p-5 border-2 border-tertiary rounded-2xl w-full h-full flex flex-col justify-between">
+      <div className="bg-zinc-800/50 relative p-5 border-2 border-tertiary rounded-2xl w-full h-full flex flex-col justify-between">
         <div className="links mx-2 absolute top-3 right-2 flex flex-row flex-nowrap items-center justify-end gap-2">
-          <a className="rounded-full bg-slate-950 p-1.5 w-[24px] shadow-sm shadow-slate-950" href={link_fm} target="_self">
+          <a className="rounded-full bg-zinc-950 p-1.5 w-[24px] shadow-sm shadow-zinc-950" href={link_fm} target="_self">
             <img src={link_internal} alt={name} />
           </a>
-          {link &&  <a className="rounded-full bg-slate-950 p-1.5 w-[24px] shadow-sm shadow-slate-950" href={link} target="_blank">
+          {link &&  <a className="rounded-full bg-zinc-950 p-1.5 w-[24px] shadow-sm shadow-zinc-950" href={link} target="_blank">
             <img src={link_external} alt={name} />
           </a>
           }       
@@ -111,12 +111,12 @@ const ProjectCard = ({ index, link, link_fm, name, description, techs, image, is
         scale: 1,
         speed: 450,
       }}
-      className="bg-gray-800 relative p-5 border-2 border-tertiary rounded-2xl w-full h-full flex flex-col justify-between">
+      className="bg-zinc-800/50 relative p-5 border-2 border-tertiary rounded-2xl w-full h-full flex flex-col justify-between">
         <div className="links mx-2 absolute top-3 right-2 flex flex-row flex-nowrap items-center justify-end gap-2">
-          <a className="rounded-full bg-slate-950 p-1.5 w-[24px] shadow-sm shadow-slate-950" href={link_fm} target="_self">
+          <a className="rounded-full bg-zinc-950 p-1.5 w-[24px] shadow-sm shadow-zinc-950" href={link_fm} target="_self">
             <img src={link_internal} alt={name} />
           </a>
-          {link &&  <a className="rounded-full bg-slate-950 p-1.5 w-[24px] shadow-sm shadow-slate-950" href={link} target="_blank">
+          {link &&  <a className="rounded-full bg-zinc-950 p-1.5 w-[24px] shadow-sm shadow-zinc-950" href={link} target="_blank">
             <img src={link_external} alt={name} />
           </a>
           }       

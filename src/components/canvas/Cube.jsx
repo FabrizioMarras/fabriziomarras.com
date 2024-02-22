@@ -46,7 +46,7 @@ const Cube = (props) => {
         {/* <boxGeometry args={[1, 1, 1]} /> */}
         <icosahedronGeometry args={[1, 1]} />
         <meshStandardMaterial 
-          color={isHovered ? "#ec1d24" : "#2dc4b6"}
+          color={isHovered ? "#f6921f" : "#2dc4b6"}
           polygonOffset
           polygonOffsetFactor={-5}
           flatShading
@@ -80,7 +80,7 @@ const CubeCanvas = ({ icon }) => {
         <OrbitControls
           enableZoom={false}
           autoRotate={shouldAutoRotate}
-          autoRotateSpeed={50}
+          autoRotateSpeed={30}
           // maxPolarAngle={Math.PI / 2}
           // minPolarAngle={Math.PI / 2}
         />

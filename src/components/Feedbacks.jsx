@@ -9,7 +9,7 @@ const FeedbackCard = ({ index, testimonial, name, designation, company, image })
   <motion.div
     variants={fadeIn("", "spring", index * 0.5, 0.75)}
     className="primary-secondary-tertiary-gradient p-[2px] rounded-3xl w-full flex flex-col justify-between">
-    <div className="bg-gray-800 p-6 rounded-3xl w-full h-full flex flex-col justify-between">
+    <div className="bg-zinc-900 p-6 rounded-3xl w-full h-full flex flex-col justify-between">
       <div className="mt-4">
         <p className="text-tertiary font-black text-[82px] testimonials leading-[50px]">"</p>
         <p className="text-white tracking-wider text-[12px] font-light">{testimonial}</p>
@@ -33,7 +33,7 @@ const FeedbackCard = ({ index, testimonial, name, designation, company, image })
 
 const Feedbacks = () => {
   return (
-    <div className="mt-12 bg-gray-600/50 rounded-[20px]">
+    <div className="mt-12 bg-zinc-800/50 rounded-[20px]">
       <div className={`bg-black/50 rounded-t-2xl ${styles.padding} min-h-[300px]`} >
         <motion.div variants={textVariant()}>
           <p className={styles.sectionSubText}>What others say</p>

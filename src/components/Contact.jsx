@@ -106,7 +106,7 @@ const Contact = () => {
           <p className={styles.sectionSubText}>Get in touch</p>
           <h3 className={styles.sectionHeadText}>Contact</h3>
           {showSuccessMessage ? (
-              <div className="mt-12 p-10 border-2 border-tertiary bg-gray-600/50 rounded-xl flex flex-col md:flex-row items-center justify-start gap-8">
+              <div className="mt-12 p-10 border-2 border-tertiary bg-zinc-800/50 rounded-xl flex flex-col md:flex-row items-center justify-start gap-8">
                 <img className="w-[150px]" src={success} alt="Success" />
                 <div className='flex flex-col md:items-start items-center'>
                   <h3 className={`font-medium sm:text-[24px] text-[18px] text-tertiary mb-6`}>Thank you for your message, <span className="text-secondary capitalize">{form.name}</span>.</h3>
@@ -133,7 +133,7 @@ const Contact = () => {
                     value={form.name}
                     onChange={handleChange}
                     placeholder="What's your name?"
-                    className="bg-gray-900 py-4 px-6 placeholder:text-tertiary placeholder:font-thin placeholder:text-[12px] placeholder:italic text-white rounded-lg outline-none border-none font-medium" />
+                    className="bg-zinc-900 py-4 px-6 placeholder:text-tertiary placeholder:font-thin placeholder:text-[12px] placeholder:italic text-white rounded-lg outline-none border-none font-medium" />
                 </label>
                 <label htmlFor="email" className="flex flex-col">
                   <span className='text-white font-medium mb-4'>Your Email Address</span>
@@ -146,7 +146,7 @@ const Contact = () => {
                     value={form.email}
                     onChange={handleChange}
                     placeholder="What's your email?"
-                    className="required:border-red-500 bg-gray-900 py-4 px-6 placeholder:text-tertiary placeholder:font-thin placeholder:italic placeholder:text-[12px] text-white rounded-lg outline-none border-none font-medium" />
+                    className="required:border-red-500 bg-zinc-900 py-4 px-6 placeholder:text-tertiary placeholder:font-thin placeholder:italic placeholder:text-[12px] text-white rounded-lg outline-none border-none font-medium" />
                 </label>
               </div>
 
@@ -163,7 +163,7 @@ const Contact = () => {
                   value={form.message}
                   onChange={handleChange}
                   placeholder="What do you want to say?"
-                  className="bg-gray-900 py-4 px-6 placeholder:text-tertiary placeholder:font-thin placeholder:italic placeholder:text-[12px] text-white rounded-lg outline-none border-none font-medium" />
+                  className="bg-zinc-900 py-4 px-6 placeholder:text-tertiary placeholder:font-thin placeholder:italic placeholder:text-[12px] text-white rounded-lg outline-none border-none font-medium" />
               </label>
               
             </div>
@@ -173,7 +173,7 @@ const Contact = () => {
             <button
               type="submit"
               disabled={!isRecaptchaVerified}
-              className={`${!isRecaptchaVerified ? "opacity-50" : "opacity-100"} bg-gray-700 py-3 px-8 outline-none w-fit text-white font-bold shadow-sm shadow-tertiary rounded-xl`}
+              className={`${!isRecaptchaVerified ? "opacity-50" : "opacity-100"} bg-zinc-600 py-3 px-8 outline-none w-fit text-white font-bold shadow-sm shadow-tertiary rounded-xl`}
             >
               {loading ? "Sending..." : "Send"}
             </button>
@@ -203,7 +203,7 @@ class ReCaptchaComponent extends React.Component {
   render() {
     return (
       <div className="m-2 mt-6 flex gap-2">
-        <input id="captcha" className="appearance-none w-4 h-4 border-2 border-gray-300 rounded-sm bg-gray-700 mt-1 shrink-0 checked:bg-tertiary checked:border-2 checked:border-gray-300" type="checkbox" onChange={this.handleVerifyRecaptcha} />
+        <input id="captcha" className="appearance-none w-4 h-4 border border-gray-300 rounded-sm bg-zinc-900 mt-1 shrink-0 checked:bg-secondary checked:border checked:border-gray-300" type="checkbox" onChange={this.handleVerifyRecaptcha} />
         <label htmlFor="captcha" className="opacity-70 hover:opacity-100 ml-2 text-[14px]"> I have read and agree to the <a href="/terms" className='underline'>Terms and Conditions</a>.</label>
       </div>
     );

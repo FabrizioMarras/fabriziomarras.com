@@ -113,7 +113,7 @@ section {
 }
 
 /* label color on check */
-[type="checkbox"]:checked + label {
+.filters-options [type="checkbox"]:checked + label {
   color: #f6921f; 
   font-weight: 400;
 }

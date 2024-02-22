@@ -104,7 +104,7 @@ const ProjectPage = () => {
           ))}
         </div>
       <div className="relative pt-20 p-4 md:p-20 flex flex-col items-center justify-center">
-        <div className="mt-8 md:mt-10 p-4 md:p-10 rounded-3xl border-2 border-tertiary max-w-[1280px]">
+        <div className="mt-8 md:mt-10 p-4 md:p-10 bg-zinc-800/80 rounded-3xl border-2 border-tertiary max-w-[1280px]">
           <div className='relative w-full h-full min-h-[190px] mb-10'>
             <img src={project.image} alt={project.name} className="w-full h-full object-cover rounded-2xl" />
           </div>
