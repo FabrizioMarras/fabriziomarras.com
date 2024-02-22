@@ -40,9 +40,18 @@ import lovelace from "./work/lovelace.jpg";
 import prasanna from "./work/prasanna.jpg";
 import speak2lead from "./work/s2l.jpg";
 // Pages - Projects
-import drop_01 from './work/drop_01.jpeg';
-import drop_02 from './work/drop_02.jpeg';
-import drop_03 from './work/drop_03.jpeg';
+// Ainsyte
+// Drop
+import drop_01 from './work/drop/drop_01.jpeg';
+import drop_02 from './work/drop/drop_02.jpeg';
+import drop_03 from './work/drop/drop_03.jpeg';
+// Speak2lead
+// Lovelace
+import love_01 from './work/lovelace/lovelace.jpeg';
+// mnml
+// prasanna
+import prasanna_01 from './work/prasanna/prasanna.jpeg';
+
 // Testimonials
 import alessandro from './testimonials/alessandro.png';
 import vaggelis from './testimonials/vaggelis.jpeg';
