@@ -20,7 +20,7 @@ import Terms from './pages/Terms';
 const Home = () => {
   
   return (
-    <>
+    <div className="relative z-0 bg-black">
       <div>
         <Navbar isHome={true} />
         <Hero />
@@ -34,14 +34,14 @@ const Home = () => {
       <div className="fixed top-[0px] left-[0px] w-full h-screen z-[-1]">
         <StarsCanvas />
       </div>
-    </>
+    </div>
   )
 }
 
 const App = () => {
   return (
     <Router>
-      <div className="relative z-0 bg-black">
+      {/* <div className="relative z-0 bg-black"> */}
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/terms" element={<Terms />} />
@@ -51,7 +51,7 @@ const App = () => {
           <FmLogo />
           <Footer />
         </footer>
-      </div>
+      {/* </div> */}
     </Router>
   )
 }

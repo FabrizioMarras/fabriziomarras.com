@@ -61,7 +61,7 @@ const ProjectPage = () => {
 
 
   return (
-    <>
+    <div className="relative z-0 bg-white">
       <Navbar isHomePage={false} />
       <div className="relative w-full h-screen" style={heroImageStyle}>
         <h1 className={`${styles.sectionHeadText} text-white w-full text-center absolute bottom-24 left-[50%] -translate-x-1/2 uppercase`}>{project.name}</h1>
@@ -138,7 +138,7 @@ const ProjectPage = () => {
               variants={textVariant(0.3 * index)}
               className={`${index === 0 ? "w-full max-w-3xl" : "w-full md:w-1/2 pb-8 md:p-12"}`}>
               <motion.h2 variants={slideIn("", "", index, 1)} className={styles.pageHeadText}>{section.title}</motion.h2>
-              <motion.p variants={fadeIn("", "", 0.3 * index, 0.8)}>{section.description}</motion.p>
+              <motion.p variants={fadeIn("", "", 0.3 * index, 0.8)} className='text-slate-950'>{section.description}</motion.p>
             </motion.div>
             <Tilt className="w-full">
               {(section.image || section.video)
@@ -162,8 +162,7 @@ const ProjectPage = () => {
           </motion.section>
         ))}
       </div>
-
-    </>
+    </div>
   );
 };
 
