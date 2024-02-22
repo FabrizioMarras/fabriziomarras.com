@@ -112,10 +112,10 @@ export const projects = [
         }
       ],
       image: drop_01,
-      link: "https://github.com/",
+      link: "",
       content: [
         { title: "The Client",
-          description: "Drop started out as a fundraiser combinining the love for music with the message of raising awareness against plastic by organising events in the heart of Amsterdam. After their first successful party in Club Oak in Leidseplein, they are now hosting a series of livestream events that support the cause and provides useful information, creating a movement that supports music, positivity and our planet."
+          description: "Drop Music Official started out as a fundraiser combinining the love for music with the message of raising awareness against plastic by organising events in the heart of Amsterdam. After their first successful party in Club Oak in Leidseplein, they are now hosting a series of livestream events that support the cause and provides useful information, creating a movement that supports music, positivity and our planet."
         },
         { title: "2D Logo Design",
           description: "The client was looking for a minimal and poligon design of a drop of water to symbolize the delicacy of our ocean. After some research about polygonal shapes and other drop-shaped designs as well as origami, I proposed and designed a 2D version of the logo using Adobe Illustrator and a light blue color-based palette to indicate the connection to clean water.",
@@ -174,7 +174,7 @@ export const projects = [
         }
       ],
       image: speak2lead,
-      source_code_link: "https://github.com/",
+      link: "",
       content: [
         { title: "The Client",
           description: "Today, English is the international language of business. Proficiency in the language as well as the ability to develop personal business skills are keys to success. Companies operating in today’s global market need their teams, managers and leaders to not only be proficient in English, but also to possess strong communication skills, business knowledge and cross-cultural awareness. Speak 2 Lead focus on developing these elements through English with instructor-led classes and eLearning. Speak 2 Lead in-depth feedback and monitoring ensure that learners can master the language and excel in their personal development."
@@ -224,7 +224,7 @@ export const projects = [
         }
       ],
       image: lovelace,
-      source_code_link: "https://github.com/",
+      link: "",
       content: [
         { title: "The Client",
           description: "Lovelace Engineering was founded in 2015 in memory of Ada Lovelace, a great woman, a wonderful scientist, and a free thinker. It provides expert advice and consulting on operational efficiency, modern scalable cloud infrastructure and engineering."
@@ -283,7 +283,7 @@ export const projects = [
         }
       ],
       image: mnml,
-      source_code_link: "https://github.com/",
+      link: "https://mnml.amsterdam/",
       content: [
         { title: "The Client",
           description: "Boipeba is a Bed and Breakfast located in the center of Alghero, in Sardinia, Italy, a few minutes away from the seaside and the historic center. It is an ideal place for young couples, single, groups of friends, but for families as well who want to enjoy a relaxing stay in one of the most enchanting places in Sardinia."
@@ -323,7 +323,7 @@ export const projects = [
         }
       ],
       image: prasanna,
-      source_code_link: "https://github.com/",
+      link: "http://prasannayoga.nl/",
       content: [
         { title: "The Client",
           description: "Prasanna Yoga is a Yoga practice studio situated in the northern side of the city of Rotterdam, The Netherlands. The client was looking for a simple and fresh look for their Yoga school, where customers could find the right and necessary information to be able to attend their favourite yoga class."

@@ -1,10 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
 import { Tilt } from "react-tilt";
 import { motion } from "framer-motion";
-// import { Link } from 'react-router-dom';
 
 import { styles } from "../styles";
-// import { github } from "../assets";
 import { SectionWrapper } from "../hoc";
 import { projects } from "../constants/projects";
 import { filters } from "../constants/filters";
@@ -13,8 +11,6 @@ import { fadeIn, textVariant } from "../utils/motion";
 const Filter = ({ handleFilterChange, filters, selectedFilters }) => {
   const [isOpen, setIsOpen] = useState(false);
   const filterOptionsRef = useRef(null);
-
-  console.log("selectedFilters:", selectedFilters);
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -69,12 +65,13 @@ const Filter = ({ handleFilterChange, filters, selectedFilters }) => {
   )
 }
 
-const ProjectCard = ({ index, name, description, techs, image, isMobile }) => {
+const ProjectCard = ({ index, link, name, description, techs, image, isMobile }) => {
   return (
     <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)}
     initial="hidden"
   animate="show"
   exit="exit">
+    <a href={link ? link : '#projects'} target={link ? "_blank" : "_self"}>
     {isMobile ? (
       <div className="bg-gray-800 p-5 border-2 border-tertiary rounded-2xl w-full h-full flex flex-col justify-between">
       <div>
@@ -126,6 +123,7 @@ const ProjectCard = ({ index, name, description, techs, image, isMobile }) => {
         </div>
       </div>
     </Tilt>)}
+    </a>
     </motion.div>
 )}
 
@@ -178,7 +176,6 @@ const Works = () => {
   }
   }, [selectedFilters]);
 
-  console.log("selectedFilters WORK:", selectedFilters);
   return (
     <>
       <div className="w-full flex flex-col">
