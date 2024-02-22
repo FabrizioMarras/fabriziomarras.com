@@ -47,9 +47,10 @@ const Contact = () => {
       return;
     }
 
-    // logic to send the email
+    // logic to send the email with Hostinger:
+    // Notification to info@fabriziomarras.com
     emailjs.send(
-      'service_8a30snc',
+      'service_9vgd4wk',
       'template_3zo9ewc',
       {
         from_name: form.name,
@@ -60,16 +61,36 @@ const Contact = () => {
       },
       '_ZYbRTFhQiKQlmC8Z'
     )
+
+    // // autoreply to user:
+    // emailjs.send(
+    //   'service_9vgd4wk',
+    //   'template_ag0ieso',
+    //   {
+    //     from_name: "Fabrizio Marras",
+    //     to_name: form.name,
+    //     from_email:'info@fabriziomarras.com',
+    //     to_email:  form.email,
+    //     message: form.message,
+    //   },
+    //   '_ZYbRTFhQiKQlmC8Z'
+    // )
+    // logic to send the email with GMAIL:
+    // emailjs.send(
+    //   'service_8a30snc',
+    //   'template_3zo9ewc',
+    //   {
+    //     from_name: form.name,
+    //     to_name: "Fabrizio Marras",
+    //     from_email: form.email,
+    //     to_email: "info@fabriziomarras.com",
+    //     message: form.message,
+    //   },
+    //   '_ZYbRTFhQiKQlmC8Z'
+    // )
       .then(() => {
         setLoading(false);
         setShowSuccessMessage(true);
-
-        // logic to reset the form to initial state
-        setForm({
-          name: '',
-          email: '',
-          message: ''
-        });
       }, (error) => {
         // logic to set the error in case something went wrong
         setLoading(false);
@@ -85,10 +106,13 @@ const Contact = () => {
           <p className={styles.sectionSubText}>Get in touch</p>
           <h3 className={styles.sectionHeadText}>Contact</h3>
           {showSuccessMessage ? (
-              <div className="mt-12 p-10 border-2 border-tertiary bg-gray-600/50 rounded-xl flex flex-col gap-8">
+              <div className="mt-12 p-10 border-2 border-tertiary bg-gray-600/50 rounded-xl flex flex-col md:flex-row items-center justify-start gap-8">
                 <img className="w-[150px]" src={success} alt="Success" />
-                <h3 className={`font-medium sm:text-[24px] text-[18px] text-tertiary`}>Thank you for your message!</h3>
-                <p className={`${styles.cardSubText}`}>We will get back to you as soon as possible.</p>
+                <div className='flex flex-col md:items-start items-center'>
+                  <h3 className={`font-medium sm:text-[24px] text-[18px] text-tertiary mb-6`}>Thank you for your message, <span className="text-secondary capitalize">{form.name}</span>.</h3>
+                  <p  className="font-medium sm:text-[20px] text-[16px] text-white ">We will get back to you as soon as possible.</p>
+                {/* <p className='font-small sm:text-[16px] text-[12px] text-white'>We will get back to you as soon as possible.</p> */}
+                </div>
               </div>
             ) : (
           <form
