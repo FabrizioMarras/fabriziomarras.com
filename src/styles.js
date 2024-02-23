@@ -12,11 +12,15 @@ const styles = {
   
     sectionHeadText:
       "font-title text-primary font-medium md:text-[60px] sm:text-[40px] xs:text-[30px] text-[30px] text-center",
+    
     sectionSubText:
       "font-title font-light sm:text-[18px] text-[14px] text-tertiary uppercase tracking-wider text-center",
 
     pageHeadText:
-      "font-title text-secondary font-medium md:text-[32px] sm:text-[24px] text-[18px]",
+    "font-title text-tertiary font-bold lg:text-[48px] md:text-[42px] sm:text-[36px] text-[30px] text-center",
+    
+    pageTitleText:
+      "font-title text-secondary font-medium lg:text-[32px] md:text-[28px] sm:text-[24px] text-[20px]",
 
     pText: 
     "font-body font-light sm:text-[16px] text-[14px] text-white tracking-wider text-center m-auto",

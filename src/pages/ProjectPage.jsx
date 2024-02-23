@@ -51,7 +51,6 @@ const ProjectPage = () => {
 
   const navigateToProject = (index) => {
     setCurrentProjectIndex(index);
-    console.log("Navigate", index,projectName )
     // Update the URL
     navigate(`/project/${projects[index].name.replace(/[^\w-]+/g, '-')}`);
   };
@@ -87,8 +86,11 @@ const ProjectPage = () => {
             &rarr;
           </button>
         </motion.div>
-        {/* Indicators */}
-        <div className="z-10 w-full flex flex-nowrap justify-center fixed top-20 gap-2">
+        
+      <div className="relative pt-20 p-4 md:p-20 flex flex-col items-center justify-center">
+        <div className="mt-8 md:mt-10 p-4 md:p-10 bg-zinc-800/80 rounded-3xl border-2 border-tertiary max-w-[1280px]">
+          {/* Indicators */}
+        <div className="z-10 w-full flex flex-nowrap justify-center my-2 md:my-4 mt-[-10px] md:mt-[-20px] gap-2">
           {projects.map((project, index) => (
             <Link
               key={project.id}
@@ -96,20 +98,18 @@ const ProjectPage = () => {
               className="text-white text-opacity-60 hover:text-opacity-100 transition duration-300"
             >
               {index === currentProjectIndex ? (
-                <div className="w-[24px] h-[3px] bg-white rounded-full" />
+                <div className="w-[24px] h-[3px] my-4 bg-white rounded-full" />
               ) : (
-                <div className="w-[24px] h-[3px] rounded-full bg-gray-100/40" />
+                <div className="w-[24px] h-[3px] my-4 rounded-full bg-gray-100/40" />
               )}
             </Link>
           ))}
         </div>
-      <div className="relative pt-20 p-4 md:p-20 flex flex-col items-center justify-center">
-        <div className="mt-8 md:mt-10 p-4 md:p-10 bg-zinc-800/80 rounded-3xl border-2 border-tertiary max-w-[1280px]">
           <div className='relative w-full h-full min-h-[190px] mb-10'>
             <img src={project.image} alt={project.name} className="w-full h-full object-cover rounded-2xl" />
           </div>
       <div className={`max-w-7xl mx-auto relative z-0 px-4`}>
-        <h2 className={`${styles.sectionHeadText}`}>{project.name}</h2>
+        <h1 className={`mb-8 ${styles.pageHeadText}`}>{project.name}</h1>
         {project.content.map((section, index) => (
           (section.image || section.video) ? (
             <motion.section
@@ -118,23 +118,24 @@ const ProjectPage = () => {
             whileInView="show"
             viewport={{ once: true, amount: 0.25}}
             key={`section-${index}`}
-            className={`py-8 flex ${index % 2 === 0 ? 'flex-col lg:flex-row' : 'flex-col lg:flex-row-reverse'}`}>
+            className={`mb-0 lg:mb-8 flex flex-col align-center justify-center ${index % 2 === 0 ? 'lg:flex-row' : ' lg:flex-row-reverse'}`}>
             <motion.div
               variants={textVariant(0.3 * index)}
-              className={`${index === 0 ? "w-full max-w-3xl" : "w-full lg:w-1/2 pb-8 lg:p-12"} ${index % 2 === 0 ? 'lg:pl-0' : 'lg:pr-0'}`}>
-              <motion.h2 variants={slideIn("", "", index, 1)} className={styles.pageHeadText}>{section.title}</motion.h2>
+              className={`mb-8 lg:mb-0 flex flex-col align-center justify-center w-full lg:w-1/2 ${index % 2 === 0 ? 'lg:pr-8 lg:pl-0' : 'lg:pl-8 lg:pr-0'}`}>
+              <motion.h2 variants={slideIn("", "", index, 1)} className={styles.pageTitleText}>{section.title}</motion.h2>
               <motion.p variants={fadeIn("", "", 0.3 * index, 0.8)} className='text-white'>{section.description}</motion.p>
+              {/* {(section.subtitle) && <motion.p variants={fadeIn("", "", 0.3 * index, 0.8)} className='text-tertiary capitalize'>{section.subtitle}: <span className='text-white normal-case'>{section.subdescription}</span></motion.p>} */}
             </motion.div>
             <Tilt className="w-full lg:w-1/2">
               {(section.image || section.video)
                 && (
                   <motion.div 
                   variants={fadeIn("", "", 0.3 * index, 0.8)}
-                    className={`${index !== 0 && "border-2 border-tertiary rounded-xl overflow-hidden w-full h-full min-h-[250px]"}`}>
+                    className={`mb-8 lg:mb-0 ${index !== 0 && "border-2 border-tertiary rounded-xl overflow-hidden w-full h-full min-h-[180px]"}`}>
                     {section.image && <img className="w-full h-full min-h-[180px] object-cover" src={section.image} alt={section.title} />}
                     {section.video && (
                       <iframe
-                        className="w-full h-full md:w-50% min-h-[250px]"
+                        className="w-full h-full md:w-50% min-h-[180px]"
                         src={`https://www.youtube.com/embed/${getYouTubeVideoId(section.video)}`}
                         allow="autoplay; encrypted-media"
                         allowFullScreen
@@ -152,12 +153,13 @@ const ProjectPage = () => {
             whileInView="show"
             viewport={{ once: true, amount: 0.25}}
             key={`section-${index}`}
-            className={`py-8 flex ${index % 2 === 0 ? 'flex-col md:flex-row' : 'flex-col md:flex-row-reverse'}`}>
+            className={`mb-0 lg:mb-8 flex flex-col align-center justify-center ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
             <motion.div
               variants={textVariant(0.3 * index)}
-              className={`${index === 0 ? "w-full max-w-3xl" : "w-full"}`}>
-              <motion.h2 variants={slideIn("", "", index, 1)} className={styles.pageHeadText}>{section.title}</motion.h2>
+              className='w-full mb-8 lg:mb-0'>
+              <motion.h2 variants={slideIn("", "", index, 1)} className={styles.pageTitleText}>{section.title}</motion.h2>
               <motion.p variants={fadeIn("", "", 0.3 * index, 0.8)} className='text-white'>{section.description}</motion.p>
+              {/* {(section.subtitle) && <motion.p variants={fadeIn("", "", 0.3 * index, 0.8)} className='mt-10 font-[18px] text-tertiary capitalize'>{section.subtitle}: <span className='text-white normal-case'>{section.subdescription}</span></motion.p>} */}
             </motion.div>
           </motion.section>
           )
