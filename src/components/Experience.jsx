@@ -13,16 +13,16 @@ const ExperienceCard = ({ experience }) => (
       background: '#00000050',
       borderRadius: '20px',
       color: '#fff',
-      boxShadow: '0px 2px 0px #2dc4b6'
+      boxShadow: `0px 2px 0px ${styles.tertiary}`
     }}
     contentArrowStyle={{
-      borderRight: '12px solid #111827',
+      borderRight: '12px solid rgba(0, 0, 0, 0.314)',
     }}
     date={experience.date}
     iconStyle={{
       background: experience.iconBg,
       backgroundColor: 'rgba(250, 250, 250, 1)',
-      border: '4px solid #2dc4b6',
+      border: `4px solid ${styles.tertiary}`,
       boxShadow: '0 5px 8px 1px rgba(31, 41, 55, .9)'
     }}
     icon={
@@ -60,7 +60,7 @@ const Experience = () => {
         <h2 className={styles.sectionHeadText}>Work Experience</h2>
         <motion.p 
           variants={fadeIn("", "", 0.1, 1)}
-          className={` ${styles.pText} mt-4`}>With a Chemistry degree from Italy, I pursued a Ph.D. in Amsterdam, later contributing six years to impactful research in the chemical industry. Driven by a desire for new challenges, I explored photography and graphic design before transitioning into IT and web development, discovering a profound passion for programming. As a frontend developer, I identified the need for improved organizational efficiency, leading me to step into the role of a project manager. Subsequently, I embraced the position of a product owner in a Marketing Automation company, expanding my skills into marketing. Currently, I'm engaged in AI-driven projects, reflecting my commitment to adaptability and continuous learning at the forefront of technological trends. My journey highlights a diverse skill set and a passion for driving innovative solutions.
+          className={` ${styles.pText} mt-4`}>In 2010 I obtained my Ph.D. in Chemistry at the University of Amsterdam (UvA), later contributing six years to impactful research in the chemical industry. Driven by a desire for new challenges, I explored photography and graphic design before transitioning into IT and web development, discovering a profound passion for programming. As a frontend developer, I identified the need for improved organizational efficiency, leading me to step into the role of a project manager. Subsequently, I embraced the position of a product owner in a Marketing Automation company, expanding my skills into marketing. Currently, I'm engaged in AI-driven projects, reflecting my commitment to adaptability and continuous learning at the forefront of technological trends. My journey highlights a diverse skill set and a passion for driving innovative solutions.
         </motion.p>
       </motion.div>
       </div>
@@ -68,7 +68,7 @@ const Experience = () => {
       <motion.div initial="hidden" animate="show"variants={fadeIn("up", "spring", 0.5, 0.75)}>
       <div className="flkex flex-col">
         <VerticalTimeline
-          lineColor={'#2dc4b6'}>
+          lineColor={styles.tertiary}>
           {experiences.map((experience, index) => (
             <ExperienceCard key={index} experience={experience} />
           ))}

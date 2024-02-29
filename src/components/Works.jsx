@@ -76,10 +76,10 @@ const ProjectCard = ({ index, link, link_fm, name, description, techs, image, is
     {isMobile ? (
       <div className="bg-zinc-800/50 relative p-5 border-2 border-tertiary rounded-2xl w-full h-full flex flex-col justify-between">
         <div className="links mx-2 absolute top-3 right-2 flex flex-row flex-nowrap items-center justify-end gap-2">
-          <a className="rounded-full bg-zinc-950 p-1.5 w-[24px] shadow-sm shadow-zinc-950" href={link_fm} target="_self">
+          <a className="rounded-full bg-tertiary p-2 w-[30px] shadow-sm shadow-tertiary" href={link_fm} target="_self">
             <img src={link_internal} alt={name} />
           </a>
-          {link &&  <a className="rounded-full bg-zinc-950 p-1.5 w-[24px] shadow-sm shadow-zinc-950" href={link} target="_blank">
+          {link &&  <a className="rounded-full bg-tertiary p-2 w-[30px] shadow-sm shadow-tertiary" href={link} target="_blank">
             <img src={link_external} alt={name} />
           </a>
           }       
@@ -93,7 +93,7 @@ const ProjectCard = ({ index, link, link_fm, name, description, techs, image, is
         />
       </div>
       <div className="mt-5">
-        <h3 className="text-tertiary font-bold text-[24px]">{name}</h3>
+        <h3 className="text-secondary font-bold text-[24px]">{name}</h3>
         <p className="mt-2 text-white text-[14px]">{description}</p>
       </div>
       </div>
@@ -113,10 +113,10 @@ const ProjectCard = ({ index, link, link_fm, name, description, techs, image, is
       }}
       className="bg-zinc-800/50 relative p-5 border-2 border-tertiary rounded-2xl w-full h-full flex flex-col justify-between">
         <div className="links mx-2 absolute top-3 right-2 flex flex-row flex-nowrap items-center justify-end gap-2">
-          <a className="rounded-full bg-zinc-950 p-1.5 w-[24px] shadow-sm shadow-zinc-950" href={link_fm} target="_self">
+          <a className="rounded-full bg-tertiary p-2 w-[30px] shadow-sm shadow-tertiary" href={link_fm} target="_self">
             <img src={link_internal} alt={name} />
           </a>
-          {link &&  <a className="rounded-full bg-zinc-950 p-1.5 w-[24px] shadow-sm shadow-zinc-950" href={link} target="_blank">
+          {link &&  <a className="rounded-full bg-tertiary p-2 w-[30px] shadow-sm shadow-ztertiary" href={link} target="_blank">
             <img src={link_external} alt={name} />
           </a>
           }       
@@ -130,7 +130,7 @@ const ProjectCard = ({ index, link, link_fm, name, description, techs, image, is
         />
       </div>
       <div className="mt-5">
-        <h3 className="text-tertiary font-bold text-[24px]">{name}</h3>
+        <h3 className="text-secondary font-bold text-[24px]">{name}</h3>
         <p className="mt-2 text-white text-[14px]">{description}</p>
       </div>
       </div>

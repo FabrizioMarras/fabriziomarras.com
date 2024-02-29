@@ -13,15 +13,16 @@ const heroImg = {
 const Hero = () => {
   return (
     <section className="relative w-full h-screen mx-auto overflow-hidden">
-      <div className={`${styles.paddingX} absolute inset-0 top-[80px] sm:top-[120px] max-w-7xl mx-auto flex flex-col md:flex-row md:justify-center gap-0 sm:gap-5 overflow-hidden`}>
+      {/* <div className={`${styles.paddingX} absolute inset-0 top-[80px] md:top-[120px] max-w-7xl mx-auto flex flex-col md:flex-row md:justify-center gap-0 sm:gap-5 overflow-hidden`}> */}
+      <div className={`${styles.paddingX} absolute left-[50%] translate-x-[-50%] top-[80px] flex flex-col items-center justify-center w-full`}>
         <div className="flex flex-col justify-center md:justify-start items-center mt-5">
           <div className={styles.heroImage}>
             <img src={heroImg.image} alt={heroImg.name} />
           </div>
         </div>
-        <div className="mt-2 md:mt-5 lg:mt-10 flex flex-col items-center md:items-start">
-          <h1 className={`${styles.heroHeadText} uppercase`}>Fabrizio&nbsp;<span className="text-secondary">Marras</span></h1>
-          <p className={`${styles.heroSubText} mt-2`}>Digital Strategy & Innovation Leader</p>
+        <div className="mt-2 flex flex-col items-center">
+          <h1 className={`${styles.HeroName} uppercase`}>Fabrizio&nbsp;<span className="text-orange">Marras</span></h1>
+          <p className={`${styles.heroSubText} mt-2 text-center`}>Digital Strategy & Innovation Leader</p>
         </div>
       </div>
       <div className="w-full h-screen absolute scale-75 md:scale-100 bottom-[-32%]">

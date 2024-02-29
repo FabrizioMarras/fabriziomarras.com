@@ -2,31 +2,13 @@ import React, { Suspense , useState, useEffect } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { Decal, Float, OrbitControls, Preload, useTexture } from '@react-three/drei';
 
+import { styles } from '../../styles';
+
 import CanvasLoader from '../Loader';
 
 const Cube = (props) => {
   const [ decal] = useTexture([props.imgUrl])
   const [ isHovered, setIsHovered ] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    // Add a listener for changes to the screen size
-    const mediaQuery = window.matchMedia('(max-width: 639px)');
-    // Set the initial value of the `isMobile` state variable
-    setIsMobile(mediaQuery.matches);
-    // Define a callback function to handle changes to the media query
-    const handleMediaQueryChange = (event) => {
-      setIsMobile(event.matches);
-    }
-    // Add the callback function as a listener for changes to the media query
-    mediaQuery.addEventListener('change',
-    handleMediaQueryChange)
-    // Remove the listener when the component is unmounted
-    return () => {
-      mediaQuery.removeEventListener('change',
-      handleMediaQueryChange)
-    }
-  }, [])
 
   return (
     <Float
@@ -46,11 +28,12 @@ const Cube = (props) => {
         {/* <boxGeometry args={[1, 1, 1]} /> */}
         <icosahedronGeometry args={[1, 1]} />
         <meshStandardMaterial 
-          color={isHovered ? "#f6921f" : "#2dc4b6"}
+          color={isHovered ? styles.secondary : styles.tertiary}
           polygonOffset
           polygonOffsetFactor={-5}
           flatShading
-          wireframe={isMobile ? false : true}
+          // wireframe={isMobile ? false : true}
+          wireframe={false}
         />
         <Decal 
           position={[0, 0, 1]}

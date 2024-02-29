@@ -8,6 +8,7 @@ import Navbar from '../components/Navbar';
 import { projects } from '../constants/projects';
 import { styles } from '../styles';
 import { staggerContainer, slideIn, fadeIn, textVariant } from '../utils/motion';
+import { arrow } from '../assets';
 
 const ProjectPage = () => {
   const { projectName } = useParams();
@@ -58,115 +59,172 @@ const ProjectPage = () => {
   const nextProjectIndex = (currentProjectIndex + 1) % projects.length;
   const prevProjectIndex = (currentProjectIndex - 1 + projects.length) % projects.length;
 
+  function ProjectSelector() {
+    const [showIndicator, setShowIndicator] = useState(true);
+  
+    useEffect(() => {
+      function handleScroll() {
+        const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
+  
+        // Calculate how far the user has scrolled from the top
+        const scrolledToBottom = scrollTop + clientHeight >= scrollHeight;
+  
+        // Set showIndicator state based on scroll position
+        setShowIndicator(!scrolledToBottom);
+      }
+  
+      // Add scroll event listener
+      window.addEventListener('scroll', handleScroll);
+  
+      // Remove event listener on component unmount
+      return () => {
+        window.removeEventListener('scroll', handleScroll);
+      };
+    }, []); // Empty dependency array means this effect runs only once, on component mount
+  
+    return (
+      <div style={{ display: showIndicator ? 'block' : 'none' }}>
+        <div className="z-10 bg-black/80 w-full flex flex-nowrap items-center justify-center gap-2 fixed bottom-0 h-[calc(100vh - 100px)]">
+           {/* Arrows */}
+           <motion.div
+            animate={{
+              x: [0, -8, 0],
+              y: [0, 0, 0]
+            }}
+            transition={{
+              duration: 1.5,
+              repeat: Infinity,
+              repeatType: 'reverse',
+              ease: "easeInOut",
+            }}
+            className="fixed left-0 bottom-0 h-[calc(100vh - 100px)] w-full my-8 p-2 md:p-4 flex justify-between items-center text-[24px]">
+            <button
+              aria-label="Previous Prtoject"
+              className="w-[20px] h-[20px] md:w-[24px] md:h-[24px] text-white/40 hover:text-white" onClick={() => navigateToProject(prevProjectIndex)}>
+              <img className="rotate-180 w-full h-full object-fit" src={arrow} alt='back' />
+            </button>
+          </motion.div>
+          <motion.div
+            animate={{
+              x: [0, -8, 0],
+              y: [0, 0, 0]
+            }}
+            transition={{
+              duration: 1.5,
+              repeat: Infinity,
+              repeatType: 'reverse',
+              ease: "easeInOut",
+            }}
+            className="fixed right-0 bottom-0 h-[calc(100vh - 100px)] my-8 p-2 md:p-4 flex justify-between items-center text-[24px]">
+            <button
+              aria-label="Next Project"
+              className="w-[20px] h-[20px] md:w-[24px] md:h-[24px] text-white/40 hover:text-white" onClick={() => navigateToProject(nextProjectIndex)}>
+              <img className="rotate-0 w-full h-full object-fit" src={arrow} alt='back' />
+            </button>
+          </motion.div>
+        {/* End Arrows*/}
+         {/* Indicators */}
+          {projects.map((project, index) => (
+              <Link
+                key={project.id}
+                to={`/project/${projects[index].name.replace(/[^\w-]+/g, '-')}`}
+                className="text-white text-opacity-60 hover:text-opacity-100 transition duration-300"
+              >
+                {index === currentProjectIndex ? (
+                  <div className='my-8 relative w-[40px] md:w-[70px] h-full border-2 border-tertiary rounded-sm md:rounded-md overflow-hidden'>
+                    <img src={project.image} alt={project.name} className="w-full h-full object-cover" />
+                  </div>
+                ) : (
+                  // <div className="w-[24px] h-[3px] my-4 rounded-full bg-gray-100/40" />
+                  <div className='my-8 relative w-[26px] md:w-[40px] h-full max-h-[50px] opacity-70 rounded-sm md:rounded-md overflow-hidden'>
+                    <img src={project.image} alt={project.name} className="w-full h-full object-cover" />
+                  </div>
+                )}
+              </Link>
+            ))}
+          {/* end Indicators */}
+          </div>
+        </div>
+    );
+  }
+
 
   return (
     <>
-      <Navbar isHomePage={false} />
-      {/* Navigation buttons */}
-      <motion.div
-          animate={{
-            x: [0, -8, 0],
-            y: [0, 0, 0]
-          }}
-          transition={{
-            duration: 1.5,
-            repeat: Infinity,
-            repeatType: 'reverse',
-            ease: "easeInOut",
-          }}
-          className="z-10 fixed top-[50%] w-full p-4 md:p-6 flex justify-between items-center text-[24px]">
-          <button
-            aria-label="Previous Prtoject"
-            className="w-[32px] h-[32px] md:w-[64px] md:h-[64px] text-white/40 hover:text-white" onClick={() => navigateToProject(prevProjectIndex)}>
-            &larr;
-          </button>
-          <button
-            aria-label="Next Project"
-            className="w-[32px] h-[32px] md:w-[64px] md:h-[64px] text-white/40 hover:text-white" onClick={() => navigateToProject(nextProjectIndex)}>
-            &rarr;
-          </button>
-        </motion.div>
-        
-      <div className="relative pt-20 p-4 md:p-20 flex flex-col items-center justify-center">
-        <div className="mt-8 md:mt-10 p-4 md:p-10 bg-zinc-800/80 rounded-3xl border-2 border-tertiary max-w-[1280px]">
-          {/* Indicators */}
-        <div className="z-10 w-full flex flex-nowrap justify-center my-2 md:my-4 mt-[-10px] md:mt-[-20px] gap-2">
-          {projects.map((project, index) => (
-            <Link
-              key={project.id}
-              to={`/project/${projects[index].name.replace(/[^\w-]+/g, '-')}`}
-              className="text-white text-opacity-60 hover:text-opacity-100 transition duration-300"
-            >
-              {index === currentProjectIndex ? (
-                <div className="w-[24px] h-[3px] my-4 bg-white rounded-full" />
-              ) : (
-                <div className="w-[24px] h-[3px] my-4 rounded-full bg-gray-100/40" />
-              )}
-            </Link>
+    <Navbar isHomePage={false} />
+    <ProjectSelector />
+    <div className="relative pt-20 p-4 sm:p-20 md:p-10 lg:p-20 flex flex-col items-center justify-center">
+      <div className="mt-8 md:mt-10 p-4 xs:p-10 bg-black/80 rounded-3xl border-2 border-tertiary max-w-[1280px]">
+        <div>
+          <h1 className={`${styles.sectionHeadText}`}>{project.name}</h1>
+          <div className='flex flex-col lg:flex-row items-center justify-center'>
+            <div className='my-8 relative w-full h-full lg:w-1/2 min-h-[190px]'>
+              <img src={project.image} alt={project.name} className="w-full h-full object-cover rounded-2xl" />
+            </div>
+            <div className='w-full lg:w-1/2 lg:pl-8'>
+              {project.header.map((header, index) => (
+                <div key={index} className='my-8'>
+                  <h2 className={styles.pageTitleText}>{header.title}</h2>
+                  <p className='text-white'>{header.description}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="mt-8 md:mt-10 p-4 xs:p-10 bg-zinc-800/80 rounded-3xl border-2 border-tertiary max-w-[1280px]">
+        <div>
+          <h2 className={styles.pageTitleText}>The Work</h2>
+          {project.work.map((work, index) => (
+            (work.image || work.video) ? (
+              <motion.section
+                variants={staggerContainer()}
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: true, amount: 0.25}}
+                key={index} className={`my-8 flex flex-col items-center justify-center ${index % 2 === 0 ? 'md:flex-row' : ' md:flex-row-reverse'}`}>
+                <div className="w-full lg:w-1/2">
+                    <motion.div 
+                      variants={fadeIn("", "", 0.3 * index, 0.8)}
+                      className={`mb-0 border-2 border-tertiary rounded-xl overflow-hidden w-full h-full min-h-[180px]`}>
+                      {work.image && <img className="w-full h-full min-h-[180px] object-cover" src={work.image} alt={work.title} />}
+                      {work.video && (
+                        <iframe
+                          className="w-full h-full md:w-50% min-h-[180px] xs:min-h-[300px] lg:min-h-[445px]"
+                          src={`https://www.youtube.com/embed/${getYouTubeVideoId(work.video)}`}
+                          allow="autoplay; encrypted-media"
+                          allowFullScreen
+                          title={work.title}
+                        />
+                      )}
+                    </motion.div>
+                </div>
+                <motion.div
+                  variants={textVariant(0.3 * index)} className={`my-4 w-full lg:w-1/2 ${index % 2 === 0 ? 'md:pl-8' : ' md:pr-8'}`}>
+                  <motion.h3 variants={slideIn("", "", index, 1)} className={styles.pageWorkTitleText}>{work.title}</motion.h3>
+                  <motion.p variants={fadeIn("", "", 0.3 * index, 0.8)} className='text-white'>{work.description}</motion.p>
+                </motion.div>  
+              </motion.section>
+            ) : (
+              // <div key={index}>
+              <motion.section
+                variants={staggerContainer()}
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: true, amount: 0.25}}
+                key={`section-${index}`}
+                >
+              <motion.div
+                  variants={textVariant(0.3 * index)} className={`my-4`}>
+                  <motion.h3 variants={slideIn("", "", index, 1)} className={styles.pageWorkTitleText}>{work.title}</motion.h3>
+                  <motion.p variants={fadeIn("", "", 0.3 * index, 0.8)} className='text-white'>{work.description}</motion.p>
+                </motion.div>  
+            </motion.section>
+            )
           ))}
         </div>
-          <div className='relative w-full h-full min-h-[190px] mb-10'>
-            <img src={project.image} alt={project.name} className="w-full h-full object-cover rounded-2xl" />
-          </div>
-      <div className={`max-w-7xl mx-auto relative z-0 px-4`}>
-        <h1 className={`mb-8 ${styles.pageHeadText}`}>{project.name}</h1>
-        {project.content.map((section, index) => (
-          (section.image || section.video) ? (
-            <motion.section
-            variants={staggerContainer()}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true, amount: 0.25}}
-            key={`section-${index}`}
-            className={`mb-0 lg:mb-8 flex flex-col align-center justify-center ${index % 2 === 0 ? 'lg:flex-row' : ' lg:flex-row-reverse'}`}>
-            <motion.div
-              variants={textVariant(0.3 * index)}
-              className={`mb-8 lg:mb-0 flex flex-col align-center justify-center w-full lg:w-1/2 ${index % 2 === 0 ? 'lg:pr-8 lg:pl-0' : 'lg:pl-8 lg:pr-0'}`}>
-              <motion.h2 variants={slideIn("", "", index, 1)} className={styles.pageTitleText}>{section.title}</motion.h2>
-              <motion.p variants={fadeIn("", "", 0.3 * index, 0.8)} className='text-white'>{section.description}</motion.p>
-              {/* {(section.subtitle) && <motion.p variants={fadeIn("", "", 0.3 * index, 0.8)} className='text-tertiary capitalize'>{section.subtitle}: <span className='text-white normal-case'>{section.subdescription}</span></motion.p>} */}
-            </motion.div>
-            <Tilt className="w-full lg:w-1/2">
-              {(section.image || section.video)
-                && (
-                  <motion.div 
-                  variants={fadeIn("", "", 0.3 * index, 0.8)}
-                    className={`mb-8 lg:mb-0 ${index !== 0 && "border-2 border-tertiary rounded-xl overflow-hidden w-full h-full min-h-[180px]"}`}>
-                    {section.image && <img className="w-full h-full min-h-[180px] object-cover" src={section.image} alt={section.title} />}
-                    {section.video && (
-                      <iframe
-                        className="w-full h-full md:w-50% min-h-[180px]"
-                        src={`https://www.youtube.com/embed/${getYouTubeVideoId(section.video)}`}
-                        allow="autoplay; encrypted-media"
-                        allowFullScreen
-                        title={section.title}
-                      />
-                    )}
-                  </motion.div>
-                )}
-            </Tilt>
-          </motion.section>
-          ) : (
-            <motion.section
-            variants={staggerContainer()}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true, amount: 0.25}}
-            key={`section-${index}`}
-            className={`mb-0 lg:mb-8 flex flex-col align-center justify-center ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
-            <motion.div
-              variants={textVariant(0.3 * index)}
-              className='w-full mb-8 lg:mb-0'>
-              <motion.h2 variants={slideIn("", "", index, 1)} className={styles.pageTitleText}>{section.title}</motion.h2>
-              <motion.p variants={fadeIn("", "", 0.3 * index, 0.8)} className='text-white'>{section.description}</motion.p>
-              {/* {(section.subtitle) && <motion.p variants={fadeIn("", "", 0.3 * index, 0.8)} className='mt-10 font-[18px] text-tertiary capitalize'>{section.subtitle}: <span className='text-white normal-case'>{section.subdescription}</span></motion.p>} */}
-            </motion.div>
-          </motion.section>
-          )
-        ))}
       </div>
-      </div>
-      </div>
+    </div>
     </>
   );
 };

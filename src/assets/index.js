@@ -6,6 +6,7 @@ import hero_hover from "./Hero_hover.png";
 import success from "./success.png";
 import link_external from "./external_link.png";
 import link_internal from "./internal_link.png";
+import arrow from "./arrow.png";
 // About
 import leadership from "./about/leadership.svg";
 import creativity from "./about/creativity.svg";
@@ -74,6 +75,7 @@ import cinema4d from './adobe/cinema4d.svg';
 
 export {
   ainsyte,
+  arrow,
   blender,
   cinema4d,
   adobe_ae,

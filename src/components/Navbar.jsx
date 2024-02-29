@@ -36,17 +36,13 @@ const Navbar = ({ isHome }) => {
       <div className="w-full flex justify-between items-center max-w-7xl mx-auto">
         <Link
           to="/"
-          // className="flex items-center gap-4 z-20"
           className="relative flex -ml-[40px] items-center justify-center w-[100px] h-[100px] z-20"
           onClick={() => {
             setActive("");
             window.scrollTo(0, 0);
           }}>
-          {/* <img src={logo} alt="logo" className="w-7 h-7 object-contain" /> */}
-          {/* <div className="absolute top-[-50%] left-[-50%]"> */}
             <FmLogo />
-          {/* </div> */}
-          <p className={`absolute left-20 mb-4 text-[20px] md:text-[22px] font-normal uppercase cursor-pointer w-auto whitespace-nowrap tracking-widest text-white`}>Fabrizio Marras</p>
+          <p className={`absolute left-20 mb-4 text-[18px] md:text-[20px] font-normal uppercase cursor-pointer w-auto whitespace-nowrap tracking-widest text-red`}>Fabrizio <span className='text-orange'>Marras</span></p>
         </Link>
         <ul className="list-none hidden mb-4 sm:flex flex-row gap-4">
           {navLinks.map((link) => (

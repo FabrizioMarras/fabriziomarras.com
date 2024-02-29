@@ -16,7 +16,7 @@ import {
 
 const technologies = [
     {
-      name: "Adobe Creative Cloud",
+      name: "Adobe CC",
       icon: adobe_cc,
     },
     {

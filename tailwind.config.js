@@ -9,9 +9,12 @@ module.exports = {
         'body': ['"Open Sans"', 'sans-serif'] // Ensure fonts with spaces have " " surrounding it.
       },
       colors: {
-        primary: "#ec1d24", // Red
-        secondary: "#f6921f", //Orange
-        tertiary: "#2dc4b6", // water
+        primary: "#6f42c1", // Purple 
+        secondary: "#217ec4", //light blue
+        tertiary: "#46739a", // opaque blue
+        red: '#ec1d24', // Red
+        orange: '#f6921f', // Orange
+        water: '#2dc4b6' // Water
       },
       boxShadow: {
         card: "0px 35px 120px -15px #211e35",
@@ -26,3 +29,4 @@ module.exports = {
   },
   plugins: [],
 };
+

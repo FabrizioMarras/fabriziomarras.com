@@ -59,14 +59,15 @@ export const projects = [
         image: ainsyte,
         link: "https://ainsyte.com/",
         link_fm: "/project/Ainsyte",
-        content: [
+        header: [
           { title: "The Client",
-            description: "Ainsyte is a platform that leverages AI to provide comprehensive personality, astrology, numerology, and metaphysical analyses, aiding users in understanding their individual traits, strengths, weaknesses, and avenues for personal development.",
+            description: "Ainsyte is a platform that leverages AI to provide personality, astrology, numerology, and metaphysical analyses, helping understanding people individual traits, strengths, weaknesses for personal growth.",
           },
           {
             title: 'The Challenge',
-            description: 'a comprehensive brand identity solution encompassing logo design, 2D/3D animation, and graphic design for website and social media. Demanded full-stack development of website with AI integration, emphasizing minimalist design.',
-          },
+            description: 'Create a brand digital footprint designing logos, 2D and 3D graphics and animations for the web and social media. Develop a full-stack website with various inventories powered by Artificial Intelligence.',
+          }],
+        work: [
           { title: "2D Logo Design",
             description: "The client was looking for a minimal and poligon design of a drop of water to symbolize the delicacy of our ocean. After some research about polygonal shapes and other drop-shaped designs as well as origami, I proposed and designed a 2D version of the logo using Adobe Illustrator and a light blue color-based palette to indicate the connection to clean water.",
             image: drop_02,
@@ -119,14 +120,15 @@ export const projects = [
       image: drop,
       link: "",
       link_fm: "/project/Drop-Music-Official",
-      content: [
+      header : [
         { title: "The Client",
-          description: "Drop Music Official started out as a fundraiser combining the love for music with the message of raising awareness against plastic by organising events in the heart of Amsterdam. After their first successful party in Club Oak in Leidseplein, they are now hosting a series of livestream events that support the cause and provides useful information, creating a movement that supports music, positivity and our planet.",
+          description: "Drop Music Official is an music event organisation based in the Netherlands and collaborate with other international organisations that shares the love for music.",
         },
         {
           title: 'The Challenge',
           description: 'a unique brand identity including logo design and animations. Requested graphic and video content for social media and assistance with live streaming event setup at chosen location.',
-        },
+        }],
+      work: [
         { title: "2D Logo Design",
           description: "The client was looking for a minimal and poligon design of a drop of water to symbolize the delicacy of our ocean. After some research about polygonal shapes and other drop-shaped designs as well as origami, I proposed and designed a 2D version of the logo using Adobe Illustrator and a light blue color-based palette to indicate the connection to clean water.",
           image: drop_01,
@@ -186,14 +188,15 @@ export const projects = [
       image: speak2lead,
       link: "",
       link_fm: "/project/Speak-2-Lead",
-      content: [
+      header: [
         { title: "The Client",
           description: "Speak 2 Lead delivers tailored e-learning solutions designed to enhance business language proficiency and communication skills among corporate professionals. Through gamification strategies, they optimize engagement and facilitate effective learning outcomes.",
         },
         {
           title: 'The Challenge',
           description: 'a strong brand identity solution with logo design and animations. Needed website and e-learning platform design and development with interactive games like snakes and ladders, focusing on user engagement.',
-        },
+        }],
+      work: [
         { title: "3D Icons Design",
           description: "Elearning brought the classical learning methodology to a more modern and futuristic aspect of learning using a virtual oriented experience. For this reason, the client asked me to bring their existing brand to a more futuristic and technological look, with the addition of 3D and animated imagery that could represent their vision and mission. As first step towards the client needs, I designed and created 3 icons which symbolise the company name and vision: 1) the speech bubble indicating their aim to bring the client toward more confident and highly skilled speaking, 2) the horse - already present in their logo - used as symbol for business leaders, and 3) the chess pattern piece symbolising the strategic learning experience. The 3 icons were first created as vector graphics in Adobe Illustrator and later on imported and developed as 3D images in Maxxon Cinema 4D. Simple splines, extrude, and materials were created and applied to each icon. An external camera and few lights, including some colored light to put in evidence some outlines, were added to the scene.",
           image:"",
@@ -241,14 +244,15 @@ export const projects = [
       image: lovelace,
       link: "",
       link_fm: "/project/Lovelace",
-      content: [
+      header: [
         { title: "The Client",
           description: "Lovelace Engineering was founded in 2015 in memory of Ada Lovelace, a great woman, a wonderful scientist, and a free thinker. It provides expert advice and consulting on operational efficiency, modern scalable cloud infrastructure and engineering. It specializes in cloud-native solutions, leveraging extensive expertise in cloud infrastructure and Kubernetes. Their advanced architectures ensure scalability and resilience, empowering businesses to thrive in the digital landscape.",
         },
         {
           title: 'The Challenge',
           description: 'a cohesive brand identity solution including logo, business cards, letters, and website design to reflect company ethos and professionalism.'
-        },
+        }],
+      work: [
         { title: "2D Logo Design",
           description: 'The client requested a new and modern looking logo which could reflect the meaning of the company name and brand, therefore including "passion" for "engineering" and their DevOp "cloud" expertise. After a brainstorming sessions with the client, and couple of sketches, the idea was set: a heart alimented by engineering gears originating a final shape of a cloud. After refining the sketches, I created the final logo as vector graphic in Adobe Illustrator, where the shapes and color palette where combined into the final product. The client wanted to use a bright color, and together we decided to go for a bright red, as it is used usually for symbolising hearts, love and passion.',
           image:"",
@@ -305,14 +309,15 @@ export const projects = [
       image: mnml,
       link: "https://mnml.amsterdam/",
       link_fm: "/project/Techno-Kube",
-      content: [
+      header: [
         { title: "The Client",
           description: "mnml.amsterdam is an event management and booking agency company specializing in techno events across Amsterdam. From event planning to artist booking and music production, they deliver exceptional experiences for techno enthusiasts in nightclubs and festivals.",
         },
         {
           title: 'The Challenge',
           description: 'For Techno Kube nights the client requested a distinct brand identity solution with logo design and a single page website. The website needed to include the event showcase, ticket sales, and music player integration. The client also required assistance with event logistics, a booking agent and a stage manager.'
-        },
+        }],
+      work: [
         { title: "The Website",
           description: "Few important points were imposed by the client: 1) a simple and bright design which reflected the summer season and the interests of their business customers, 2) two languages - english as the main language as to attract more foreign customers but also italian in order to not limit the possibility of national tourism, and 3) the color palette which was already part of their print marketing material. The first part of the project consisted of creating a wireframe of the full website using Adobe illustrator. The project wireframe was then exported to Adobe Muse where the full website was created with scrolling sections, single page and multipage layouts. The last and final step toward the complete project was the creations of breakpoints on Adobe Muse for a fully responsive and mobile device compatible design, which included the description of the business, available accommodations, location, and a descriptive page regarding the host.",
           image:"",
@@ -350,14 +355,15 @@ export const projects = [
       image: prasanna,
       link: "http://prasannayoga.nl/",
       link_fm: "/project/Prasanna",
-      content: [
+      header: [
         { title: "The Client",
           description: "Prasanna Yoga is a Yoga practice studio situated in the northern side of the city of Rotterdam, The Netherlands. They offers transformative yoga practices aimed at fostering inner peace and holistic well-being. Rooted in tradition, their teachings guide students towards physical and mental alignment, facilitating a harmonious and balanced lifestyle.",
         },
         {
           title: 'The Challenge',
           description: 'a multilingual website solution for class scheduling and information dissemination. Required a user-friendly interface for both teachers and students in English and Dutch languages.'
-        },
+        }],
+      work: [
         { title: "The Website",
           description: "The design followed strict recommendations from the client, who provided a logo, color palette, images, content and full structure of the website, including a fully translated version of the site content. After gathering all the necessary and given information, and assets, I created the final version of the project using Adobe Muse, including a Dutch translated version of the website and I embedded google maps linking to the yoga classroom location, contact links, in a mobile device friendly and responsive layout.",
           image:"",
