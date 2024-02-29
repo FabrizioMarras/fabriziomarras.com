@@ -21,7 +21,7 @@ const Hero = () => {
           </div>
         </div>
         <div className="mt-2 flex flex-col items-center">
-          <h1 className={`${styles.HeroName} uppercase`}>Fabrizio&nbsp;<span className="text-orange">Marras</span></h1>
+          <h1 className={`${styles.HeroName} uppercase`}>Fabrizio&nbsp;<span className="text-primary">Marras</span></h1>
           <p className={`${styles.heroSubText} mt-2 text-center`}>Digital Strategy & Innovation Leader</p>
         </div>
       </div>

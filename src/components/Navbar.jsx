@@ -41,15 +41,15 @@ const Navbar = ({ isHome }) => {
             setActive("");
             window.scrollTo(0, 0);
           }}>
-            <FmLogo />
-          <p className={`absolute left-20 mb-4 text-[18px] md:text-[20px] font-normal uppercase cursor-pointer w-auto whitespace-nowrap tracking-widest text-red`}>Fabrizio <span className='text-orange'>Marras</span></p>
+            <FmLogo autoRotation={true} />
+          <p className={`absolute left-20 mb-4 text-[18px] md:text-[20px] font-normal uppercase cursor-pointer w-auto whitespace-nowrap tracking-widest text-secondary`}>Fabrizio <span className='text-primary'>Marras</span></p>
         </Link>
         <ul className="list-none hidden mb-4 sm:flex flex-row gap-4">
           {navLinks.map((link) => (
             <li
               className={`${active === link.title
                   ? 'text-secondary'
-                  : 'text-white'
+                  : 'text-tertiary'
                 } hover:text-primary text-[16px] font-light cursor-pointer`}
               key={link.id}
               onClick={() => {
@@ -73,7 +73,7 @@ const Navbar = ({ isHome }) => {
                 <li
                   className={`${active === link.title
                       ? 'text-secondary'
-                      : 'text-white'
+                      : 'text-tertiary'
                     } font-body text-[18px] cursor-pointer`}
                   key={link.id}
                   onClick={() => {

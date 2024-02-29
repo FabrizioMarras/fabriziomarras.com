@@ -2,16 +2,17 @@ import {
     alessandro,
     vaggelis,
     massimo,
+    tim,
 } from "../assets";
 
 const testimonials = [
     {
       testimonial:
-        "Fabrizio's creative, inventive and inquisitive mind help immensely to get the projects we shared at the University of Amsterdam through the hurdles that every chemist find on his/her way. He's an hard worker but he know how to keep a balance and when it's time to stop, step back, relax and start over from a fresh perspective. I miss working with him!",
-      name: "Alessandro Vozza",
-      designation: "Developer Relations",
-      company: "Solo.io",
-      image: alessandro,
+        "As a technical product manager, Fabrizio consistently demonstrated a passionate dedication to his work and a strong work ethic. He played an important role in technical projects with clients, ensuring that each project was aligned with their needs and objectives. One of Fabrizio's standout qualities was his commitment to providing honest and clear feedback to clients. He understood the importance of transparent communication in building strong relationships and fostering trust. Fabrizio's ability to articulate technical concepts in a straightforward manner helped clients make informed decisions and navigate complex projects with confidence.",
+      name: "Tim Hubers",
+      designation: "Co-Founder | Managing Partner",
+      company: "Penfield Assist Digital",
+      image: tim,
     },
     {
       testimonial:

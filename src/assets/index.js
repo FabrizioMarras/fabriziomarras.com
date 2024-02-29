@@ -58,6 +58,7 @@ import prasanna_01 from './work/prasanna/prasanna.jpeg';
 import alessandro from './testimonials/alessandro.png';
 import vaggelis from './testimonials/vaggelis.jpeg';
 import massimo from './testimonials/massimo.jpeg';
+import tim from './testimonials/tim.jpeg';
 //Socials
 import gh from './socials/github-white.svg';
 import yt from './socials/youtube-white.svg';
@@ -123,6 +124,7 @@ export {
   alessandro,
   vaggelis,
   massimo,
+  tim,
   gh,
   yt,
   li,
