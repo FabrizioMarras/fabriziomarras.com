@@ -33,7 +33,7 @@ const Filter = ({ handleFilterChange, filters, selectedFilters }) => {
 
   };
   // Determine the color of the icon based on whether there are selected filters
-  const iconColor = selectedFilters.length === 0 ? "currentColor" : "#217ec4";
+  const iconColor = selectedFilters.length === 0 ? "#46739a" : "#217ec4";
 
   return (
     <div className={`${isOpen ? 'open' : 'close'} filters `} ref={filterOptionsRef}>
