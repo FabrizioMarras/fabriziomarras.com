@@ -1,12 +1,12 @@
 import {
-    assist,
-    floyd,
-    fm,
-    hexion,
-    pirates,
-    speak,
-    wfp,
-} from "../assets";
+  assist,
+  floyd,
+  fm,
+  hexion,
+  pirates,
+  speak,
+  wfp,
+} from "../assets/experience";
 
 const experiences = [
     {

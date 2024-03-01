@@ -1,13 +1,12 @@
 import { motion } from 'framer-motion'
 
 import { styles } from '../styles';
-import { hero, hero_hover, } from '../assets';
+import { hero } from '../assets';
 import { FmLogo } from '../components';
 
 const heroImg = {
   name: "Fabrizio Marras",
   image: hero,
-  image_hover: hero_hover
 }
 
 const Hero = () => {

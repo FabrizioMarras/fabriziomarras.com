@@ -1,6 +1,6 @@
 import {
     gh,yt,li,
-  } from "../assets";
+  } from "../assets/socials";
 
   export const navLinks = [
     {

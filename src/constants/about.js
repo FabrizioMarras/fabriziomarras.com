@@ -1,11 +1,11 @@
 import {
-    leadership,
-    creativity,
-    communication,
-    agile,
-    ai,
-    development,
-} from "../assets";
+  leadership,
+  creativity,
+  communication,
+  agile,
+  ai,
+  development,
+} from "../assets/about";
 
 const services = [
     {

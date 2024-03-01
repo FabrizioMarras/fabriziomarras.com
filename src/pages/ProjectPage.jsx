@@ -5,10 +5,10 @@ import { motion } from 'framer-motion';
 import { Tilt } from 'react-tilt';
 
 import Navbar from '../components/Navbar';
-import { projects } from '../constants/projects';
+// import { projects } from '../constants/projects';
 import { styles } from '../styles';
 import { staggerContainer, slideIn, fadeIn, textVariant } from '../utils/motion';
-import { arrow } from '../assets';
+// import { arrow } from '../assets';
 
 const ProjectPage = () => {
   const { projectName } = useParams();

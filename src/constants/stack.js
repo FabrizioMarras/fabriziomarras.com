@@ -1,18 +1,23 @@
 import {
-    javascript,
-    artificial,
-    html,
-    css,
-    reactjs,
-    tailwind,
-    nodejs,
-    mongodb,
-    git,
-    figma,
-    threejs,
-    github,
-    adobe_ae, adobe_xp, adobe_cc, adobe_il, adobe_lr, adobe_ps, adobe_pr, blender, cinema4d,
-} from "../assets";
+  artificial,
+  adobe_ae,
+  adobe_xp,
+  adobe_cc,
+  adobe_il,
+  adobe_lr,
+  adobe_ps,
+  adobe_pr,
+  blender,
+  cinema4d,
+  css,
+  html,
+  javascript,
+  mongodb,
+  nodejs,
+  reactjs,
+  tailwind,
+  threejs,
+} from "../assets/stack";
 
 const technologies = [
     {

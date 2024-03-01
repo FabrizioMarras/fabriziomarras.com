@@ -1,9 +1,8 @@
 import {
-    alessandro,
     vaggelis,
     massimo,
     tim,
-} from "../assets";
+} from "../assets/testimonials";
 
 const testimonials = [
     {

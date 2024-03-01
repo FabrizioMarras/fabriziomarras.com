@@ -1,15 +1,36 @@
 import {
-    ainsyte,
-    mnml,
-    lovelace,
-    prasanna,
-    speak2lead,
-    drop,
-    drop_01,
-    drop_02,
-    adobe_ae, adobe_xp, adobe_cc, adobe_il, adobe_lr, adobe_ps, adobe_pr, blender, cinema4d,
-    html, css, javascript, nodejs, artificial,
-  } from "../assets";
+  ainsyte,
+  mnml,
+  drop,
+  lovelace,
+  prasanna,
+  speak2lead,
+  drop_01,
+  drop_02,
+  love_01,
+  prasanna_01,
+  } from "../assets/work";
+
+  import {
+    artificial,
+  adobe_ae,
+  adobe_xp,
+  adobe_cc,
+  adobe_il,
+  adobe_lr,
+  adobe_ps,
+  adobe_pr,
+  blender,
+  cinema4d,
+  css,
+  html,
+  javascript,
+  mongodb,
+  nodejs,
+  reactjs,
+  tailwind,
+  threejs,
+  } from '../assets/stack'
 
 export const projects = [
     {
