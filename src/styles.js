@@ -6,12 +6,12 @@ const styles = {
     heroImage: "w-[150px] h-[150px] border-8 border-tertiary rounded-full overflow-hidden",
 
     HeroName: 
-    "font-title font-medium text-secondary lg:text-[42px] sm:text-[36px] text-[28px] lg:leading-[64px] mt-2 tracking-wider",
+    "font-title font-medium text-secondary sm:text-[36px] text-[28px] lg:leading-[64px] mt-2 tracking-wider",
 
     heroHeadText:
-      "font-title font-medium text-primary lg:text-[46px] sm:text-[38px] text-[30px] lg:leading-[64px] mt-2 tracking-wider",
+      "font-title font-medium text-primary sm:text-[38px] text-[30px] lg:leading-[64px] mt-2 tracking-wider",
     heroSubText:
-      "font-body font-light text-white lg:text-[28px] sm:text-[24px] xs:text-[18px] text-[16px] lg:leading-[40px] tracking-wider",
+      "font-body font-light text-white sm:text-[24px] xs:text-[18px] text-[16px] lg:leading-[40px] tracking-wider",
   
     sectionHeadText:
       "font-title text-primary font-medium md:text-[60px] sm:text-[40px] text-[30px] text-center",
