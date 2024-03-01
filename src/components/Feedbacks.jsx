@@ -8,11 +8,11 @@ import { testimonials } from "../constants/testimonials";
 const FeedbackCard = ({ index, testimonial, name, designation, company, image }) => (
   <motion.div
     variants={fadeIn("", "spring", index * 0.5, 0.75)}
-    className="border-2 border-tertiary p-[2px] rounded-3xl w-full flex flex-col justify-between">
+    className={`${index === 0 ? 'lg:col-span-4' : 'lg:col-span-2'} border-2 border-tertiary p-[2px] lg:col-span-2 rounded-3xl w-full flex flex-col justify-between`}>
     <div className="bg-zinc-900 p-6 rounded-3xl w-full h-full flex flex-col justify-between">
       <div className="mt-4">
         <p className="text-secondary font-black text-[82px] testimonials leading-[50px]">"</p>
-        <p className="text-white tracking-wider text-[12px] font-light">{testimonial}</p>
+        <p className="text-white tracking-wider text-[16px] font-light">{testimonial}</p>
       </div>
       <div className="mt-7 flex justify-between items-center gap-2">
         <div className="flex-1 flex flex-col">
@@ -40,7 +40,8 @@ const Feedbacks = () => {
           <h2 className={styles.sectionHeadText}>Testimonials</h2>
         </motion.div>
       </div>
-      <div className={`-mt-20 pb-14 ${styles.paddingX} grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-7`}>
+      <div className={`-mt-20 pb-14 ${styles.paddingX} grid grid-cols-1 lg:grid-cols-4 gap-7`}>
+      {/* <div className={`-mt-20 pb-14 ${styles.paddingX} flex flex-col flex-nowrap items-center gap-7`}>  */}
         {testimonials.map((testimonial, index) => (
           <FeedbackCard
             key={testimonial.name}
