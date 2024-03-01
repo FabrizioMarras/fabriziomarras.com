@@ -85,7 +85,7 @@ const ProjectCard = ({ index, link, link_fm, name, description, techs, image, is
           }       
         </div>
       <div>
-      <div className="w-full h-[230px]">
+      <div className="w-full md:h-[230px] h-[250px]">
         <img
           src={image}
           alt={`project-${name}`}
@@ -122,7 +122,7 @@ const ProjectCard = ({ index, link, link_fm, name, description, techs, image, is
           }       
         </div> */}
       <div>
-      <div className="w-full h-[230px]">
+      <div className="w-full md:h-[230px] h-[250px]">
         <img
           src={image}
           alt={`project-${name}`}
