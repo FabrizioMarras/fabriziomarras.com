@@ -7,7 +7,7 @@ import { SectionWrapper } from "../hoc";
 import { projects } from "../constants/projects";
 import { filters } from "../constants/filters";
 import { fadeIn, textVariant } from "../utils/motion";
-// import { link_external, link_internal} from '../assets';
+import { link_external, link_internal} from '../assets';
 
 const Filter = ({ handleFilterChange, filters, selectedFilters }) => {
   const [isOpen, setIsOpen] = useState(false);
