@@ -16,6 +16,7 @@ import {
 
 import ProjectPage from './pages/ProjectPage';
 import Terms from './pages/Terms';
+import ChatBot from './pages/ChatBot';
 
 const Home = () => {
   
@@ -44,6 +45,7 @@ const App = () => {
       {/* <div className="relative z-0 bg-black"> */}
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/chatbot" element={<ChatBot />} />
           <Route path="/terms" element={<Terms />} />
           <Route path={`/project/:projectName`} element={<ProjectPage />} />
         </Routes>
