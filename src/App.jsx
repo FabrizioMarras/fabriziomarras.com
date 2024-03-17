@@ -1,4 +1,5 @@
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
 
 import {
   Hero,
@@ -19,6 +20,23 @@ import Terms from './pages/Terms';
 import ChatBot from './pages/ChatBot';
 
 const Home = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    // Check if the URL contains a hash
+    if (location.hash) {
+      // Extract the ID of the section to scroll to
+      const sectionId = location.hash.substring(1);
+      const section = document.getElementById(sectionId);
+      // Scroll to the section if it exists
+      if (section) {
+        section.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      // If no hash in URL, scroll to top
+      window.scrollTo(0, 0);
+    }
+  }, [location.hash]);
   
   return (
     <div className="relative z-0">
@@ -32,9 +50,6 @@ const Home = () => {
       <Works />
       <Feedbacks />
       <Contact />
-      {/* <div className="fixed top-[0px] left-[0px] w-full h-screen z-[-1]">
-        <StarsCanvas />
-      </div> */}
     </div>
   )
 }
@@ -42,7 +57,6 @@ const Home = () => {
 const App = () => {
   return (
     <Router>
-      {/* <div className="relative z-0 bg-black"> */}
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/chatbot" element={<ChatBot />} />
@@ -53,11 +67,9 @@ const App = () => {
           <FmLogo />
           <Footer />
         </footer>
-      
       <div className="fixed top-[0px] left-[0px] w-full h-screen z-[-1]">
         <StarsCanvas />
       </div>
-      {/* </div> */}
     </Router>
   )
 }
