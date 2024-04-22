@@ -1,71 +1,56 @@
-import React, { useState, useRef } from 'react';
-import { Canvas } from '@react-three/fiber';
-import { Html, usePlane } from '@react-three/drei';
+import React, { useState } from 'react';
 
 function AIbot() {
   const [question, setQuestion] = useState('');
   const [answers, setAnswers] = useState([]);
-  const htmlRef = useRef();
 
   const handleQuestionChange = (event) => {
     setQuestion(event.target.value);
   };
 
   const handleSubmitQuestion = () => {
-    setAnswers([...answers, { type: 'question', text: question }]);
+    // Simulate AI response
+    const response = getAIResponse(question);
+
+    setAnswers([...answers, { type: 'question', text: question }, { type: 'answer', text: response }]);
     setQuestion('');
   };
 
-  const Plane = () => {
-    const [ref] = usePlane(() => ({
-      rotation: [-Math.PI / 2, 0, 0],
-    }));
+  // Simulated function to get AI response
+  const getAIResponse = (question) => {
+    // Mock response for demonstration
+    const mockResponses = {
+      'hello': 'Hello! How can I assist you today?',
+      'how are you?': 'I am just a virtual assistant, but thanks for asking!',
+      'bye': 'Goodbye! Have a great day!'
+    };
 
-    return (
-      <mesh ref={ref} receiveShadow>
-        <planeBufferGeometry attach="geometry" args={[100, 100]} />
-        <meshPhysicalMaterial attach="material" color="white" />
-      </mesh>
-    );
+    // Check if the question exists in mockResponses, otherwise return a default response
+    return mockResponses[question.toLowerCase()] || 'I am sorry, I cannot understand that question.';
   };
 
   return (
-    <div style={{ width: '100%', height: '100vh', position: 'relative' }}>
-      <Canvas>
-        {/* Your Three.js scene */}
-        <ambientLight intensity={0.5} />
-        <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
-        <Plane />
-        {/* Add more 3D elements for your AIbot interface */}
-      </Canvas>
-      <Html fullscreen>
-        <div
-          style={{
-            position: 'absolute',
-            top: '50%',
-            left: '50%',
-            transform: 'translate(-50%, -50%)',
-            padding: '10px',
-            backgroundColor: 'rgba(255, 255, 255, 0.8)',
-          }}
-          ref={htmlRef}
-        >
-          {/* Display questions and answers */}
-          {answers.map((item, index) => (
-            <div key={index}>{item.text}</div>
-          ))}
-          {/* Input for asking questions */}
-          <input
-            type="text"
-            value={question}
-            onChange={handleQuestionChange}
-            style={{ marginTop: '10px' }}
-          />
-          <button onClick={handleSubmitQuestion} style={{ marginTop: '10px' }}>
-            Ask
-          </button>
-        </div>
-      </Html>
+    <div className="mt-12 p-10 px-6 md:px-10 border-2 border-tertiary bg-black/70 rounded-xl flex flex-col gap-8">
+      {/* Display questions and answers */}
+      <div className="bg-zinc-900 py-4 px-6 placeholder:text-tertiary placeholder:font-thin placeholder:italic text-white rounded-lg outline-none border-none font-medium">
+        {answers.map((item, index) => (
+          <div key={index}>{item.text}</div>
+        ))}
+      </div>
+      {/* Input for asking questions */}
+      <input
+        type="text"
+        value={question}
+        onChange={handleQuestionChange}
+        placeholder="Ask me anything..."
+        className="bg-zinc-900 py-4 px-6 placeholder:text-tertiary placeholder:font-thin placeholder:italic text-white rounded-lg outline-none border-none font-medium"
+      />
+      <button
+        onClick={handleSubmitQuestion}
+        className="bg-zinc-600 py-3 px-8 outline-none w-fit text-white font-bold shadow-sm shadow-tertiary rounded-xl"
+      >
+        Ask a question
+      </button>
     </div>
   );
 }
