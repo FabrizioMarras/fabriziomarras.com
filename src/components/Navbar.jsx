@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 
 import { styles } from '../styles';
 import { navLinks } from '../constants';
@@ -10,15 +10,24 @@ const Navbar = ({ isHome }) => {
   const [active, setActive] = useState('');
   const [toggle, setToggle] = useState(false);
   const navigate = useNavigate();
+  const location = useLocation();
 
-  const handleNavClick = (sectionId) => {
+  const handleNavClick = (sectionId, targetPage) => {
     const section = document.getElementById(sectionId);
 
     if (isHome && section) {
       section.scrollIntoView({ behavior: 'smooth' });
     } else {
+      // Check if already on the target page
+      if (location.pathname === targetPage) {
+        console.log(location.pathname)
+        // If already on the target page, just scroll to the section
+        if (section) {
+          section.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
       // Navigate to home page using React Router
-      navigate('/');
+      navigate(targetPage);
       // Wait for navigation to complete, then scroll to the section
       setTimeout(() => {
         const homeSection = document.getElementById(sectionId);
@@ -45,20 +54,31 @@ const Navbar = ({ isHome }) => {
           <p className={`absolute left-20 mb-4 text-[18px] md:text-[20px] font-normal uppercase cursor-pointer w-auto whitespace-nowrap tracking-widest text-secondary`}>Fabrizio <span className='text-primary'>Marras</span></p>
         </Link>
         <ul className="list-none hidden mb-4 sm:flex flex-row gap-4">
-          {navLinks.map((link) => (
-            <li
+          {navLinks.map((link) => {
+            return (link.id === 'blog') ? (
+              <li
               className={`${active === link.title
                   ? 'text-secondary'
                   : 'text-tertiary'
                 } hover:text-primary text-[16px] font-light cursor-pointer`}
-              key={link.id}
-              onClick={() => {
-                setActive(link.title)
-                handleNavClick(link.id)}
-                }>
-              <Link to={isHome ? `#${link.id}` : `/#${link.id}`}>{link.title}</Link>
+              key={link.id}>
+              <Link to={`${link.id}`}>{link.title}</Link>
             </li>
-          ))}
+            ):(
+            <li
+            className={`${active === link.title
+                ? 'text-secondary'
+                : 'text-tertiary'
+              } hover:text-primary text-[16px] font-light cursor-pointer`}
+            key={link.id}
+            onClick={() => {
+              setActive(link.title)
+              handleNavClick(link.id, link.to)}
+              }>
+            <Link to={isHome ? `#${link.id}` : `/#${link.id}`}>{link.title}</Link>
+          </li>)
+          }
+        )}
         </ul>
         <div className="sm:hidden flex flex-1 justify-end items-center mb-4 z-10">
           <img
@@ -79,7 +99,7 @@ const Navbar = ({ isHome }) => {
                   onClick={() => {
                     setToggle(!toggle);
                     setActive(link.title);
-                    handleNavClick(link.id)
+                    handleNavClick(link.id, link.to);
                   }}>
                   <Link to={isHome ? `#${link.id}` : `/${link.id}`}>{link.title}</Link>
                 </li>

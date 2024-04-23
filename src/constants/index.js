@@ -6,6 +6,7 @@ import {
     {
       id: "about",
       title: "About",
+      
     },
     {
       id: "experience",
@@ -18,6 +19,10 @@ import {
     {
       id: "contact",
       title: "Contact",
+    },
+    {
+      id: "blog",
+      title: "Blog",
     },
   ];
 
