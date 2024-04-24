@@ -6,23 +6,31 @@ import {
     {
       id: "about",
       title: "About",
-      
+      to: "#about",
+      type: 'anchor'
     },
     {
       id: "experience",
       title: "Experience",
+      to: "#experience",
+      type: 'anchor'
     },
     {
       id: "projects",
       title: "Portfolio",
+      to: "#projects",
+      type: 'anchor'
     },
     {
       id: "contact",
       title: "Contact",
+      to: "#contact",
+      type: 'anchor'
     },
     {
       id: "blog",
       title: "Blog",
+      to: "/blog",
     },
   ];
 

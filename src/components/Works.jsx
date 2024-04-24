@@ -19,7 +19,7 @@ const ProjectCard = ({ index, link, link_fm, name, description, techs, image, is
   exit="exit">
     {isMobile ? (
       <div className="bg-zinc-800/50 relative p-5 border-2 border-tertiary rounded-2xl w-full h-full flex flex-col justify-between">
-        {/* <div className="links mx-2 absolute top-3 right-2 flex flex-row flex-nowrap items-center justify-end gap-2">
+        <div className="links mx-2 absolute top-3 right-2 flex flex-row flex-nowrap items-center justify-end gap-2">
           <a className="rounded-full bg-tertiary p-2 w-[30px] shadow-sm shadow-tertiary" href={link_fm} target="_self">
             <img src={link_internal} alt={name} />
           </a>
@@ -27,7 +27,7 @@ const ProjectCard = ({ index, link, link_fm, name, description, techs, image, is
             <img src={link_external} alt={name} />
           </a>
           }       
-        </div> */}
+        </div>
       <div>
       <div className="w-full md:h-[230px] h-[250px]">
         <img
@@ -56,7 +56,7 @@ const ProjectCard = ({ index, link, link_fm, name, description, techs, image, is
         speed: 450,
       }}
       className="bg-zinc-800/50 relative p-5 border-2 border-tertiary rounded-2xl w-full h-full flex flex-col justify-between">
-        {/* <div className="links mx-2 absolute top-3 right-2 flex flex-row flex-nowrap items-center justify-end gap-2">
+        <div className="links mx-2 absolute top-3 right-2 flex flex-row flex-nowrap items-center justify-end gap-2">
           <a className="rounded-full bg-tertiary p-2 w-[30px] shadow-sm shadow-tertiary" href={link_fm} target="_self">
             <img src={link_internal} alt={name} />
           </a>
@@ -64,7 +64,7 @@ const ProjectCard = ({ index, link, link_fm, name, description, techs, image, is
             <img src={link_external} alt={name} />
           </a>
           }       
-        </div> */}
+        </div>
       <div>
       <div className="w-full md:h-[230px] h-[250px]">
         <img

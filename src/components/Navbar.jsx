@@ -14,29 +14,24 @@ const Navbar = ({ isHome }) => {
 
   const handleNavClick = (sectionId, targetPage) => {
     const section = document.getElementById(sectionId);
-
-    if (isHome && section) {
-      section.scrollIntoView({ behavior: 'smooth' });
-    } else {
-      // Check if already on the target page
-      if (location.pathname === targetPage) {
-        console.log(location.pathname)
-        // If already on the target page, just scroll to the section
+    if (isHome) {
+        // For homepage, scroll to the section if exists
         if (section) {
-          section.scrollIntoView({ behavior: 'smooth' });
+            section.scrollIntoView({ behavior: 'smooth' });
+        }
+    } else {
+      if (location.pathname === targetPage) {
+        // Navigate to target page using React Router
+        navigate(targetPage);
+        // Scroll to the section after a short delay to ensure navigation is complete
+        if (section) {
+            setTimeout(() => {
+                section.scrollIntoView({ behavior: 'smooth' });
+            }, 200); // Adjust the delay if needed
         }
       }
-      // Navigate to home page using React Router
-      navigate(targetPage);
-      // Wait for navigation to complete, then scroll to the section
-      setTimeout(() => {
-        const homeSection = document.getElementById(sectionId);
-        if (homeSection) {
-          homeSection.scrollIntoView({ behavior: 'smooth' });
-        }
-      }, 80); // Adjust the delay if needed
     }
-  };
+};
 
   return (
     <nav className={`
@@ -55,14 +50,14 @@ const Navbar = ({ isHome }) => {
         </Link>
         <ul className="list-none hidden mb-4 sm:flex flex-row gap-4">
           {navLinks.map((link) => {
-            return (link.id === 'blog') ? (
+            return (!link.type) ? (
               <li
               className={`${active === link.title
                   ? 'text-secondary'
                   : 'text-tertiary'
                 } hover:text-primary text-[16px] font-light cursor-pointer`}
               key={link.id}>
-              <Link to={`${link.id}`}>{link.title}</Link>
+              <Link to={`/${link.id}`}>{link.title}</Link>
             </li>
             ):(
             <li
@@ -75,7 +70,7 @@ const Navbar = ({ isHome }) => {
               setActive(link.title)
               handleNavClick(link.id, link.to)}
               }>
-            <Link to={isHome ? `#${link.id}` : `/#${link.id}`}>{link.title}</Link>
+            <Link to={isHome ? `${link.to}` : `/${link.to}`}>{link.title}</Link>
           </li>)
           }
         )}
@@ -101,7 +96,7 @@ const Navbar = ({ isHome }) => {
                     setActive(link.title);
                     handleNavClick(link.id, link.to);
                   }}>
-                  <Link to={isHome ? `#${link.id}` : `/${link.id}`}>{link.title}</Link>
+                  <Link to={isHome ? `${link.to}` : `/${link.to}`}>{link.title}</Link>
                 </li>
               ))}
             </ul>
