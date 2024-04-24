@@ -7,6 +7,7 @@ import Navbar from '../components/Navbar';
 import { posts } from '../constants/posts';
 import { styles } from '../styles';
 import { staggerContainer, slideIn, fadeIn, textVariant } from '../utils/motion';
+import { getYouTubeVideoId } from '../utils/getYouTubeVideoId';
 import { arrow } from '../assets';
 
 const PostPage = () => {
@@ -43,11 +44,6 @@ const PostPage = () => {
     backgroundPosition: 'center',
     backgroundRepeat: 'no-repeat',
   };
-
-  const getYouTubeVideoId = (url) => {
-    const videoIdMatch = url.match(/(?:youtu\.be\/|youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/\s]{11})/);
-    return videoIdMatch ? videoIdMatch[1] : null;
-  }
 
   const navigateToPost = (index) => {
     setCurrentPostIndex(index);
