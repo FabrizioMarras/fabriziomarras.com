@@ -48,7 +48,7 @@ const Filter = ({ handleFilterChange, filters, selectedFilters }) => {
               onChange={handleFilterChange}
               className="hidden"
             />
-            <label htmlFor={filter.name} className="ml-2 text-white font-thin">{filter.name}</label>
+            <label htmlFor={filter.name} className="ml-2 text-white font-thin cursor-pointer">{filter.name}</label>
           </div>
           
           ))}
