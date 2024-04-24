@@ -67,6 +67,7 @@ const Navbar = ({ isHome }) => {
               } hover:text-primary text-[16px] font-light cursor-pointer`}
             key={link.id}
             onClick={() => {
+              setToggle(!toggle);
               setActive(link.title)
               handleNavClick(link.id, link.to)}
               }>
@@ -84,21 +85,32 @@ const Navbar = ({ isHome }) => {
         </div>
         <div className={`${!toggle ? 'hidden' : 'flex'} bg-black flex-col justify-between md:hidden p- pt-24 absolute top-0 right-0 z-8 w-full h-screen`}>
             <ul className="list-none flex flex-col justify-end items-center mt-10 gap-8">
-              {navLinks.map((link) => (
-                <li
-                  className={`${active === link.title
-                      ? 'text-secondary'
-                      : 'text-tertiary'
-                    } font-body text-[18px] cursor-pointer`}
-                  key={link.id}
-                  onClick={() => {
-                    setToggle(!toggle);
-                    setActive(link.title);
-                    handleNavClick(link.id, link.to);
-                  }}>
-                  <Link to={isHome ? `${link.to}` : `/${link.to}`}>{link.title}</Link>
-                </li>
-              ))}
+            {navLinks.map((link) => {
+            return (!link.type) ? (
+              <li
+              className={`${active === link.title
+                  ? 'text-secondary'
+                  : 'text-tertiary'
+                } hover:text-primary text-[16px] font-light cursor-pointer`}
+              key={link.id}>
+              <Link to={`/${link.id}`}>{link.title}</Link>
+            </li>
+            ):(
+            <li
+            className={`${active === link.title
+                ? 'text-secondary'
+                : 'text-tertiary'
+              } hover:text-primary text-[16px] font-light cursor-pointer`}
+            key={link.id}
+            onClick={() => {
+              setToggle(!toggle);
+              setActive(link.title)
+              handleNavClick(link.id, link.to)}
+              }>
+            <Link to={isHome ? `${link.to}` : `/${link.to}`}>{link.title}</Link>
+          </li>)
+          }
+        )}
             </ul>
           </div>
       </div>
