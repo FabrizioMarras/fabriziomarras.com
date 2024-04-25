@@ -19,6 +19,7 @@ import ProjectPage from './pages/ProjectPage';
 import Terms from './pages/Terms';
 import BlogPage from './pages/BlogPage';
 import PostPage from './pages/PostPage';
+import AdminPage from './pages/AdminPage'
 
 const Home = () => {
   const location = useLocation();
@@ -61,6 +62,7 @@ const App = () => {
     <Router>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/admin" element={<AdminPage />} />
           <Route path="/terms" element={<Terms />} />
           <Route path="/blog" element={<BlogPage />} />
           <Route path={`/blog/:postName`} element={<PostPage />} />

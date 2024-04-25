@@ -119,13 +119,14 @@ const FmLogo = ({ position, rotation, scale }) => {
   );
 };
 
-const FmLogoCanvas = ({autoRotation, logoRotation = 0, scale}) => {
+const FmLogoCanvas = ({autoRotation, logoRotation = 0, scale, style}) => {
 
   const spotLightRef = useRef();
   // useHelper(spotLightRef, spotLightHelper, 1, "red");
   return (
       <Canvas
-        camera={{ position: [0, 0, 50], fov: 25 }}
+        style={style}
+        camera={{ position: [0, 0, 50], aspect: 1, fov: 25 }}
         frameloop='demand'
       >
         <Suspense fallback={<CanvasLoader />}>
