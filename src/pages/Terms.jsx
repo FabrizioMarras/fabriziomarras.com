@@ -1,6 +1,6 @@
 import Navbar from '../components/Navbar';
 import { styles } from '../styles';
-// import { terms } from '../constants/terms';
+import { terms } from '../constants/terms';
 
 const Term = ({title, description}) => {
   return (
