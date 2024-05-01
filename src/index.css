@@ -15,6 +15,11 @@
   /* scroll-snap-type: y proximity; */
   color-scheme: dark;
 }
+/* hide the recaptcha logo */
+.grecaptcha-badge {
+  visibility: hidden;
+}
+
 canvas {
   margin: auto;
 }
