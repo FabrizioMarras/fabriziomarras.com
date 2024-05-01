@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-route
 import { useEffect } from 'react';
 
 import {
+  Bot,
   Hero,
   Navbar,
   About,
@@ -56,6 +57,8 @@ const Home = () => {
 const App = () => {
   return (
     <Router>
+      <div className="relative z-0">
+        <Bot />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/terms" element={<Terms />} />
@@ -65,8 +68,9 @@ const App = () => {
           <FmLogo />
           <Footer />
         </footer>
-      <div className="fixed top-[0px] left-[0px] w-full h-screen z-[-1]">
-        <StarsCanvas />
+        <div className="fixed top-[0px] left-[0px] w-full h-screen z-[-1]">
+          <StarsCanvas />
+        </div>
       </div>
     </Router>
   )
