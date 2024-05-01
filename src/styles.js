@@ -34,6 +34,9 @@ const styles = {
     cardText: 
     "font-body font-light sm:text-[15px] text-[12px] text-white leading-[18px] tracking-wider",
 
+    activeTab:
+    "",
+
     primary: '#6f42c1',
     secondary: '#217ec4',
     tertiary: '#46739a',
