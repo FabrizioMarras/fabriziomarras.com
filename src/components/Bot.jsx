@@ -8,6 +8,12 @@ const Bot = () => {
     const [comingSoon, setComingSoon] = useState(false);
     const [chat, setChat] = useState([]);
     const [inputMessage, setInputMessage] = useState('');
+    const [isNewChat, setIsNewChat] = useState(true);
+
+    const handleStartNewChat = () => {
+        setChat([]); // Clear chat history
+        setIsNewChat(true); // Set isNewChat to true
+    };
 
     const handleMessageSend = async () => {
         if (inputMessage.trim() === '') return;
@@ -27,6 +33,7 @@ const Bot = () => {
                 // Update chat history with user message and bot response
                 setChat([...chat, { role: 'user', content: inputMessage }, { role: 'assistant', content: responseData.message }]);
                 setInputMessage(''); // Clear input field
+                setIsNewChat(false);
             } else {
                 console.error('Error sending message:', response.statusText);
             }
@@ -49,15 +56,26 @@ const Bot = () => {
                     src={!toggle ? bot : close}
                     alt="bot"
                     className={`${toggle ? 'w-[20px] h-[20px]' : 'w-[40px] h-[40px]'} object-contain cursor-pointer`}
-                    onClick={() => setToggle(!toggle)} />
+                    onClick={() => {
+                        setToggle(!toggle)
+                        !toggle && handleStartNewChat()
+                    }} />
             </div>
                 <div className={`${!toggle ? 'hidden' : 'flex'} flex-col gap-6 bg-zinc-900 p-4`}>
                 {comingSoon ? (
                 <h4>Coming Soon</h4>
                 ) : (<>
                 <div className="bot-body flex flex-col gap-6 cursor-default">
-                    <h3 className="text-secondary text-[20px] font-bold text-center">Chat History</h3>
-                    <div className="bg-black/70 py-4 px-6 text-wrap text-gray-200 rounded-lg font-medium h-full min-h-[160px]">                       
+                    <div className="flex flex-row items-center justify-between">
+                        <h3 className="text-secondary text-[20px] font-bold text-center">Chat History</h3>
+                        {!isNewChat && ( // Render button only if it's a new chat
+                            <button className="text-white font-medium" onClick={handleStartNewChat}>
+                                New Chat
+                            </button>
+                        )}
+                    </div>
+                    
+                    <div className="bg-black/70 py-4 px-6 text-wrap text-gray-200 rounded-lg font-medium h-full min-h-[160px] max-h-[280px] overflow-auto hover:overflow-scroll text-[14px]">                       
                         {/* Message history from the chat bot */}
                         {chat.length !== 0 ? (chat.map((message, index) => (
                             <p key={index} className={message.role === 'user' ? 'text-left text-secondary' : 'text-right'}>
@@ -72,7 +90,6 @@ const Bot = () => {
                 </div>
                 <div className="bot-footer flex flex-col gap-6">
                     <label htmlFor="message" className="relative flex flex-col">
-                    <span className='text-white font-medium mb-4'>Write your message below.</span>
                     <img
                             src={send}
                             alt="send"
@@ -87,7 +104,7 @@ const Bot = () => {
                         value={inputMessage}
                         onChange={(e) => setInputMessage(e.target.value)}
                         placeholder="Write your message"
-                        className="bg-black/70 py-4 px-6 placeholder:text-tertiary placeholder:font-thin placeholder:text-[12px] placeholder:italic text-white rounded-lg outline-none border-none font-medium" />
+                        className="bg-black/70 py-4 px-6 pe-10 placeholder:text-tertiary placeholder:font-thin placeholder:text-[12px] placeholder:italic text-white rounded-lg outline-none border-none font-medium" />
                     </label>
                 </div>
                 </>)}
