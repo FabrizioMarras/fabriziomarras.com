@@ -5,7 +5,36 @@ import { styles } from '../styles';
 
 const Bot = () => {
     const [toggle, setToggle] = useState(false);
-    const [comingSoon, setComingSoon] = useState(true);
+    const [comingSoon, setComingSoon] = useState(false);
+    const [chat, setChat] = useState([]);
+    const [inputMessage, setInputMessage] = useState('');
+
+    const handleMessageSend = async () => {
+        if (inputMessage.trim() === '') return;
+
+        try {
+            const response = await fetch('http://localhost:3333/chatGPT', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ message: inputMessage }),
+            });
+
+            if (response.ok) {
+                const responseData = await response.json();
+                console.log(responseData); 
+                // Update chat history with user message and bot response
+                setChat([...chat, { role: 'user', content: inputMessage }, { role: 'assistant', content: responseData.message }]);
+                setInputMessage(''); // Clear input field
+            } else {
+                console.error('Error sending message:', response.statusText);
+            }
+        } catch (error) {
+            console.error('Error sending message:', error);
+        }
+    };
+
   return (
     <>
         <div className={`bot flex flex-col cursor-pointer fixed bottom-0 right-0 m-4 z-10 border-2 border-tertiary bg-black/70 overflow-hidden ${toggle ? 'rounded-xl max-w-[300px]' : 'rounded-full'}`}>
@@ -25,34 +54,43 @@ const Bot = () => {
                 <div className={`${!toggle ? 'hidden' : 'flex'} flex-col gap-6 bg-zinc-900 p-4`}>
                 {comingSoon ? (
                 <h4>Coming Soon</h4>
-            ) : (<>
-            <div className="bot-body flex flex-col gap-6 cursor-default">
-                    <h4>Chat History:</h4>
-                    <div className="bg-black/70 py-4 px-6 text-wrap text-gray-200 rounded-lg font-medium h-full min-h-[160px]">
+                ) : (<>
+                <div className="bot-body flex flex-col gap-6 cursor-default">
+                    <h3 className="text-secondary text-[20px] font-bold text-center">Chat History</h3>
+                    <div className="bg-black/70 py-4 px-6 text-wrap text-gray-200 rounded-lg font-medium h-full min-h-[160px]">                       
                         {/* Message history from the chat bot */}
-                        Messages with the bot will appear here.
+                        {chat.length !== 0 ? (chat.map((message, index) => (
+                            <p key={index} className={message.role === 'user' ? 'text-left text-secondary' : 'text-right'}>
+                                {message.content}
+                            </p>
+                        ))) : (
+                            <p className="text-tertiary font-thin italic text-[12px]">
+                                Messages with the bot will appear here.
+                            </p>
+                        )}
                     </div>
                 </div>
                 <div className="bot-footer flex flex-col gap-6">
-                <label htmlFor="message" className="relative flex flex-col">
-                  <span className='text-white font-medium mb-4'>Your Message:</span>
-                  <img
-                        src={send}
-                        alt="send"
-                        className={`absolute p-2 bottom-2 right-0 w-[40px] h-[40px] object-contain z-10 cursor-pointer`} />
-                  <input
-                    required
-                    id="message"
-                    autoComplete="message"
-                    type="text"
-                    name="message"
-                    placeholder="Write your message"
-                    className="bg-black/70 py-4 px-6 placeholder:text-tertiary placeholder:font-thin placeholder:text-[12px] placeholder:italic text-white rounded-lg outline-none border-none font-medium" />
-                </label>
+                    <label htmlFor="message" className="relative flex flex-col">
+                    <span className='text-white font-medium mb-4'>Write your message below.</span>
+                    <img
+                            src={send}
+                            alt="send"
+                            className={`absolute p-2 bottom-2 right-0 w-[40px] h-[40px] object-contain z-10 cursor-pointer`}
+                            onClick={handleMessageSend} />
+                    <input
+                        required
+                        id="message"
+                        autoComplete="message"
+                        type="text"
+                        name="message"
+                        value={inputMessage}
+                        onChange={(e) => setInputMessage(e.target.value)}
+                        placeholder="Write your message"
+                        className="bg-black/70 py-4 px-6 placeholder:text-tertiary placeholder:font-thin placeholder:text-[12px] placeholder:italic text-white rounded-lg outline-none border-none font-medium" />
+                    </label>
                 </div>
-            </>
-                    
-                )}
+                </>)}
             </div>
         </div>
     </>
