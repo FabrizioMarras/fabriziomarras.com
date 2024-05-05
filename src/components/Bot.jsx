@@ -9,6 +9,7 @@ const Bot = () => {
     const [chat, setChat] = useState([]);
     const [inputMessage, setInputMessage] = useState('');
     const [isNewChat, setIsNewChat] = useState(true);
+    const [botName, setBotName] = useState('');
 
     const handleStartNewChat = () => {
         setChat([]); // Clear chat history
@@ -16,7 +17,8 @@ const Bot = () => {
     };
 
     const handleMessageSend = async () => {
-        if (inputMessage.trim() === '') return;
+        console.log(botName);
+        if (inputMessage.trim() === '' || botName === '') return console.warn('Warning: message or bot name is empty');
 
         try {
             const response = await fetch('http://localhost:3333/chatGPT', {
@@ -24,7 +26,7 @@ const Bot = () => {
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ message: inputMessage }),
+                body: JSON.stringify({ message: inputMessage, botName: botName }),
             });
 
             if (response.ok) {
@@ -52,6 +54,21 @@ const Bot = () => {
                         alt="bot"
                         className={`w-[40px] h-[40px] object-contain`} />
                 </div>
+                <div className={`${!toggle && 'hidden'} py-2 px-4 border rounded-md border-zinc-600 bot-selection`}>
+                    <label htmlFor="bot-select" className="text-white/50 font-medium mb-2">
+                            <select
+                                id="bot-select"
+                                className="bg-inherit text-zinc-600 hover:text-white font-thin outline-none border-none"
+                                value={botName}
+                                onChange={(e) => setBotName(e.target.value)}
+                            >
+                                <option value="">Model</option>
+                                <option value="chatGPT">GPT4</option>
+                                <option value="Gemini">GeminiPro</option>
+                                {/* Add more options as needed */}
+                            </select>
+                        </label>
+                    </div>
                 <img
                     src={!toggle ? bot : close}
                     alt="bot"
@@ -74,11 +91,10 @@ const Bot = () => {
                             </button>
                         )}
                     </div>
-                    
                     <div className="bg-black/70 py-4 px-6 text-wrap text-gray-200 rounded-lg font-medium h-full min-h-[160px] max-h-[280px] overflow-auto hover:overflow-scroll text-[14px]">                       
                         {/* Message history from the chat bot */}
                         {chat.length !== 0 ? (chat.map((message, index) => (
-                            <p key={index} className={message.role === 'user' ? 'text-left text-secondary' : 'text-right'}>
+                            <p key={index} className={message.role === 'user' ? 'text-right text-secondary' : 'text-left'}>
                                 {message.content}
                             </p>
                         ))) : (
