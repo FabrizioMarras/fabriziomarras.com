@@ -9,7 +9,7 @@ const Bot = () => {
     const [chat, setChat] = useState([]);
     const [inputMessage, setInputMessage] = useState('');
     const [isNewChat, setIsNewChat] = useState(true);
-    const [botName, setBotName] = useState('');
+    const [botName, setBotName] = useState('chatGPT');
 
     const handleStartNewChat = () => {
         setChat([]); // Clear chat history
@@ -46,7 +46,7 @@ const Bot = () => {
 
   return (
     <>
-        <div className={`bot flex flex-col cursor-pointer fixed bottom-0 right-0 m-4 z-10 border-2 border-tertiary bg-black/70 overflow-hidden ${toggle ? 'rounded-xl max-w-[300px]' : 'rounded-full'}`}>
+        <div className={`bot flex flex-col cursor-pointer fixed bottom-0 right-0 m-4 z-10 border-2 border-tertiary bg-black overflow-hidden ${toggle ? 'rounded-xl max-w-[300px]' : 'rounded-full'}`}>
             <div className={`flex flex-1  ${toggle ? 'justify-between w-full min-w-[250px]' : 'justify-end'}  items-center p-4`}>
                 <div className={`${!toggle && 'hidden'} ${styles.sectionHeadText} text-primary`}>
                     <img
@@ -54,21 +54,20 @@ const Bot = () => {
                         alt="bot"
                         className={`w-[40px] h-[40px] object-contain`} />
                 </div>
-                <div className={`${!toggle && 'hidden'} py-2 px-4 border rounded-md border-zinc-600 bot-selection`}>
+                {/* <div className={`${!toggle && 'hidden'} py-2 px-4 border rounded-md border-zinc-600 bot-selection`}>
                     <label htmlFor="bot-select" className="text-white/50 font-medium mb-2">
-                            <select
-                                id="bot-select"
-                                className="bg-inherit text-zinc-600 hover:text-white font-thin outline-none border-none"
-                                value={botName}
-                                onChange={(e) => setBotName(e.target.value)}
-                            >
-                                <option value="">Model</option>
-                                <option value="chatGPT">GPT4</option>
-                                <option value="Gemini">GeminiPro</option>
-                                {/* Add more options as needed */}
-                            </select>
-                        </label>
-                    </div>
+                        <select
+                            id="bot-select"
+                            className="bg-inherit text-zinc-600 hover:text-white font-thin outline-none border-none"
+                            value={botName}
+                            onChange={(e) => setBotName(e.target.value)}
+                        >
+                            <option value="">Model</option>
+                            <option value="chatGPT">GPT4</option>
+                            <option value="Gemini">GeminiPro</option>
+                        </select>
+                    </label>
+                </div> */}
                 <img
                     src={!toggle ? bot : close}
                     alt="bot"
@@ -86,7 +85,7 @@ const Bot = () => {
                     <div className="flex flex-row items-center justify-between">
                         <h3 className="text-secondary text-[20px] font-bold text-center">Chat History</h3>
                         {!isNewChat && ( // Render button only if it's a new chat
-                            <button className="text-white font-medium" onClick={handleStartNewChat}>
+                            <button className="text-white text-[10px] rounded-md bg-tertiary hover:bg-secondary p-2 font-thin" onClick={handleStartNewChat}>
                                 New Chat
                             </button>
                         )}
