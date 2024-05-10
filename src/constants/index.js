@@ -27,11 +27,11 @@ import {
       to: "#contact",
       type: 'anchor'
     },
-    {
-      id: "blog",
-      title: "Blog",
-      to: "/blog",
-    },
+    // {
+    //   id: "blog",
+    //   title: "Blog",
+    //   to: "/blog",
+    // },
   ];
 
   export const socials = [
