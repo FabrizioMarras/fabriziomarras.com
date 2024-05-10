@@ -18,8 +18,6 @@ const Bot = () => {
     const sendEmail = () => {
         // Notification to info@fabriziomarras.com
         let messages = chat.map(message => message.content).join('\n');
-        console.log("sending email...");
-        console.log("messages", messages)
         
         emailjs.send(
           'service_9vgd4wk',
@@ -42,13 +40,10 @@ const Bot = () => {
       };
 
     const handleStartNewChat = () => {
-        console.log("starting new chat", messageEmail, chat)
         // Check if userEmail is defined and chat is not empty
         if (chat.length > 0) {
-            console.log("sending email")
             sendEmail(); // Send email with chat history
         }
-        console.log("resetting chat...")
         setChat([]); // Clear chat history
         setIsNewChat(true); // Set isNewChat to true
     };
@@ -67,31 +62,26 @@ const Bot = () => {
         const emailRegex = /\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b/;
         // Use match to find the first email address in the input string
         const emails = inputString.match(emailRegex);
-        console.log("emails:", emails)
         return emails ? emails[0] : null; // return the first email found or null if no email is found
     }
 
     const handleMessageSend = async () => {
-        console.log(botName);
-        
+       
         if (inputMessage.trim() === '' || botName === '') {
             console.warn('Warning: message or bot name is empty');
             return;
         }
         if (botName === 'assistant') {
-            console.log("bot name is assistant")
+
             const isEmail = isEmailPresent(inputMessage); // check if user sent email with message
             // Check if email is present and set userEmail
             if (isEmail) {
-                console.log("extracting email")
                 const email = extractEmail(inputMessage);
                 setMessageEmail(email);
                 console.log(messageEmail)
             }
-            console.log("userEmail:", messageEmail)
             const defaultMessage = isEmail ? 'Thank you for your message. Fabrizio will come back to you shortly. See you soon.' : `Thank you for your message. Please leave your email, so we can respond to you. See you soon.`;
             setChat([...chat, { role: 'user', content: inputMessage }, { role: 'assistant', content: defaultMessage }])
-            console.log("email and chat:", messageEmail, chat)
 
             setInputMessage(''); // Clear input field
             setIsNewChat(false); // reset the chat
@@ -109,7 +99,7 @@ const Bot = () => {
 
             if (response.ok) {
                 const responseData = await response.json();
-                console.log(responseData); 
+                // console.log(responseData); 
                 // Update chat history with user message and bot response
                 setChat([...chat, { role: 'user', content: inputMessage }, { role: 'assistant', content: responseData.message }]);
                 setInputMessage(''); // Clear input field
@@ -206,7 +196,7 @@ const Bot = () => {
                 <div className={`${!toggle ? 'hidden' : 'flex'} flex-col gap-6 bg-zinc-900 p-4`}>
                 {!isLoggedIn ? (
                     <div className="p-4 bg-black/70 rounded-xl">
-                        <p>You need Login Credentials to use this AI. Send a <a className="text-primary" href="/#contact">message</a> to know more.</p>
+                        <p>You need Login credentials to use this AI. Send a <a className="text-primary" href="/#contact">message</a> to know more.</p>
                         <LoginForm setIsLoggedIn={setIsLoggedIn} />
                     </div>
                  
