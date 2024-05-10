@@ -21,7 +21,8 @@ import ProjectPage from './pages/ProjectPage';
 import Terms from './pages/Terms';
 import BlogPage from './pages/BlogPage';
 import PostPage from './pages/PostPage';
-import AdminPage from './pages/AdminPage'
+import AdminPage from './pages/AdminPage';
+import NotFoundPage from './pages/NotFoundPage';
 
 const Home = () => {
   const location = useLocation();
@@ -67,9 +68,10 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/admin" element={<AdminPage />} />
           <Route path="/terms" element={<Terms />} />
-          <Route path="/blog" element={<BlogPage />} />
+          {/* <Route path="/blog" element={<BlogPage />} /> */}
           <Route path={`/blog/:postName`} element={<PostPage />} />
           <Route path={`/project/:projectName`} element={<ProjectPage />} />
+          <Route path="*" element={<NotFoundPage />} />
         </Routes>
         <footer>
           <FmLogo />
