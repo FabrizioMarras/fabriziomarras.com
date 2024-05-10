@@ -205,7 +205,11 @@ const Bot = () => {
             ) : (
                 <div className={`${!toggle ? 'hidden' : 'flex'} flex-col gap-6 bg-zinc-900 p-4`}>
                 {!isLoggedIn ? (
-                 <LoginForm setIsLoggedIn={setIsLoggedIn} />
+                    <div className="p-4 bg-black/70 rounded-xl">
+                        <p>You need Login Credentials to use this AI. Send a <a className="text-primary" href="/#contact">message</a> to know more.</p>
+                        <LoginForm setIsLoggedIn={setIsLoggedIn} />
+                    </div>
+                 
                 ) : (
                 <>
                 <div className="bot-body flex flex-col gap-6 cursor-default">
