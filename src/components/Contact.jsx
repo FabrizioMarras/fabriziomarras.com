@@ -60,35 +60,7 @@ const Contact = () => {
         message: form.message,
       },
       '_ZYbRTFhQiKQlmC8Z'
-    )
-
-    // // autoreply to user:
-    // emailjs.send(
-    //   'service_9vgd4wk',
-    //   'template_ag0ieso',
-    //   {
-    //     from_name: "Fabrizio Marras",
-    //     to_name: form.name,
-    //     from_email:'info@fabriziomarras.com',
-    //     to_email:  form.email,
-    //     message: form.message,
-    //   },
-    //   '_ZYbRTFhQiKQlmC8Z'
-    // )
-    // logic to send the email with GMAIL:
-    // emailjs.send(
-    //   'service_8a30snc',
-    //   'template_3zo9ewc',
-    //   {
-    //     from_name: form.name,
-    //     to_name: "Fabrizio Marras",
-    //     from_email: form.email,
-    //     to_email: "info@fabriziomarras.com",
-    //     message: form.message,
-    //   },
-    //   '_ZYbRTFhQiKQlmC8Z'
-    // )
-      .then(() => {
+    ).then(() => {
         setLoading(false);
         setShowSuccessMessage(true);
       }, (error) => {
