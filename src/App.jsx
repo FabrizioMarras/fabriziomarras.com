@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-route
 import { useEffect } from 'react';
 
 import {
+  BotComponent,
   Bot,
   Hero,
   Navbar,
@@ -57,12 +58,11 @@ const Home = () => {
   )
 }
 
-const App = () => {
-  
+const App = () => {  
   return (
     <Router>
       <div className="relative z-0">
-        <Bot />
+        <BotComponent />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/admin" element={<AdminPage />} />
