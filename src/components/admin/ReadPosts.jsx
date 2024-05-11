@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import apiUrl from '../../constants/apiUrl';
 
 const ReadPosts = () => {
   const [posts, setPosts] = useState([]);
@@ -13,7 +14,7 @@ const ReadPosts = () => {
   const fetchPosts = async () => {
     try {
       // Fetch the list of posts from the backend
-      const response = await fetch('http://localhost:3333/posts');
+      const response = await fetch(`${apiUrl}/posts`);
       if (response.ok) {
         const data = await response.json();
         setPosts(data);
@@ -36,7 +37,7 @@ const ReadPosts = () => {
 
   const handleDeletePost = async (postId) => {
     try {
-      const response = await fetch(`http://localhost:3333/posts/${postId}`, {
+      const response = await fetch(`${apiUrl}/posts/${postId}`, {
         method: 'DELETE',
       });
       if (response.ok) {

@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import apiUrl from '../../constants/apiUrl';
 
 const CreatePost = () => {
   const [formData, setFormData] = useState({
@@ -17,7 +18,7 @@ const CreatePost = () => {
     e.preventDefault();
     try {
       // Send formData to backend to create new post
-      const response = await fetch('http://localhost:3333/posts', {
+      const response = await fetch(`${apiUrl}/posts`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

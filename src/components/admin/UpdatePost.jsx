@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import apiUrl from '../../constants/apiUrl';
 
 const UpdatePost = ({ postId }) => {
   const [title, setTitle] = useState('');
@@ -8,7 +9,7 @@ const UpdatePost = ({ postId }) => {
   useEffect(() => {
     const fetchPost = async () => {
       try {
-        const response = await fetch(`http://localhost:3333/posts/${postId}`);
+        const response = await fetch(`${apiUrl}/posts/${postId}`);
         if (!response.ok) {
           throw new Error('Failed to fetch post');
         }
@@ -27,7 +28,7 @@ const UpdatePost = ({ postId }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch(`http://localhost:3333/posts/${postId}`, {
+      const response = await fetch(`${apiUrl}/posts/${postId}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',

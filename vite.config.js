@@ -15,9 +15,7 @@ export default ({ command }) => {
       react(),
     ],
     define: {
-      'process.env': {
-        VITE_REACT_APP_API_ENDPOINT: JSON.stringify(apiUrl),
-      },
+      'import.meta.env.VITE_REACT_APP_API_ENDPOINT': JSON.stringify(apiUrl)
     },
   });
 };

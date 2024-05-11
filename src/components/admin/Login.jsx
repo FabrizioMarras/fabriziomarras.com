@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import apiUrl from '../../constants/apiUrl';
 
 const LoginForm = ({ setIsLoggedIn }) => {
   const [message, setMessage] = useState()
@@ -27,7 +28,7 @@ const LoginForm = ({ setIsLoggedIn }) => {
     }
     
     try {
-      const response = await fetch('http://localhost:3333/user/login', {
+      const response = await fetch(`${apiUrl}/user/login`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

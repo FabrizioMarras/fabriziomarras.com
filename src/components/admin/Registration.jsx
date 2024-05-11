@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import apiUrl from '../../constants/apiUrl';
 
 const RegistrationForm = () => {
   const [loading, setLoading] = useState(false);
@@ -26,7 +27,7 @@ const RegistrationForm = () => {
     }
     
     try {
-      const response = await fetch('http://localhost:3333/user/register', {
+      const response = await fetch(`${apiUrl}/user/register`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
