@@ -16,6 +16,8 @@ const Bot = () => {
     const [botName, setBotName] = useState('assistant');
     const [messageEmail, setMessageEmail] = useState('')
 
+    console.log("URL: ", apiUrl)
+
     const sendEmail = () => {
         // Notification to info@fabriziomarras.com
         let messages = chat.map(message => message.content).join('\n');
