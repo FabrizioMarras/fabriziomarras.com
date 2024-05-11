@@ -4,10 +4,10 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite --host 0.0.0.0",
-    "build": " vite build",
+    "dev": "VITE_REACT_APP_API_ENDPOINT=http://localhost:3333 vite --host 0.0.0.0",
+    "build": "VITE_REACT_APP_API_ENDPOINT=https://server.fabriziomarras.com vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "VITE_REACT_APP_API_ENDPOINT=https://server.fabriziomarras.com vite preview"
   },
   "dependencies": {
     "@emailjs/browser": "^3.11.0",
