@@ -1,2 +1,2 @@
-const apiUrl = import.meta.env.VITE_REACT_APP_API_ENDPOINT;
+const apiUrl = "server.fabriziomarras.com"
 export default apiUrl;
