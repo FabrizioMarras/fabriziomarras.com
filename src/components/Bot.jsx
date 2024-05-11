@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import apiUrl from '../constants/apiUrl'
 import { bot, send, close } from '../assets';
 import { styles } from '../styles';
 
@@ -89,7 +90,7 @@ const Bot = () => {
         } else {
 
         try {
-            const response = await fetch('http://localhost:3333/bot', {
+            const response = await fetch(`${apiUrl}/bot`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

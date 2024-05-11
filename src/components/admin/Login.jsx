@@ -58,6 +58,7 @@ const LoginForm = ({ setIsLoggedIn }) => {
           <span className='text-white font-medium mb-4'>Your Email</span>
           <input 
           className="bg-zinc-900 py-4 px-6 placeholder:text-tertiary placeholder:font-thin placeholder:text-[12px] placeholder:italic text-white rounded-lg outline-none border-none font-medium"
+          id="email"
           type="email" 
           name="email" 
           placeholder="Email" 
@@ -67,6 +68,7 @@ const LoginForm = ({ setIsLoggedIn }) => {
         <label htmlFor="password" className="flex flex-col">
           <span className='text-white font-medium mb-4'>Your Password</span>
           <input 
+          id="password"
           className="bg-zinc-900 py-4 px-6 placeholder:text-tertiary placeholder:font-thin placeholder:text-[12px] placeholder:italic text-white rounded-lg outline-none border-none font-medium"
           type="password" 
           name="password" 
