@@ -16,7 +16,7 @@ const Terms = () => {
     <>
       <Navbar isHomePage={false} />
       <section className='sm:px-16 px-6 sm:py-16 py-10 max-w-7xl mx-auto relative z-0'>
-        <h1 className={`${styles.sectionHeadText} pt-20`}>Terms.</h1>
+        <h1 className={`${styles.sectionHeadText} pt-20`}>Terms</h1>
         <p className={`${styles.pText} py-10`}>Please read the following terms and conditions carefully. By accessing or using our website, you agree to be bound by these terms. If you do not agree with any part of these terms, please refrain from using our services</p>
         {terms.map(term => {
           return <Term key={term.title} {...term} />
